@@ -77,7 +77,7 @@ export default function Footer() {
                 <HiOutlineMail className="text-green-700" /> support@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
-                <HiOutlinePhone className="text-green-700" /> 813.960.2225
+                <HiOutlinePhone className="text-green-700" /> 813 960 2225
               </li>
               <li className="flex items-start gap-2">
                 <HiOutlineLocationMarker className="text-green-700 mt-1" /> 
