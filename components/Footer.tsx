@@ -74,14 +74,14 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">Contacts us</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2">
-                <HiOutlineMail className="text-green-700" /> contact@company.com
+                <HiOutlineMail className="text-green-700" /> support@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
-                <HiOutlinePhone className="text-green-700" /> (414) 687 – 5892
+                <HiOutlinePhone className="text-green-700" /> 813.960.2225
               </li>
               <li className="flex items-start gap-2">
                 <HiOutlineLocationMarker className="text-green-700 mt-1" /> 
-                <span>794 Mcallister St <br /> San Francisco, 94102</span>
+                <span>5111 Ehrlich Road Ste 128, <br /> Tampa, Florida 33624, United States</span> 
               </li>
             </ul>
           </div>
