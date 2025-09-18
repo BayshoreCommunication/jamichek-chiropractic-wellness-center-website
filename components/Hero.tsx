@@ -66,15 +66,15 @@ export default function Home() {
 
           {/* Floating Badges - mobile responsive + animation */}
           <div
-            className="absolute top-24 left-4 md:top-26 md:right-16 md:left-auto bg-white/95 backdrop-blur-sm shadow-md px-3 md:px-4 py-1.5 md:py-2 rounded-full flex flex-nowrap items-center space-x-2 text-gray-800 animate-float-slow transition-transform duration-300 ease-out hover:scale-105 hidden md:block whitespace-nowrap"
+            className="absolute top-24 left-4 md:top-26 md:right-16 md:left-auto bg-white/95 backdrop-blur-sm shadow-md px-3 md:px-4 py-1.5 md:py-2 rounded-full flex flex-nowrap items-center space-x-2 text-gray-800 animate-bounce transition-transform duration-300 ease-out hover:scale-105 hidden md:block whitespace-nowrap motion-reduce:animate-none"
           >
             <div className="flex item-center space-x-2"><Image src="/images/hero/popup1.png" alt="Weight Loss" width={20} height={20} />
               <span className="">Weight Loss</span></div>
           </div>
           <div
-            className="absolute top-4 right-4 md:top-16 md:left-16 md:right-auto bg-white/95 backdrop-blur-sm shadow-md px-3 md:px-4 py-1.5 md:py-2 rounded-full flex flex-nowrap items-center space-x-2 text-gray-800 animate-float-slow transition-transform duration-300 ease-out hover:scale-105 whitespace-nowrap"
+            className="absolute top-4 right-4 md:top-16 md:left-16 md:right-auto bg-white/95 backdrop-blur-sm shadow-md px-3 md:px-4 py-1.5 md:py-2 rounded-full flex flex-nowrap items-center space-x-2 text-gray-800 transition-transform duration-300 ease-out hover:scale-105 whitespace-nowrap motion-reduce:animate-none"
           >
-            <Image src="/images/hero/popup2.png" alt="Pain Relief" width={20} height={20} />
+            <Image src="/images/hero/popup2.png" alt="Pain Relief" width={20} height={20} className="animate-spin duration-[2.5s]" />
             <span className="leading-none">Pain Relief</span>
           </div>
         </div>
