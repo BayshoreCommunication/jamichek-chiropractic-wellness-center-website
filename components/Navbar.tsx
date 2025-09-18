@@ -86,7 +86,7 @@ export default function Navbar() {
                         href="tel:8139602225"
                         className="bg-primary text-white px-4 py-2 rounded-md flex items-center space-x-2"
                     >
-                        <Phone size={16} /> <span>813.960.2225</span>
+                        <Phone size={16} /> <span>813 960 2225</span>
                     </a>
                 </nav>
 
@@ -136,7 +136,7 @@ export default function Navbar() {
                             href="tel:8139602225"
                             className="bg-primary text-white px-4 py-2 rounded-md text-center"
                         >
-                            Call: 813.960.2225
+                            Call: 813 960 2225
                         </a>
                     </div>
                 )
