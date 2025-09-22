@@ -10,7 +10,7 @@ export default function About() {
                         <Image
                             src="/images/about/about.png"
                             alt="Our Team"
-                            className="w-[600px] h-auto object-cover rounded-xl"
+                            className="w-auto h-auto object-cover rounded-xl"
                             width={630}
                             height={470}
                         />

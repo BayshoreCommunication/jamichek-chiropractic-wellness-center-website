@@ -70,20 +70,27 @@ export default function Testimonials() {
           </a>
         </div>
 
-        {/* Swiper */}
+        {/* First Swiper - Left to Right Marquee */}
         <Swiper
-          modules={[ Autoplay]}
+          modules={[Autoplay]}
           spaceBetween={24}
-          slidesPerView={1}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          navigation
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            1024: { slidesPerView: 2 },
-            1280: { slidesPerView: 3 },
+          slidesPerView={1}   // 👈 default for mobile
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true,
           }}
-          className="pb-16"
+          speed={6000}
+          loop={true}
+          allowTouchMove={false}
+          freeMode={true}
+          breakpoints={{
+            640: { slidesPerView: 1 },   // small screens (still 1)
+            768: { slidesPerView: 2 },   // tablets
+            1024: { slidesPerView: 3 },  // laptops
+            1280: { slidesPerView: 3 },  // desktops
+          }}
+          className="pb-16 mb-8"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
@@ -129,6 +136,71 @@ export default function Testimonials() {
           ))}
         </Swiper>
 
+        {/* Second Swiper - Right to Left Marquee */}
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={24}
+          slidesPerView={1}   // 👈 default for mobile
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: false,
+          }}
+          speed={6000}
+          loop={true}
+          allowTouchMove={false}
+          freeMode={true}
+          breakpoints={{
+            640: { slidesPerView: 1 },   // small screens (still 1)
+            768: { slidesPerView: 2 },   // tablets
+            1024: { slidesPerView: 3 },  // laptops
+            1280: { slidesPerView: 3 },  // desktops
+          }}
+          className="pb-16 mb-8"
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={`second-${index}`}>
+              <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition p-6 border border-gray-100 h-full flex flex-col">
+                {/* User Info */}
+                <div className="flex items-center gap-4 mb-4">
+                  {testimonial.image ? (
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold">
+                      {testimonial.name.charAt(0)}
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="font-semibold text-gray-900">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-sm text-gray-500">{testimonial.time}</p>
+                  </div>
+                </div>
+
+                {/* Rating */}
+                <div className="flex items-center mb-3">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <span key={i} className="text-orange-500 text-lg">
+                      ★
+                    </span>
+                  ))}
+                </div>
+
+                {/* Review */}
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {testimonial.review}
+                </p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
         
 
       </div>
