@@ -18,6 +18,7 @@ export default function Footer() {
                 alt="Logo"
                 width={195}
                 height={70}
+                className="w-auto h-auto"
               />
             </div>
             <p className="text-gray-600 mt-4 text-sm leading-relaxed">
@@ -37,11 +38,11 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Product</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-green-700">Features</a></li>
-              <li><a href="#" className="hover:text-green-700">Pricing</a></li>
-              <li><a href="#" className="hover:text-green-700">Case studies</a></li>
-              <li><a href="#" className="hover:text-green-700">Reviews</a></li>
-              <li><a href="#" className="hover:text-green-700">Updates</a></li>
+              <li><a href="#" className="hover:text-primary">Features</a></li>
+              <li><a href="#" className="hover:text-primary">Pricing</a></li>
+              <li><a href="#" className="hover:text-primary">Case studies</a></li>
+              <li><a href="#" className="hover:text-primary">Reviews</a></li>
+              <li><a href="#" className="hover:text-primary">Updates</a></li>
             </ul>
           </div>
 
@@ -49,11 +50,11 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-green-700">About</a></li>
-              <li><a href="#" className="hover:text-green-700">Contact us</a></li>
-              <li><a href="#" className="hover:text-green-700">Careers</a></li>
-              <li><a href="#" className="hover:text-green-700">Culture</a></li>
-              <li><a href="#" className="hover:text-green-700">Blog</a></li>
+              <li><a href="#" className="hover:text-primary">About</a></li>
+              <li><a href="#" className="hover:text-primary">Contact us</a></li>
+              <li><a href="#" className="hover:text-primary">Careers</a></li>
+              <li><a href="#" className="hover:text-primary">Culture</a></li>
+              <li><a href="#" className="hover:text-primary">Blog</a></li>
             </ul>
           </div>
 
@@ -61,11 +62,11 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-green-700">Getting started</a></li>
-              <li><a href="#" className="hover:text-green-700">Help center</a></li>
-              <li><a href="#" className="hover:text-green-700">Server status</a></li>
-              <li><a href="#" className="hover:text-green-700">Report a bug</a></li>
-              <li><a href="#" className="hover:text-green-700">Chat support</a></li>
+              <li><a href="#" className="hover:text-primary">Getting started</a></li>
+              <li><a href="#" className="hover:text-primary">Help center</a></li>
+              <li><a href="#" className="hover:text-primary">Server status</a></li>
+              <li><a href="#" className="hover:text-primary">Report a bug</a></li>
+              <li><a href="#" className="hover:text-primary">Chat support</a></li>
             </ul>
           </div>
 
@@ -74,13 +75,13 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">Contacts us</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2">
-                <HiOutlineMail className="text-green-700" /> support@jachimekchiro.com
+                <HiOutlineMail className="text-primary" /> support@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
-                <HiOutlinePhone className="text-green-700" /> 813 960 2225
+                <HiOutlinePhone className="text-primary" /> 813 960 2225
               </li>
               <li className="flex items-start gap-2">
-                <HiOutlineLocationMarker className="text-green-700 mt-1" /> 
+                <HiOutlineLocationMarker className="text-primary mt-1" /> 
                 <span>5111 Ehrlich Road Ste 128, <br /> Tampa, Florida 33624, United States</span> 
               </li>
             </ul>
@@ -92,11 +93,11 @@ export default function Footer() {
           <p>Copyright © 2025 Jachimek Chiropractic & Wellness Center</p>
           <p>
             All Rights Reserved |{" "}
-            <a href="#" className="text-green-700 hover:underline">
+            <a href="#" className="text-primary hover:underline">
               Terms and Conditions
             </a>{" "}
             |{" "}
-            <a href="#" className="text-green-700 hover:underline">
+            <a href="#" className="text-primary hover:underline">
               Privacy Policy
             </a>
           </p>
