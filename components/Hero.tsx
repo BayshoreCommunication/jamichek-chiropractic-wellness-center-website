@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -58,9 +59,12 @@ export default function Home() {
               <p className="font-semibold text-black">
                 4.9 | <span className="text-gray-500">140 Reviews</span>
               </p>
-              <a href="#" className="text-primary underline text-sm">
+              <Link
+                href="https://www.google.com/maps?cid=15818987750581458581"
+                className="text-primary underline text-sm"
+              >
                 View all Google Reviews here
-              </a>
+              </Link>
             </div>
           </div>
         </div>
