@@ -45,10 +45,10 @@ export default function ChiropractorSection() {
                 Weight Loss
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                At Jachimek Wellness Center, we believe that the body has the
-                ability to heal itself. Our goal is to remove any interference
-                in the nervous system and allow the body to function at its
-                best.
+                Our chiropractors offer various services, including chiropractic
+                adjustments, spinal decompression therapy, rehabilitation
+                exercises, and weight loss, to help our patients achieve optimal
+                health.
               </p>
             </div>
           </div>
