@@ -1,27 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const teamMembers = [
   {
-    name: "Dr. Juliet Marvenko – \"Dr. J\"",
+    name: 'Dr. Juliet Marvenko – "Dr. J"',
     role: "Doctor",
     image: "/images/team/team1.png",
     desc: "My team and I provide a safe, whole-body approach to...",
   },
   {
-    name: "Dr. Glen Gunderson – \"Dr. G\"",
+    name: 'Dr. Glen Gunderson – "Dr. G"',
     role: "Doctor",
     image: "/images/team/team2.png",
     desc: "My team and I provide a safe, whole-body approach to...",
   },
   {
-    name: "Dr. Ross Paxia – \"Dr. Ross\"",
+    name: 'Dr. Ross Paxia – "Dr. Ross"',
     role: "Doctor",
     image: "/images/team/team3.png",
     desc: "My team and I provide a safe, whole-body approach to...",
@@ -43,8 +43,9 @@ export default function OurTeam() {
             Our Team
           </h2>
           <p className="text-gray-900 max-w-xl">
-            Our expert doctor will tailor a treatment program to address your
-            unique needs, ensuring you achieve peak wellness.
+            Stop by and meet our amazing team! We are here for you! Our friendly
+            staff is dedicated to providing you with the best care and service
+            to ensure your comfort throughout your journey.
           </p>
         </div>
         <button className="mt-6 md:mt-0 border border-black rounded-full px-6 py-2 transition text-gray-900 hover:bg-black hover:text-white">
@@ -87,9 +88,15 @@ export default function OurTeam() {
 
                 <div className="flex items-center justify-between mt-4">
                   <div className="flex space-x-3 text-gray-900">
-                    <a href=""><FaFacebookF /></a>
-                    <a href=""><FaInstagram /></a>
-                    <a href=""><FaTwitter /></a>
+                    <a href="">
+                      <FaFacebookF />
+                    </a>
+                    <a href="">
+                      <FaInstagram />
+                    </a>
+                    <a href="">
+                      <FaTwitter />
+                    </a>
                   </div>
                   <a
                     href=""

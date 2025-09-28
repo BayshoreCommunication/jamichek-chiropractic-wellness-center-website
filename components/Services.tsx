@@ -6,7 +6,7 @@ const services = [
   {
     title: "Back Pain",
     description:
-      "Treatment for joint, bone, and muscle injuries to restore mobility and strength.",
+      "Relieve pain, restore mobility, and get back to your daily life.",
     image: "/images/services/back-pain.png",
   },
   {
@@ -18,25 +18,25 @@ const services = [
   {
     title: "Spinal decompression",
     description:
-      "Guided therapy programs for faster, safer recovery after surgery.",
+      "Non-surgical spinal care to ease pressure, reduce pain, and promote healing.",
     image: "/images/services/spinal-decompression.png",
   },
   {
     title: "Car Accidents",
     description:
-      "Care for patients with stroke, spinal cord, or nerve-related conditions.",
+      "Expert care for accident-related injuries to help you recover safely.",
     image: "/images/services/car-accidents.png",
   },
   {
     title: "Sciatic Relief",
     description:
-      "Hands-on techniques to relieve chronic pain, stiffness, and tension.",
+      "Target nerve pain at its source for lasting relief and improved function.",
     image: "/images/services/sciatic-relief.png",
   },
   {
     title: "Headaches",
     description:
-      "Specialized care for children's development needs and elderly mobility support.",
+      "Alleviate tension and recurring headaches with personalized chiropractic care.",
     image: "/images/services/headaches.png",
   },
 ];
@@ -50,8 +50,10 @@ export default function Services() {
           <div>
             <h2 className="text-3xl font-bold text-gray-900">Our Services</h2>
             <p className="mt-2 text-gray-600 max-w-2xl">
-              Our expert doctor will tailor a treatment program to address your
-              unique needs, ensuring you achieve peak wellness.
+              Our chiropractors offer various services, including chiropractic
+              adjustments, spinal decompression therapy, rehabilitation
+              exercises, and weight loss, to help our patients achieve optimal
+              health.
             </p>
           </div>
           <button className="mt-6 md:mt-0 inline-flex items-center gap-2 border border-black rounded-full px-5 py-2  font-medium hover:text-white hover:bg-black transition text-black">

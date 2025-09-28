@@ -1,8 +1,18 @@
 "use client";
 
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from "react-icons/hi";
 import Image from "next/image";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
+import {
+  HiOutlineLocationMarker,
+  HiOutlineMail,
+  HiOutlinePhone,
+} from "react-icons/hi";
 
 export default function Footer() {
   return (
@@ -22,15 +32,26 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-600 mt-4 text-sm leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam
+              Providing expert chiropractic care and whole-body wellness to help
+              you live pain-free.
             </p>
             {/* Social Icons */}
             <div className="flex gap-4 mt-4 text-primary text-lg">
-              <a href=""><FaFacebookF /></a>
-              <a href=""><FaTwitter /></a>
-              <a href=""><FaInstagram /></a>
-              <a href=""><FaLinkedinIn /></a>
-              <a href=""><FaYoutube /></a>
+              <a href="">
+                <FaFacebookF />
+              </a>
+              <a href="">
+                <FaTwitter />
+              </a>
+              <a href="">
+                <FaInstagram />
+              </a>
+              <a href="">
+                <FaLinkedinIn />
+              </a>
+              <a href="">
+                <FaYoutube />
+              </a>
             </div>
           </div>
 
@@ -38,11 +59,31 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Product</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-primary">Features</a></li>
-              <li><a href="#" className="hover:text-primary">Pricing</a></li>
-              <li><a href="#" className="hover:text-primary">Case studies</a></li>
-              <li><a href="#" className="hover:text-primary">Reviews</a></li>
-              <li><a href="#" className="hover:text-primary">Updates</a></li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Case studies
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Reviews
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Updates
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -50,11 +91,31 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-primary">About</a></li>
-              <li><a href="#" className="hover:text-primary">Contact us</a></li>
-              <li><a href="#" className="hover:text-primary">Careers</a></li>
-              <li><a href="#" className="hover:text-primary">Culture</a></li>
-              <li><a href="#" className="hover:text-primary">Blog</a></li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Contact us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Culture
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -62,11 +123,31 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-primary">Getting started</a></li>
-              <li><a href="#" className="hover:text-primary">Help center</a></li>
-              <li><a href="#" className="hover:text-primary">Server status</a></li>
-              <li><a href="#" className="hover:text-primary">Report a bug</a></li>
-              <li><a href="#" className="hover:text-primary">Chat support</a></li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Getting started
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Help center
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Server status
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Report a bug
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary">
+                  Chat support
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -75,14 +156,18 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">Contacts us</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2">
-                <HiOutlineMail className="text-primary" /> support@jachimekchiro.com
+                <HiOutlineMail className="text-primary" />{" "}
+                support@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
                 <HiOutlinePhone className="text-primary" /> 813 960 2225
               </li>
               <li className="flex items-start gap-2">
-                <HiOutlineLocationMarker className="text-primary mt-1" /> 
-                <span>5111 Ehrlich Road Ste 128, <br /> Tampa, Florida 33624, United States</span> 
+                <HiOutlineLocationMarker className="text-primary mt-1" />
+                <span>
+                  5111 Ehrlich Road Ste 128, <br /> Tampa, Florida 33624, United
+                  States
+                </span>
               </li>
             </ul>
           </div>

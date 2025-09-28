@@ -1,51 +1,95 @@
 "use client";
 
 import Image from "next/image";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: "Armen Sargsyan",
-    time: "месяц назад",
+    name: "Nicholas Nicol",
+    time: "4 months ago",
     review:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "Amazing service and great staff. Highly recommend for all who have back pain.",
     rating: 5,
     image: "",
   },
   {
-    name: "Armen Sargsyan",
-    time: "6 дней назад",
+    name: "N M",
+    time: "4 weeks ago",
     review:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "I always have the most amazing experience when I'm there. Everyone treats you like family here. They always care about your health and well-being and put your needs first. I highly recommend them!!",
     rating: 5,
     image: "",
   },
   {
-    name: "Armen Sargsyan",
-    time: "месяц назад",
+    name: "Alicia Perez",
+    time: "3 months ago",
     review:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "Words can’t even express how grateful I am. The whole staff is amazing! I don’t think anyone can really understand how much peace I feel. The Wellness Center gave me so much more reason to wake up everyday and put my best self forward. You are all hero’s in my personal book. Thank you for all you do.",
     rating: 5,
     image: "",
   },
   {
-    name: "Armen Sargsyan",
-    time: "месяц назад",
+    name: "JAY S",
+    time: "a month ago",
     review:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "I love everyone there! They're so kind and always willing to help you matter what.  They REALLY care about me getting better.  If you have pain, give them a call ASAP. The biggest mistake you could tell yourself, is it'll go away. They have really great hours that meet the needs before and after work. Don't wait give them a call.",
     rating: 5,
     image: "",
   },
   {
-    name: "Armen Sargsyan",
-    time: "месяц назад",
+    name: "Paul Martinez",
+    time: "4 months ago",
     review:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "Definitely five stars, the staff becomes family from the moment you walk in the door. from the doctors to the assistance, it is a wonderful experience. I come in with pain and leave with less pain and happy to visit this location. Would recommend it to everyone I know.",
+    rating: 5,
+    image: "",
+  },
+];
+
+const testimonialsTwo = [
+  {
+    name: "Krista Louttit",
+    time: "4 months ago",
+    review:
+      "The staff were so helpful and welcoming. They made the process easy and explained everything clearly. They really know their stuff about GLP-1 medication. I'm so glad I found this place after being so skeptical of other places that offer this medication and Telehealth companies. Thanks guys",
+    rating: 5,
+    image: "",
+  },
+  {
+    name: "Xarisalet PerezDeSilva",
+    time: "4 months ago",
+    review:
+      "The team are so friendly make the atmosphere great and relaxing. The 30 minute of treatment make me feel comfortable and trust from the moment step in and with the work is performing.Thank you guys!!",
+    rating: 5,
+    image: "",
+  },
+  {
+    name: "Paul Martinez",
+    time: "4 months ago",
+    review:
+      "Dr.G is awesome, he listens to your concerns and designs a treatment plan that will work to get you back to normal and pain free.  The staff is very accommodating and friendly, great experience overall.",
+    rating: 5,
+    image: "",
+  },
+  {
+    name: "Ashley Karpuch",
+    time: "4 months ago",
+    review:
+      "The staff at Jachimek have been nothing but amazing and supportive through my weight loss journey. You feel supported and well guided throughout your whole process! Would highly recommend.",
+    rating: 5,
+    image: "",
+  },
+  {
+    name: "Frances Paris",
+    time: "3 weeks ago",
+    review:
+      "My first time visiting and it was the best decision that i made. Everyone was so nice and sweet. The dr answered all of my questions and I am excited.",
     rating: 5,
     image: "",
   },
@@ -59,22 +103,23 @@ export default function Testimonials() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">Testimonials</h2>
           <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
-            Our expert doctor will tailor a treatment program to address your
-            unique needs, ensuring you achieve peak wellness.
+            Our patients’ success stories speak for themselves. Read how
+            personalized chiropractic care has helped them find relief, regain
+            mobility, and improve their quality of life.
           </p>
-          <a
-            href="#"
+          <Link
+            href="https://www.google.com/maps?cid=15818987750581458581"
             className="inline-block mt-4 text-primary font-medium hover:underline"
           >
             View all Google Reviews here
-          </a>
+          </Link>
         </div>
 
         {/* First Swiper - Left to Right Marquee */}
         <Swiper
           modules={[Autoplay]}
           spaceBetween={24}
-          slidesPerView={1}   // 👈 default for mobile
+          slidesPerView={1} // 👈 default for mobile
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
@@ -85,10 +130,10 @@ export default function Testimonials() {
           allowTouchMove={false}
           freeMode={true}
           breakpoints={{
-            640: { slidesPerView: 1 },   // small screens (still 1)
-            768: { slidesPerView: 2 },   // tablets
-            1024: { slidesPerView: 3 },  // laptops
-            1280: { slidesPerView: 3 },  // desktops
+            640: { slidesPerView: 1 }, // small screens (still 1)
+            768: { slidesPerView: 2 }, // tablets
+            1024: { slidesPerView: 3 }, // laptops
+            1280: { slidesPerView: 3 }, // desktops
           }}
           className="pb-16 mb-8"
         >
@@ -140,7 +185,7 @@ export default function Testimonials() {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={24}
-          slidesPerView={1}   // 👈 default for mobile
+          slidesPerView={1} // 👈 default for mobile
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
@@ -151,14 +196,14 @@ export default function Testimonials() {
           allowTouchMove={false}
           freeMode={true}
           breakpoints={{
-            640: { slidesPerView: 1 },   // small screens (still 1)
-            768: { slidesPerView: 2 },   // tablets
-            1024: { slidesPerView: 3 },  // laptops
-            1280: { slidesPerView: 3 },  // desktops
+            640: { slidesPerView: 1 }, // small screens (still 1)
+            768: { slidesPerView: 2 }, // tablets
+            1024: { slidesPerView: 3 }, // laptops
+            1280: { slidesPerView: 3 }, // desktops
           }}
           className="pb-16 mb-8"
         >
-          {testimonials.map((testimonial, index) => (
+          {testimonialsTwo.map((testimonial, index) => (
             <SwiperSlide key={`second-${index}`}>
               <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition p-6 border border-gray-100 h-full flex flex-col">
                 {/* User Info */}
@@ -201,8 +246,6 @@ export default function Testimonials() {
             </SwiperSlide>
           ))}
         </Swiper>
-        
-
       </div>
     </section>
   );
