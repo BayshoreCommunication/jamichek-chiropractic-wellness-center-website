@@ -157,7 +157,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2">
                 <HiOutlineMail className="text-primary" />{" "}
-                support@jachimekchiro.com
+               dana@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
                 <HiOutlinePhone className="text-primary" /> 813 960 2225
