@@ -10,19 +10,37 @@ import Stagger from "../motion/Stagger";
 const blogs = [
   {
     title: "Top Balance Exercises for Seniors at Home",
-    category: "UI DESIGN",
+
     date: "May 24, 2022",
     image: "/images/blog/blog1.png",
   },
   {
     title: "Stroke (CVA) Rehab: What to Expect in Physical Therapy",
-    category: "UI DESIGN",
+
     date: "May 24, 2022",
     image: "/images/blog/blog2.png",
   },
   {
     title: "How to Relieve Lower Back Pain Without Surgery",
-    category: "UI DESIGN",
+
+    date: "May 24, 2022",
+    image: "/images/blog/blog3.png",
+  },
+  {
+    title: "Top Balance Exercises for Seniors at Home",
+
+    date: "May 24, 2022",
+    image: "/images/blog/blog1.png",
+  },
+  {
+    title: "Stroke (CVA) Rehab: What to Expect in Physical Therapy",
+
+    date: "May 24, 2022",
+    image: "/images/blog/blog2.png",
+  },
+  {
+    title: "How to Relieve Lower Back Pain Without Surgery",
+
     date: "May 24, 2022",
     image: "/images/blog/blog3.png",
   },
@@ -32,20 +50,18 @@ export default function BlogSection() {
   return (
     <section className="max-w-[1640px] mx-auto md:py-16 py-8 px-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-10">
-        <Stagger>
-          <Reveal tag="h2" y={16} opacityFrom={0}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-0 text-black">
-              Latest From the <span className="text-primary">Blog</span>
-            </h2>
-          </Reveal>
-          <Reveal y={12} opacityFrom={0}>
-            <button className="border border-black rounded-full px-6 py-2 hover:bg-black hover:text-white transition text-gray-900">
-              Explore Blogs →
-            </button>
-          </Reveal>
-        </Stagger>
-      </div>
+      <Reveal tag="div" y={16} opacityFrom={0}>
+        <div className="text-center  mb-8">
+          <h2 className="text-3xl lg:text-[38px] font-bold text-gray-900">
+            Our Team
+          </h2>
+          <p className="mt-2 text-base text-gray-600 max-w-4xl mx-auto">
+            Stop by and meet our amazing team! We are here for you! Our friendly
+            staff is dedicated to providing you with the best care and service
+            to ensure your comfort throughout your journey.
+          </p>
+        </div>
+      </Reveal>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {blogs.map((blog, index) => (
@@ -67,8 +83,6 @@ export default function BlogSection() {
             <div className="p-6 flex flex-col flex-1 justify-between">
               <div>
                 <p className="text-xs font-medium text-gray-500 uppercase flex items-center gap-2">
-                  {blog.category}
-                  <span className="text-red-500">•</span>
                   {blog.date}
                 </p>
                 <h3 className="text-lg font-semibold text-gray-900 mt-2">

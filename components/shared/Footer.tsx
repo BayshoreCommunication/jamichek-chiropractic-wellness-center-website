@@ -17,7 +17,7 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-[1640px] mx-auto md:py-16 py-8 px-8">
+      <div className="max-w-[1640px] mx-auto md:pt-16 py-8 px-8">
         {/* ⭐ Grid 5 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Column 1 */}
@@ -157,7 +157,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2">
                 <HiOutlineMail className="text-primary" />{" "}
-               dana@jachimekchiro.com
+                dana@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
                 <HiOutlinePhone className="text-primary" /> 813 960 2225

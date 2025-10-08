@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
       label: "Weight Loss Services",
     },
     { href: "/team", label: "Meet The Team" },
-    { href: "/wellness-journal", label: "The Wellness Journal" },
+    { href: "/the-wellness-journal", label: "The Wellness Journal" },
   ];
 
   return (
