@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={albertSans.className}>
-      <body className="">
+      <body className="bg-white   text-[#0B0C0E]">
         <Providers>
           <Navbar />
           <main className="">{children}</main>

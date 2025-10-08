@@ -11,7 +11,7 @@ export default function Home() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <div className="bg-[#F2FFEA] bg-cover bg-center">
+    <div className="bg-[#F2FFEA] bg-cover bg-center overflow-hidden">
       {/* Hero Section */}
       <section className="max-w-[1640px] mx-auto md:pt-16 py-8 px-8 grid md:grid-cols-2 gap-12 items-center">
         {/* Left */}

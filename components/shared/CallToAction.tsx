@@ -1,4 +1,5 @@
 // components/HeroSection.js
+import Link from "next/link";
 import Reveal from "../motion/Reveal";
 import Stagger from "../motion/Stagger";
 
@@ -24,26 +25,28 @@ export default function PainRelief() {
             </p>
           </Reveal>
           <Reveal y={10} opacityFrom={0}>
-            <div className="mt-8">
-              <a
-                href="#"
-                className="inline-flex items-center px-6 py-3 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition"
+            <div className="mt-8 ">
+              <Link
+                href="/contact"
+                className="group inline-flex gap-2 items-center px-6 py-3 bg-primary text-white hover:text-black text-base font-medium rounded-full hover:bg-white transition"
               >
                 Not a Patient Yet? Schedule Today!
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
+                <div className="bg-white group-hover:bg-black/20  rounded-full w-5 h-5 flex items-center justify-center text-black">
+                  <svg
+                    className="w-4 h-4 "
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </Link>
             </div>
           </Reveal>
         </Stagger>
