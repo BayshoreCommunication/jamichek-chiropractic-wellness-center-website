@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Footer from "../components/layout/Footer";
-import Navbar from "../components/layout/Navbar";
+
 import "./globals.css";
 import { Providers } from "./providers";
 
 import { Albert_Sans } from "next/font/google";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"], // Or other desired subsets
