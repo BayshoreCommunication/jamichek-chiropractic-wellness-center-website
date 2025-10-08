@@ -1,5 +1,6 @@
 import BreadcrumbSection from "@/components/shared/BreadcrumbSection";
 import CallToAction from "@/components/shared/CallToAction";
+import FbReviewSection from "@/components/team/FbReviewSection";
 import Instagram from "@/components/team/InstagramSection";
 import TeamPage from "@/components/team/TeamPage";
 import React from "react";
@@ -19,6 +20,7 @@ const page = () => {
       />
       <TeamPage />
       <Instagram />
+      <FbReviewSection />
       <CallToAction />
     </>
   );
