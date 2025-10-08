@@ -29,7 +29,7 @@ const BreadcrumbSection: React.FC<BreadcrumbSectionProps> = ({
     <section className={`py-16 text-center bg-[#f6fff0] ${className || ""}`}>
       <div className="max-w-4xl mx-auto px-10">
         {/* Subtitle */}
-        <p className="inline-block px-10 py-2 bg-[#eaf5e4] rounded-full text-base lg:text-xl font-medium text-gray-700">
+        <p className="inline-block px-10 py-2 bg-[#eaf5e4] rounded-full text-base lg:text-xl font-semibold text-gray-700">
           {subtitle}
         </p>
 
