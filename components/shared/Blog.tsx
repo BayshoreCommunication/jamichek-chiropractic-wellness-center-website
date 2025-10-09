@@ -10,37 +10,37 @@ import Stagger from "../motion/Stagger";
 const blogs = [
   {
     title: "Top Balance Exercises for Seniors at Home",
-
+    slug: "top-balance-exercises-for-seniors-at-home",
     date: "May 24, 2022",
     image: "/images/blog/blog1.png",
   },
   {
     title: "Stroke (CVA) Rehab: What to Expect in Physical Therapy",
-
+    slug: "stroke-cva-rehab-what-to-expect-in-physical-therapy",
     date: "May 24, 2022",
     image: "/images/blog/blog2.png",
   },
   {
     title: "How to Relieve Lower Back Pain Without Surgery",
-
+    slug: "how-to-relieve-lower-back-pain-without-surgery",
     date: "May 24, 2022",
     image: "/images/blog/blog3.png",
   },
   {
     title: "Top Balance Exercises for Seniors at Home",
-
+    slug: "top-balance-exercises-for-seniors-at-home",
     date: "May 24, 2022",
     image: "/images/blog/blog1.png",
   },
   {
     title: "Stroke (CVA) Rehab: What to Expect in Physical Therapy",
-
+    slug: "stroke-cva-rehab-what-to-expect-in-physical-therapy",
     date: "May 24, 2022",
     image: "/images/blog/blog2.png",
   },
   {
     title: "How to Relieve Lower Back Pain Without Surgery",
-
+    slug: "how-to-relieve-lower-back-pain-without-surgery",
     date: "May 24, 2022",
     image: "/images/blog/blog3.png",
   },
@@ -65,9 +65,10 @@ export default function BlogSection() {
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {blogs.map((blog, index) => (
-          <div
+          <Link
             key={index}
-            className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col h-full"
+            href={`/the-wellness-journal/${blog.slug}`}
+            className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col h-full hover:shadow-lg transition-shadow"
           >
             {/* Blog Image */}
             <div className="w-full h-56 relative">
@@ -90,14 +91,11 @@ export default function BlogSection() {
                 </h3>
               </div>
 
-              <Link
-                href="#"
-                className="text-primary text-sm font-medium hover:underline mt-4"
-              >
+              <span className="text-primary text-sm font-medium hover:underline mt-4">
                 Read More
-              </Link>
+              </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
