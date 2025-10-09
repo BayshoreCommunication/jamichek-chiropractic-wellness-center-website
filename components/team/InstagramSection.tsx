@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Instagram } from "lucide-react";
 import React from "react";
+import Reveal from "../motion/Reveal";
+import Stagger from "../motion/Stagger";
 
 const instagramFeed = [
   {
@@ -34,21 +36,26 @@ const InstagramSection = () => {
       <div className="max-w-[1640px] mx-auto md:py-16 py-8 px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-8">
-          <h2 className="text-3xl lg:text-[38px] font-bold text-gray-900">
-            Instagram
-          </h2>
+          <Reveal y={20} opacityFrom={0}>
+            <h2 className="text-3xl lg:text-[38px] font-bold text-gray-900">
+              Instagram
+            </h2>
+          </Reveal>
+          <Reveal y={20} opacityFrom={0}>
           <Link
             href="https://www.instagram.com/medicalweightlosstampa/"
             target="_blank"
             className="underline text-primary text-medium"
           >
-            Follow me on Instagram
-          </Link>
+                Follow me on Instagram
+            </Link>
+          </Reveal>
         </div>
 
         {/* Instagram Feed */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {instagramFeed.map((post) => (
+            <Reveal key={post.id} y={30} opacityFrom={0}>
             <div
               key={post.id}
               className="relative group  overflow-hidden   transition p-8 bg-white shadow-medium rounded-2xl border-0"
@@ -72,6 +79,7 @@ const InstagramSection = () => {
                 </div>
               </Link>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

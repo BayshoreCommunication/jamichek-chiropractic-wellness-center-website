@@ -93,6 +93,7 @@ export default function FbReviewSection() {
           // className="cursor-pointer"
         >
           {fbReviewData.map((review) => (
+            <Reveal key={review.id} y={30} opacityFrom={0}>
             <SwiperSlide key={review.id}>
               <div className="bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 p-6 flex flex-col justify-between h-full transition">
                 {/* Top Section */}
@@ -147,6 +148,7 @@ export default function FbReviewSection() {
                 </div>
               </div>
             </SwiperSlide>
+            </Reveal>
           ))}
         </Swiper>
       </div>

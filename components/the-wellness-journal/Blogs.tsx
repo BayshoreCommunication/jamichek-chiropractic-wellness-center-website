@@ -5,6 +5,8 @@ import Link from "next/link";
 import { TbBrandFacebook } from "react-icons/tb";
 import { FiInstagram } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
+import Reveal from "../motion/Reveal";
+import Stagger from "../motion/Stagger";
 
 const teammatesData = [
   {
@@ -70,19 +72,22 @@ const TeamPage = () => {
     <section className="max-w-[1640px] mx-auto px-8 py-8 md:py-16">
       {/* ===== Header ===== */}
       <div className="text-center">
+        <Reveal y={20} opacityFrom={0}>
         <h2 className="text-3xl md:text-[38px] font-bold text-gray-900">
           Our Team
         </h2>
         <p className="mt-2 text-base text-gray-600 max-w-3xl mx-auto">
-          Stop by and meet our amazing team! We are here for you. Our friendly
-          staff is dedicated to providing the best care and service to ensure
-          your comfort throughout your journey.
-        </p>
+                    Stop by and meet our amazing team! We are here for you. Our friendly
+            staff is dedicated to providing the best care and service to ensure
+            your comfort throughout your journey.
+          </p>
+        </Reveal>
       </div>
 
       {/* ===== Team Grid ===== */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
         {teammatesData.map((member) => (
+          <Reveal key={member.id} y={30} opacityFrom={0}>
           <Link
             href={`/the-wellness-journal/${member.slug}`}
             key={member.id}
@@ -130,6 +135,7 @@ const TeamPage = () => {
               </div>
             </div>
           </Link>
+          </Reveal>
         ))}
       </div>
     </section>

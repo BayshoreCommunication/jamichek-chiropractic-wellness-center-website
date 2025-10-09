@@ -88,64 +88,66 @@ const TeamPage = () => {
           <div className="grid grid-cols-1 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {teammatesData.map((member, index) => (
-                <div
-                  key={member.id}
-                  className={`bg-white shadow-lg rounded-2xl overflow-hidden  flex flex-col  items-center  `}
-                >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                    className="  w-full"
-                  />
+                <Reveal key={member.id} y={30} opacityFrom={0}>
+                  <div
+                    key={member.id}
+                    className={`bg-white shadow-lg rounded-2xl overflow-hidden  flex flex-col  items-center  `}
+                  >
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={400}
+                      height={400}
+                      className="  w-full"
+                    />
 
-                  <div className="px-6 pt-4 pb-6 ">
-                    <h3 className="text-xl uppercase font-semibold text-gray-800">
-                      {member.name}
-                    </h3>
-                    <p className="text-primary font-medium mt-1 ">
-                      {member.designation}
-                    </p>
-                    <p className="text-gray-600 mt-3 line-clamp-2">
-                      {member.details}
-                    </p>
+                    <div className="px-6 pt-4 pb-6 ">
+                      <h3 className="text-xl uppercase font-semibold text-gray-800">
+                        {member.name}
+                      </h3>
+                      <p className="text-primary font-medium mt-1 ">
+                        {member.designation}
+                      </p>
+                      <p className="text-gray-600 mt-3 line-clamp-2">
+                        {member.details}
+                      </p>
 
-                    <div className="flex  items-center justify-between mt-4 lg:mt-6">
-                      <div className="flex gap-4 ">
-                        <Link
-                          href={member.socialsMedia.facebook}
-                          target="_blank"
-                          className="text-black/80 hover:text-blue-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
-                        >
-                          <TbBrandFacebook />
-                        </Link>
-                        <Link
-                          href={member.socialsMedia.instagram}
-                          target="_blank"
-                          className="text-black/80 hover:text-pink-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
-                        >
-                          <FiInstagram />
-                        </Link>
-                        <Link
-                          href={member.socialsMedia.x}
-                          target="_blank"
-                          className="text-black/80 hover:text-black p-2 rounded-full bg-[#F2F4F7] text-xl"
-                        >
-                          <FaXTwitter />
-                        </Link>
-                      </div>
-                      <div>
-                        <button
-                          onClick={() => setSelectedMember(member)}
-                          className="underline text-primary text-medium"
-                        >
-                          Read More
-                        </button>
+                      <div className="flex  items-center justify-between mt-4 lg:mt-6">
+                        <div className="flex gap-4 ">
+                          <Link
+                            href={member.socialsMedia.facebook}
+                            target="_blank"
+                            className="text-black/80 hover:text-blue-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
+                          >
+                            <TbBrandFacebook />
+                          </Link>
+                          <Link
+                            href={member.socialsMedia.instagram}
+                            target="_blank"
+                            className="text-black/80 hover:text-pink-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
+                          >
+                            <FiInstagram />
+                          </Link>
+                          <Link
+                            href={member.socialsMedia.x}
+                            target="_blank"
+                            className="text-black/80 hover:text-black p-2 rounded-full bg-[#F2F4F7] text-xl"
+                          >
+                            <FaXTwitter />
+                          </Link>
+                        </div>
+                        <div>
+                          <button
+                            onClick={() => setSelectedMember(member)}
+                            className="underline text-primary text-medium"
+                          >
+                            Read More
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -163,47 +165,51 @@ const TeamPage = () => {
               </button>
 
               {/* Modal Content */}
-              <div className="flex flex-col lg:flex-row max-w-5xl w-full gap-6 items-center">
-                <Image
-                  src={selectedMember.image}
-                  alt={selectedMember.name}
-                  width={350}
-                  height={350}
-                  className="rounded-2xl object-cover w-full md:w-1/2"
-                />
-                <div className="flex-1">
-                  <h3 className="text-xl lg:text-3xl font-semibold text-gray-800 uppercase">
-                    {selectedMember.name}
-                  </h3>
-                  <p className="text-primary font-medium mt-1">
-                    {selectedMember.designation}
-                  </p>
-                  <p className="text-gray-700 mt-4">{selectedMember.details}</p>
-                  <div className="flex gap-4 mt-6">
-                    <Link
-                      href={selectedMember.socialsMedia.facebook}
-                      target="_blank"
-                      className="text-black/80 hover:text-blue-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
-                    >
-                      <TbBrandFacebook />
-                    </Link>
-                    <Link
-                      href={selectedMember.socialsMedia.instagram}
-                      target="_blank"
-                      className="text-black/80 hover:text-pink-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
-                    >
-                      <FiInstagram />
-                    </Link>
-                    <Link
-                      href={selectedMember.socialsMedia.x}
-                      target="_blank"
-                      className="text-black/80 hover:text-black p-2 rounded-full bg-[#F2F4F7] text-xl"
-                    >
-                      <FaXTwitter />
-                    </Link>
+              <Reveal y={30} opacityFrom={0}>
+                <div className="flex flex-col lg:flex-row max-w-5xl w-full gap-6 items-center">
+                  <Image
+                    src={selectedMember.image}
+                    alt={selectedMember.name}
+                    width={350}
+                    height={350}
+                    className="rounded-2xl object-cover w-full md:w-1/2"
+                  />
+                  <div className="flex-1">
+                    <h3 className="text-xl lg:text-3xl font-semibold text-gray-800 uppercase">
+                      {selectedMember.name}
+                    </h3>
+                    <p className="text-primary font-medium mt-1">
+                      {selectedMember.designation}
+                    </p>
+                    <p className="text-gray-700 mt-4">
+                      {selectedMember.details}
+                    </p>
+                    <div className="flex gap-4 mt-6">
+                      <Link
+                        href={selectedMember.socialsMedia.facebook}
+                        target="_blank"
+                        className="text-black/80 hover:text-blue-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
+                      >
+                        <TbBrandFacebook />
+                      </Link>
+                      <Link
+                        href={selectedMember.socialsMedia.instagram}
+                        target="_blank"
+                        className="text-black/80 hover:text-pink-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
+                      >
+                        <FiInstagram />
+                      </Link>
+                      <Link
+                        href={selectedMember.socialsMedia.x}
+                        target="_blank"
+                        className="text-black/80 hover:text-black p-2 rounded-full bg-[#F2F4F7] text-xl"
+                      >
+                        <FaXTwitter />
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             </div>
           </div>
         )}
