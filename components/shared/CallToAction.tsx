@@ -27,7 +27,7 @@ export default function PainRelief() {
           <Reveal y={10} opacityFrom={0}>
             <div className="mt-8 ">
               <Link
-                href="/contact"
+                href="https://portal.sked.life/new-patient/?key=489579519b65115ba47eec5ca31a717befcba2464a5491dc864e7173c4e6cfe6" target="_blank"
                 className="group inline-flex gap-2 items-center px-6 py-3 bg-primary text-white hover:text-black text-base font-medium rounded-full hover:bg-white transition"
               >
                 Not a Patient Yet? Schedule Today!

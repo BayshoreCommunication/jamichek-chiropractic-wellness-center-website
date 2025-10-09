@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaInstagram,
@@ -37,21 +38,21 @@ export default function Footer() {
             </p>
             {/* Social Icons */}
             <div className="flex gap-4 mt-4 text-primary text-lg">
-              <a href="">
+              <Link href="">
                 <FaFacebookF />
-              </a>
-              <a href="">
+              </Link>
+              <Link href="">
                 <FaTwitter />
-              </a>
-              <a href="">
+              </Link>
+              <Link href="">
                 <FaInstagram />
-              </a>
-              <a href="">
+              </Link>
+              <Link href="">
                 <FaLinkedinIn />
-              </a>
-              <a href="">
+              </Link>
+              <Link href="">
                 <FaYoutube />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -60,29 +61,29 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">Product</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Features
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Case studies
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Reviews
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Updates
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -92,29 +93,29 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Contact us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Culture
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -124,29 +125,29 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Getting started
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Help center
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Server status
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Report a bug
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Chat support
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -157,15 +158,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2">
                 <HiOutlineMail className="text-primary" />{" "}
-                dana@jachimekchiro.com
+                support@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
-                <HiOutlinePhone className="text-primary" /> 813 960 2225
+                <HiOutlinePhone className="text-primary" /> (414) 687 - 5892
               </li>
               <li className="flex items-start gap-2">
-                <HiOutlineLocationMarker className="text-primary mt-1" />
+                <HiOutlineLocationMarker className="text-primary mt-1 text-2xl" />
                 <span>
-                  5111 Ehrlich Road Ste 128, <br /> Tampa, Florida 33624, United
+                5111 Ehrlich Road Ste 128, Tampa, Florida 33624, United States
                   States
                 </span>
               </li>
@@ -178,13 +179,13 @@ export default function Footer() {
           <p>Copyright © 2025 Jachimek Chiropractic & Wellness Center</p>
           <p>
             All Rights Reserved |{" "}
-            <a href="#" className="text-primary hover:underline">
+            <Link href="#" className="text-primary hover:underline">
               Terms and Conditions
-            </a>{" "}
-            |{" "}
-            <a href="#" className="text-primary hover:underline">
+            </Link>{" "}
+            |{" "}  
+            <Link href="#" className="text-primary hover:underline">
               Privacy Policy
-            </a>
+            </Link>
           </p>
         </div>
       </div>

@@ -25,25 +25,7 @@ const blogs = [
     slug: "how-to-relieve-lower-back-pain-without-surgery",
     date: "May 24, 2022",
     image: "/images/blog/blog3.png",
-  },
-  {
-    title: "Top Balance Exercises for Seniors at Home",
-    slug: "top-balance-exercises-for-seniors-at-home",
-    date: "May 24, 2022",
-    image: "/images/blog/blog1.png",
-  },
-  {
-    title: "Stroke (CVA) Rehab: What to Expect in Physical Therapy",
-    slug: "stroke-cva-rehab-what-to-expect-in-physical-therapy",
-    date: "May 24, 2022",
-    image: "/images/blog/blog2.png",
-  },
-  {
-    title: "How to Relieve Lower Back Pain Without Surgery",
-    slug: "how-to-relieve-lower-back-pain-without-surgery",
-    date: "May 24, 2022",
-    image: "/images/blog/blog3.png",
-  },
+  }
 ];
 
 export default function BlogSection() {
@@ -51,17 +33,30 @@ export default function BlogSection() {
     <section className="max-w-[1640px] mx-auto md:py-16 py-8 px-8">
       {/* Header */}
       <Reveal tag="div" y={16} opacityFrom={0}>
-        <div className="text-center  mb-8">
+        <div className=" mb-8">
           <h2 className="text-3xl lg:text-[38px] font-bold text-gray-900">
-            Our Team
+            
           </h2>
-          <p className="mt-2 text-base text-gray-600 max-w-4xl mx-auto">
-            Stop by and meet our amazing team! We are here for you! Our friendly
-            staff is dedicated to providing you with the best care and service
-            to ensure your comfort throughout your journey.
-          </p>
+          
         </div>
       </Reveal>
+
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-10">
+        <Stagger>
+          <Reveal tag="div" y={16} opacityFrom={0}>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900">
+              Latest From the <span className="text-primary">Blog</span>
+              </h2>
+            </div>
+          </Reveal>
+          <Reveal y={12} opacityFrom={0}>
+            <button className="mt-6 md:mt-0 border border-black rounded-full px-6 py-2 transition text-gray-900 hover:bg-black hover:text-white">
+              Explore Blogs →
+            </button>
+          </Reveal>
+        </Stagger>
+      </div>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {blogs.map((blog, index) => (

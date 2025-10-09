@@ -96,9 +96,9 @@ const TeamPage = () => {
             <Image
               src={member.image}
               alt={member.name}
-              width={400}
-              height={400}
-              className="w-full object-cover"
+              width={1000}
+              height={800}
+              className="w-full h-auto object-cover"
             />
             <div className="p-6 text-center">
               <h3 className="text-xl uppercase font-semibold text-gray-800">

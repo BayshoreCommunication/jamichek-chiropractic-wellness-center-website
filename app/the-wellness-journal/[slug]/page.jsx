@@ -12,6 +12,7 @@ const page = () => {
           { label: "Blog Details" }, // current page (no href)
         ]}
       />
+      
     </>
   );
 };

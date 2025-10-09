@@ -63,11 +63,11 @@ export default function Services() {
                 </p>
               </div>
             </Reveal>
-            <Reveal y={12} opacityFrom={0}>
+            {/* <Reveal y={12} opacityFrom={0}>
               <button className="mt-6 md:mt-0 inline-flex items-center gap-2 border border-black rounded-full px-5 py-2  font-medium hover:text-white hover:bg-black transition text-black">
                 Explore More Services →
               </button>
-            </Reveal>
+            </Reveal> */}
           </Stagger>
         </div>
 
