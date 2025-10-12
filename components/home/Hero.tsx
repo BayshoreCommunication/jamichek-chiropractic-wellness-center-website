@@ -44,7 +44,8 @@ export default function Home() {
             <Reveal y={16} opacityFrom={0.1}>
               <div className="mt-6 flex space-x-4">
                 <a
-                  href="#"
+                  href="https://portal.sked.life/new-patient/?key=489579519b65115ba47eec5ca31a717befcba2464a5491dc864e7173c4e6cfe6"
+                  target="_blank"
                   className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary-dark transition"
                 >
                   Not a patient yet? Book Now!

@@ -21,8 +21,8 @@ export default function Footer() {
         {/* ⭐ Grid 5 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Column 1 */}
-          <div>
-            <div className="flex items-center gap-3">
+          <div className="md:col-span-2 max-w-[80%]">
+            <div className="flex items-start gap-3">
               <Image
                 src="/images/footer/logo.png"
                 alt="Logo"
@@ -31,89 +31,84 @@ export default function Footer() {
                 className="w-auto h-auto"
               />
             </div>
-            <p className="text-gray-600 mt-4 text-sm leading-relaxed">
+            <p className="text-gray-600 mt-4 text-base leading-relaxed">
               Providing expert chiropractic care and whole-body wellness to help
               you live pain-free.
             </p>
             {/* Social Icons */}
             <div className="flex gap-4 mt-4 text-primary text-lg">
-              <a href="">
-                <FaFacebookF />
-              </a>
-              <a href="">
-                <FaTwitter />
-              </a>
-              <a href="">
-                <FaInstagram />
-              </a>
-              <a href="">
-                <FaLinkedinIn />
-              </a>
-              <a href="">
-                <FaYoutube />
-              </a>
+              <div className="flex gap-4 mt-4 text-primary text-lg">
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaTwitter />
+                </a>
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn />
+                </a>
+                <a
+                  href="https://www.youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaYoutube />
+                </a>
+              </div>
             </div>
-          </div>
-
-          {/* Column 2 */}
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Product</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Case studies
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Reviews
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Updates
-                </a>
-              </li>
-            </ul>
           </div>
 
           {/* Column 3 */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Company</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-base text-gray-600">
               <li>
-                <a href="#" className="hover:text-primary">
-                  About
+                <a href="/" className="hover:text-primary">
+                  Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  Contact us
+                <a href="/help" className="hover:text-primary">
+                  Let Us Help You
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  Careers
+                <a
+                  href="https://jamichek-weight-loss-tampa-website.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  Weight Loss Services
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  Culture
+                <a href="/team" className="hover:text-primary">
+                  Meet The Team
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  Blog
+                <a href="/the-wellness-journal" className="hover:text-primary">
+                  The Wellness Journal
                 </a>
               </li>
             </ul>
@@ -122,30 +117,30 @@ export default function Footer() {
           {/* Column 4 */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-base text-gray-600">
               <li>
-                <a href="#" className="hover:text-primary">
-                  Getting started
+                <a href="/contact" className="hover:text-primary">
+                  Contact
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  Help center
+                <a href="/disclaimers" className="hover:text-primary">
+                  Disclaimers
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  Server status
+                <a href="/terms-of-service" className="hover:text-primary">
+                  Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  Report a bug
+                <a href="/privacy-policy" className="hover:text-primary">
+                  Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  Chat support
+                <a href="/cookie-policy" className="hover:text-primary">
+                  Cookie Policy
                 </a>
               </li>
             </ul>
@@ -153,8 +148,8 @@ export default function Footer() {
 
           {/* Column 5 */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Contacts us</h3>
-            <ul className="space-y-3 text-sm text-gray-600">
+            <h3 className="font-semibold text-gray-900 mb-4">Contact Us</h3>
+            <ul className="space-y-3 text-base text-gray-600">
               <li className="flex items-center gap-2">
                 <HiOutlineMail className="text-primary" />{" "}
                 dana@jachimekchiro.com
@@ -174,7 +169,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-600">
+        <div className="border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-base text-gray-600">
           <p>Copyright © 2025 Jachimek Chiropractic & Wellness Center</p>
           <p>
             All Rights Reserved |{" "}
