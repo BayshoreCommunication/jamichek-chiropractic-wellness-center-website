@@ -14,20 +14,23 @@ const albertSans = Albert_Sans({
   weight: ["400", "700"],
 });
 
+
 export const metadata: Metadata = {
   title: "jamichek-weight-loss",
   description: "jamichek-weight-loss website",
-  // metadataBase: new URL(""),
+  metadataBase: new URL("https://jamichek-weight-loss-website.vercel.app/"),
   alternates: {
     canonical: "/",
     languages: {
       "en-US": "/en-US",
     },
   },
+
   openGraph: {
-    images: "/", //opengraph-image.png
+    images: "/opengraph-image.png",
   },
 };
+
 
 export default function RootLayout({
   children,
