@@ -6,9 +6,35 @@ import { useState } from "react";
 import Reveal from "../motion/Reveal";
 import Stagger from "../motion/Stagger";
 
+// Set your YouTube link here (supports youtu.be and youtube.com links)
+const YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v=uKxF2MNFf9g";
+
+function extractYouTubeId(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === "youtu.be") {
+      return parsed.pathname.replace("/", "");
+    }
+    if (parsed.hostname.includes("youtube.com")) {
+      const v = parsed.searchParams.get("v");
+      if (v) return v;
+      // Handle /embed/{id}
+      const parts = parsed.pathname.split("/").filter(Boolean);
+      const embedIndex = parts.findIndex((p) => p === "embed");
+      if (embedIndex !== -1 && parts[embedIndex + 1])
+        return parts[embedIndex + 1];
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const videoId = extractYouTubeId(YOUTUBE_VIDEO_URL) ?? "uKxF2MNFf9g";
 
   return (
     <div className="bg-[#F2FFEA] bg-cover bg-center overflow-hidden">
@@ -42,15 +68,19 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal y={16} opacityFrom={0.1}>
-              <div className="mt-6 flex space-x-4">
-                <a
+              <div className="mt-6 flex space-x-4 gap-4 md:gap-6">
+                <Link
                   href="https://portal.sked.life/new-patient/?key=489579519b65115ba47eec5ca31a717befcba2464a5491dc864e7173c4e6cfe6"
                   target="_blank"
                   className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary-dark transition"
                 >
                   Not a patient yet? Book Now!
-                </a>
-                <button className="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-primary">
+                </Link>
+                <button
+                  onClick={() => setShowVideo(true)}
+                  aria-label="Play introduction video"
+                  className="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-primary hover:scale-105 transition"
+                >
                   ▶
                 </button>
               </div>
@@ -123,6 +153,34 @@ export default function Home() {
           </Stagger>
         </div>
       </section>
+      {showVideo && (
+        <div
+          className="fixed inset-0 z-50 bg-black/75 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setShowVideo(false)}
+        >
+          <div
+            className="relative w-full max-w-4xl aspect-video bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              aria-label="Close video"
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-12 right-0 text-white/90 hover:text-white"
+            >
+              ✕
+            </button>
+            <iframe
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

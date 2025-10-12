@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Reveal from "../motion/Reveal";
 import Stagger from "../motion/Stagger";
+import Link from "next/link";
 
 const services = [
   {
@@ -64,9 +65,9 @@ export default function Services() {
               </div>
             </Reveal>
             <Reveal y={12} opacityFrom={0}>
-              <button className="mt-6 md:mt-0 inline-flex items-center gap-2 border border-black rounded-full px-5 py-2  font-medium hover:text-white hover:bg-black transition text-black">
+              <Link href="/help" className="mt-6 md:mt-0 inline-flex items-center gap-2 border border-black rounded-full px-5 py-2  font-medium hover:text-white hover:bg-black transition text-black">
                 Explore More Services →
-              </button>
+              </Link>
             </Reveal>
           </Stagger>
         </div>
@@ -75,13 +76,13 @@ export default function Services() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal key={index} y={16} opacityFrom={0}>
-              <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition p-6 flex flex-col items-center text-center border border-gray-100">
+              <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition p-6 flex flex-col items-center text-center border border-gray-100 h-full">
                 <Image
                   src={service.image}
                   alt={service.title}
                   width={300}
                   height={224}
-                  className="w-full h-52 object-cover object-top rounded-xl"
+                  className="w-full h-auto object-cover object-top rounded-xl"
                 />
                 <div className="p-6 text-center">
                   <h3 className="text-lg font-semibold text-gray-900">

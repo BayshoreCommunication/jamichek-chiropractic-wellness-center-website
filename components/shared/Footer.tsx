@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaInstagram,
@@ -152,13 +153,13 @@ export default function Footer() {
             <ul className="space-y-3 text-base text-gray-600">
               <li className="flex items-center gap-2">
                 <HiOutlineMail className="text-primary" />{" "}
-                dana@jachimekchiro.com
+                support@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
-                <HiOutlinePhone className="text-primary" /> 813 960 2225
+                <HiOutlinePhone className="text-primary" /> (414) 687 - 5892
               </li>
               <li className="flex items-start gap-2">
-                <HiOutlineLocationMarker className="text-primary mt-1" />
+                <HiOutlineLocationMarker className="text-primary mt-1 text-2xl" />
                 <span>
                   5111 Ehrlich Road Ste 128, <br /> Tampa, Florida 33624, United
                   States
@@ -173,9 +174,9 @@ export default function Footer() {
           <p>Copyright © 2025 Jachimek Chiropractic & Wellness Center</p>
           <p>
             All Rights Reserved |{" "}
-            <a href="#" className="text-primary hover:underline">
+            <Link href="#" className="text-primary hover:underline">
               Terms and Conditions
-            </a>{" "}
+            </Link>{" "}
             |{" "}
             <a href="#" className="text-primary hover:underline">
               Privacy Policy

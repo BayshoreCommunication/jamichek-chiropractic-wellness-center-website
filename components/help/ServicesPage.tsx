@@ -82,6 +82,7 @@ const ServicesPage = () => {
         <div>
           <div className="grid grid-cols-1 py-12">
             {servicesData.map((service, index) => (
+              <Reveal key={service.id} y={30} opacityFrom={0}>
               <div
                 key={service.id}
                 className={`shadow-small rounded-3xl p-8 lg:p-10 bg-white flex flex-col md:flex-row gap-8 mb-12 items-center ${
@@ -123,9 +124,10 @@ const ServicesPage = () => {
                         />
                       </svg>
                     </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
