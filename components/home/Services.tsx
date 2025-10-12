@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Reveal from "../motion/Reveal";
 import Stagger from "../motion/Stagger";
+import Link from "next/link";
 
 const services = [
   {
@@ -63,11 +64,11 @@ export default function Services() {
                 </p>
               </div>
             </Reveal>
-            {/* <Reveal y={12} opacityFrom={0}>
-              <button className="mt-6 md:mt-0 inline-flex items-center gap-2 border border-black rounded-full px-5 py-2  font-medium hover:text-white hover:bg-black transition text-black">
+            <Reveal y={12} opacityFrom={0}>
+              <Link href="/help" className="mt-6 md:mt-0 inline-flex items-center gap-2 border border-black rounded-full px-5 py-2  font-medium hover:text-white hover:bg-black transition text-black">
                 Explore More Services →
-              </button>
-            </Reveal> */}
+              </Link>
+            </Reveal>
           </Stagger>
         </div>
 

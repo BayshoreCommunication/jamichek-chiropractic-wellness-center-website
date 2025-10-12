@@ -64,7 +64,7 @@ export default function ContactForm() {
               <div className="text-left">
                 <h4 className="font-semibold text-[#2a3b47] mb-1">Phone</h4>
                 <div className="flex flex-wrap gap-4 items-center">
-                  <p className="text-gray-600 text-sm">Phone: 813.960.2225 </p>
+                  <p className="text-gray-600 text-sm">Phone: (414) 687 - 5892 </p>
                   <p className="text-gray-600 text-sm">Fax: 813.968.1784</p>
                 </div>
               </div>

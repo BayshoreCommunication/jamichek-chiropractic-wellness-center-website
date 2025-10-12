@@ -78,7 +78,7 @@ export default function FbReviewSection() {
           slidesPerView={1}
           autoplay={{
             delay: 0,
-            reverseDirection: false,
+            reverseDirection: true,
             pauseOnMouseEnter: true,
           }}
           speed={5000}
@@ -149,6 +149,90 @@ export default function FbReviewSection() {
               </div>
             </SwiperSlide>
             </Reveal>
+
+            
+          ))}
+        </Swiper>
+
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={24}
+          slidesPerView={1}
+          autoplay={{
+            delay: 0,
+            reverseDirection: false,
+            pauseOnMouseEnter: true,
+          }}
+          speed={5000}
+          loop
+          freeMode
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            // 1280: { slidesPerView: 4 },
+          }}
+           className="mt-6"
+        >
+          {fbReviewData.map((review) => (
+            <Reveal key={review.id} y={30} opacityFrom={0}>
+            <SwiperSlide key={review.id}>
+              <div className="bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 p-6 flex flex-col justify-between h-full transition">
+                {/* Top Section */}
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src={review.image}
+                        alt={review.name}
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <h3 className="font-semibold text-gray-900">
+                          {review.name}
+                        </h3>
+                        <p className="text-sm text-gray-500">{review.date}</p>
+                      </div>
+                    </div>
+                    <FaFacebook className="text-[#1877F2] text-2xl" />
+                  </div>
+
+                  <hr className="my-4 border-gray-200" />
+
+                  {/* Review text */}
+                  <p className="text-gray-700 text-[15px] leading-relaxed line-clamp-2 min-h-[3rem]">
+                    {review.review}
+                  </p>
+                </div>
+
+                <hr className="my-4 border-gray-200" />
+
+                {/* Footer */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-[#E63946] font-medium">
+                    <Image
+                      src="/images/review/recommendation.png"
+                      alt="Thumbs Up"
+                      width={18}
+                      height={18}
+                    />
+                    <span>Recommends</span>
+                  </div>
+                  <Link
+                    href={review.recommends}
+                    target="_blank"
+                    className="text-primary font-medium hover:underline"
+                  >
+                    Read More
+                  </Link>
+                </div>
+              </div>
+            </SwiperSlide>
+            </Reveal>
+
+            
           ))}
         </Swiper>
       </div>

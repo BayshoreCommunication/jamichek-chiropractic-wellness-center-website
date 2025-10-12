@@ -10,7 +10,7 @@ import Stagger from "../motion/Stagger";
 const blogs = [
   {
     title: "Top Balance Exercises for Seniors at Home",
-    slug: "top-balance-exercises-for-seniors-at-home",
+    slug: "brand-positioning-what-space-will-you-own-in-your-customers-mind-during-your-business-transformation",
     date: "May 24, 2022",
     image: "/images/blog/blog1.png",
   },
@@ -25,7 +25,7 @@ const blogs = [
     slug: "how-to-relieve-lower-back-pain-without-surgery",
     date: "May 24, 2022",
     image: "/images/blog/blog3.png",
-  }
+  },
 ];
 
 export default function BlogSection() {
@@ -34,10 +34,7 @@ export default function BlogSection() {
       {/* Header */}
       <Reveal tag="div" y={16} opacityFrom={0}>
         <div className=" mb-8">
-          <h2 className="text-3xl lg:text-[38px] font-bold text-gray-900">
-            
-          </h2>
-          
+          <h2 className="text-3xl lg:text-[38px] font-bold text-gray-900"></h2>
         </div>
       </Reveal>
 
@@ -46,14 +43,17 @@ export default function BlogSection() {
           <Reveal tag="div" y={16} opacityFrom={0}>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900">
-              Latest From the <span className="text-primary">Blog</span>
+                Latest From the <span className="text-primary">Blog</span>
               </h2>
             </div>
           </Reveal>
           <Reveal y={12} opacityFrom={0}>
-            <button className="mt-6 md:mt-0 border border-black rounded-full px-6 py-2 transition text-gray-900 hover:bg-black hover:text-white">
+            <Link
+              href="/the-wellness-journal"
+              className="mt-6 md:mt-0 border border-black rounded-full px-6 py-2 transition text-gray-900 hover:bg-black hover:text-white"
+            >
               Explore Blogs →
-            </button>
+            </Link>
           </Reveal>
         </Stagger>
       </div>
