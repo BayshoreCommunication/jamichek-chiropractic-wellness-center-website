@@ -18,7 +18,7 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-[1640px] mx-auto md:pt-16 py-8 px-8">
+      <div className="max-w-[1640px] mx-auto md:pt-16 pb-6 px-8">
         {/* ⭐ Grid 5 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Column 1 */}
@@ -120,29 +120,29 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
             <ul className="space-y-2 text-base text-gray-600">
               <li>
-                <a href="/contact" className="hover:text-primary">
+                <Link href="/contact" className="hover:text-primary">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/disclaimers" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Disclaimers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms-of-service" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/privacy-policy" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/cookie-policy" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   Cookie Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -170,9 +170,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-base text-gray-600">
+        <div className="border-t border-gray-200 mt-10 pt-6 flex flex-col md:flex-row items-center justify-center text-base text-gray-600">
           <p>Copyright © 2025 Jachimek Chiropractic & Wellness Center</p>
-          <p>
+          {/* <p>
             All Rights Reserved |{" "}
             <Link href="#" className="text-primary hover:underline">
               Terms and Conditions
@@ -181,7 +181,7 @@ export default function Footer() {
             <a href="#" className="text-primary hover:underline">
               Privacy Policy
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

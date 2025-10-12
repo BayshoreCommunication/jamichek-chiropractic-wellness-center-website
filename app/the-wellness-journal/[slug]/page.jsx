@@ -106,7 +106,28 @@ const page = async ({ params }) => {
   };
 
   // console.log("check data", blogDetails);
-
+  if (!blogDetails || blogDetails.length === 0) {
+    return (
+      <>
+        <style>{css}</style>
+        <BreadcrumbSection
+          title="Transform Your Body with Medical Weight Loss Tampa"
+          items={[
+            { label: "Home", href: "/" },
+            { label: "The Wellness Journal" }, // current page (no href)
+          ]}
+        />
+        <div className="max-w-[1640px] mx-auto px-4 py-16 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            No Blog Found
+          </h2>
+          <p className="text-lg text-gray-600">
+            The requested blog post could not be found.
+          </p>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <style>{css}</style>
