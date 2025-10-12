@@ -1,5 +1,6 @@
 import BlogSection from "@/components/shared/Blog";
 import BreadcrumbSection from "@/components/shared/BreadcrumbSection";
+import PainRelief from "@/components/shared/CallToAction";
 import { BreadcrumbItem } from "@nextui-org/react";
 import React from "react";
 
@@ -15,6 +16,7 @@ const page = () => {
         ]}
       />
       <BlogSection />
+      <PainRelief />
     </div>
   );
 };
