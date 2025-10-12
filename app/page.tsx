@@ -6,12 +6,14 @@ import OurTeam from "@/components/shared/OurTeam";
 import PainRelief from "@/components/shared/CallToAction";
 import Services from "@/components/home/Services";
 import Testimonials from "@/components/shared/Testimonials";
+import NewPatientSpecial from "@/components/home/NewPatientSpecial";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <ChiropractorSection />
+      <NewPatientSpecial />
       <About />
       <Services />
       <Testimonials />
