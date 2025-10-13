@@ -34,21 +34,21 @@ const teammatesData = [
       x: "https://x.com",
     },
   },
+  // {
+  //   id: 3,
+  //   image: "/images/team/ross-paxia.png",
+  //   name: `dr. ross paxia "dr. ross"`,
+  //   designation: "Doctor",
+  //   details:
+  //     "I have had an interesting journey so far! I was born in Portsmouth, VA and moved around a bit - first to Jacksonville, FL and then to Bunnell, FL. I earned my undergraduate degree in Sports Medicine in 2014/2015 and graduated from Palmer College of Chiropractic in 2018. In my free time, I enjoy reading, playing video games, and I am a pretty solid cook! I'm also interested in learning blacksmithing, which is something I'm excited to explore!",
+  //   socialsMedia: {
+  //     facebook: "https://facebook.com",
+  //     instagram: "https://instagram.com",
+  //     x: "https://x.com",
+  //   },
+  // },
   {
     id: 3,
-    image: "/images/team/ross-paxia.png",
-    name: `dr. ross paxia "dr. ross"`,
-    designation: "Doctor",
-    details:
-      "I have had an interesting journey so far! I was born in Portsmouth, VA and moved around a bit - first to Jacksonville, FL and then to Bunnell, FL. I earned my undergraduate degree in Sports Medicine in 2014/2015 and graduated from Palmer College of Chiropractic in 2018. In my free time, I enjoy reading, playing video games, and I am a pretty solid cook! I'm also interested in learning blacksmithing, which is something I'm excited to explore!",
-    socialsMedia: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      x: "https://x.com",
-    },
-  },
-  {
-    id: 4,
     image: "/images/team/dana.png",
     name: "dana",
     designation: "Executive Director",
@@ -86,7 +86,7 @@ const TeamPage = () => {
         </div>
         <div>
           <div className="grid grid-cols-1 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {teammatesData.map((member, index) => (
                 <Reveal key={member.id} y={30} opacityFrom={0}>
                   <div
