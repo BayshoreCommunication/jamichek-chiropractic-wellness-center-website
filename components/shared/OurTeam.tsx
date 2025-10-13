@@ -35,19 +35,19 @@ const teammatesData = [
       x: "https://x.com",
     },
   },
-  {
-    id: 3,
-    image: "/images/team/ross-paxia.png",
-    name: `dr. ross paxia "dr. ross"`,
-    designation: "Doctor",
-    details:
-      "I have had an interesting journey so far! I was born in Portsmouth, VA and moved around a bit - first to Jacksonville, FL and then to Bunnell, FL. I earned my undergraduate degree in Sports Medicine in 2014/2015 and graduated from Palmer College of Chiropractic in 2018. In my free time, I enjoy reading, playing video games, and I am a pretty solid cook! I'm also interested in learning blacksmithing, which is something I'm excited to explore!",
-    socialsMedia: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      x: "https://x.com",
-    },
-  },
+  // {
+  //   id: 3,
+  //   image: "/images/team/ross-paxia.png",
+  //   name: `dr. ross paxia "dr. ross"`,
+  //   designation: "Doctor",
+  //   details:
+  //     "I have had an interesting journey so far! I was born in Portsmouth, VA and moved around a bit - first to Jacksonville, FL and then to Bunnell, FL. I earned my undergraduate degree in Sports Medicine in 2014/2015 and graduated from Palmer College of Chiropractic in 2018. In my free time, I enjoy reading, playing video games, and I am a pretty solid cook! I'm also interested in learning blacksmithing, which is something I'm excited to explore!",
+  //   socialsMedia: {
+  //     facebook: "https://facebook.com",
+  //     instagram: "https://instagram.com",
+  //     x: "https://x.com",
+  //   },
+  // },
   {
     id: 4,
     image: "/images/team/dana.png",
@@ -71,30 +71,34 @@ const TeamPage = () => {
   return (
     <>
       <section className="max-w-[1640px] mx-auto md:pt-16 py-8 px-8  gap-12 ">
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-10">
-        <Stagger>
-          <Reveal tag="div" y={16} opacityFrom={0}>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900">
-                Our Team
-              </h2>
-              <p className="text-gray-900 max-w-xl">
-                Stop by and meet our amazing team! We are here for you! Our
-                friendly staff is dedicated to providing you with the best care
-                and service to ensure your comfort throughout your journey.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal y={12} opacityFrom={0}>
-            <Link href="/team" className="mt-6 md:mt-0 border border-black rounded-full px-6 py-2 transition text-gray-900 hover:bg-black hover:text-white">
-              Explore Team Members →
-            </Link>
-          </Reveal>
-        </Stagger>
-      </div>
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-10">
+          <Stagger>
+            <Reveal tag="div" y={16} opacityFrom={0}>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900">
+                  Our Team
+                </h2>
+                <p className="text-gray-900 max-w-xl">
+                  Stop by and meet our amazing team! We are here for you! Our
+                  friendly staff is dedicated to providing you with the best
+                  care and service to ensure your comfort throughout your
+                  journey.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal y={12} opacityFrom={0}>
+              <Link
+                href="/team"
+                className="mt-6 md:mt-0 border border-black rounded-full px-6 py-2 transition text-gray-900 hover:bg-black hover:text-white"
+              >
+                Explore Team Members →
+              </Link>
+            </Reveal>
+          </Stagger>
+        </div>
         <div>
           <div className="grid grid-cols-1">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {teammatesData.map((member, index) => (
                 <Reveal key={member.id} y={30} opacityFrom={0}>
                   <div
