@@ -12,7 +12,7 @@ export default function About() {
           <Reveal y={20} opacityFrom={0}>
             <div className="rounded-xl overflow-hidden">
               <Image
-                src="/images/about/about.png"
+                src="/images/about/about.jpg"
                 alt="Our Team"
                 className="w-auto h-auto object-cover rounded-xl"
                 width={630}
