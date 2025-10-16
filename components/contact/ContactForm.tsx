@@ -81,7 +81,7 @@ export default function ContactForm() {
                     <h4 className="font-semibold text-[#2a3b47] mb-1">Phone</h4>
                     <div className="flex flex-wrap gap-4 items-center">
                       <p className="text-gray-600 text-sm leading-relaxed">
-                        Phone: (414) 687 – 5892
+                        Phone: 813.960.2225
                       </p>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         Fax: 813.968.1784
