@@ -11,10 +11,10 @@ export default function NewPatientSpecial() {
           $47 New Patient Special Offer
         </h2>
         <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-          Experience a complete chiropractic consultation, examination, and
-          personalized treatment plan for only{" "}
-          <span className="font-semibold text-primary">$47</span>. Discover how
-          we can help you feel better, move better, and live pain-free.
+          Experience a comprehensive weight loss consultation, health
+          assessment, and personalized treatment plan for just <span className="font bold text-primary">$47</span> . Discover how
+          our medically guided programs can help you lose weight safely, boost
+          your energy, and feel your best again.
         </p>
 
         <Link
