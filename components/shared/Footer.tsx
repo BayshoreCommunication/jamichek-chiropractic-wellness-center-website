@@ -156,7 +156,7 @@ export default function Footer() {
                 support@jachimekchiro.com
               </li>
               <li className="flex items-center gap-2">
-                <HiOutlinePhone className="text-primary" /> (414) 687 - 5892
+                <HiOutlinePhone className="text-primary" /> 813.960.2225
               </li>
               <li className="flex items-start gap-2">
                 <HiOutlineLocationMarker className="text-primary mt-1 text-2xl" />
