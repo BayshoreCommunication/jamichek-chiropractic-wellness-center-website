@@ -116,7 +116,7 @@ export default function Testimonials() {
             </Reveal>
             <Reveal y={10} opacityFrom={0}>
               <Link
-                href="https://www.google.com/maps?cid=15818987750581458581"
+                href="https://share.google/fr5fqwEAfsaCT7WNX"
                 className="inline-block mt-4 text-primary font-medium hover:underline"
               >
                 View all Google Reviews here

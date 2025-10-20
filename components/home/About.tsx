@@ -68,7 +68,7 @@ export default function About() {
                     <span className="font-semibold">4.9</span> | 140 Reviews
                     <div>
                       <Link
-                        href="https://www.google.com/maps?cid=15818987750581458581"
+                        href="https://share.google/fr5fqwEAfsaCT7WNX"
                         className="text-primary underline hover:text-green-700"
                       >
                         View all Google Reviews here
