@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="flex gap-4 mt-4 text-primary text-lg">
               <div className="flex gap-4 mt-4 text-primary text-lg">
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/JachimekChiropracticWellnessCenter/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
