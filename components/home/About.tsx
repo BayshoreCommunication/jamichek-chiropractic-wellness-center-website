@@ -48,9 +48,12 @@ export default function About() {
 
               {/* Explore More button */}
               <Reveal y={10} opacityFrom={0}>
-                <button className="bg-black text-white px-6 py-3 rounded-full w-fit transition mb-8 hover:bg-white hover:border hover:border-black hover:text-black">
+                <Link
+                  href={"/team"}
+                  className="bg-black text-white px-6 py-3 rounded-full w-fit transition mb-8 hover:bg-white hover:border hover:border-black hover:text-black"
+                >
                   Explore More
-                </button>
+                </Link>
               </Reveal>
 
               {/* Google Reviews */}
