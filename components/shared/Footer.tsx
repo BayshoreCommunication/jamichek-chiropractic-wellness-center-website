@@ -54,7 +54,7 @@ export default function Footer() {
                   <FaTwitter />
                 </a>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/tampa_chiropractic?igsh=N3llNDhpdXRpbjg1"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
