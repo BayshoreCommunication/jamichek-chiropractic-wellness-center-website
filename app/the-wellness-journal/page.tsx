@@ -2,9 +2,11 @@ import BlogSection from "@/components/shared/Blog";
 import BreadcrumbSection from "@/components/shared/BreadcrumbSection";
 import PainRelief from "@/components/shared/CallToAction";
 import { BreadcrumbItem } from "@nextui-org/react";
+import GetAllPostData from "@/lib/GetPostData";
 import React from "react";
 
-const page = () => {
+const page = async () => {
+  const blogPostData = await GetAllPostData();
   return (
     <div>
       <BreadcrumbSection
@@ -15,7 +17,7 @@ const page = () => {
           { label: "My Blog" }, // current page (no href)
         ]}
       />
-      <BlogSection />
+      <BlogSection blogPost={blogPostData} />
       <PainRelief />
     </div>
   );
