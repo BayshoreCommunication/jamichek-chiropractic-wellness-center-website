@@ -49,21 +49,21 @@ export default function Blogs({ blogPost }: BlogsProps) {
 
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-10">
         <Stagger>
-          <Reveal tag="div" y={16} opacityFrom={0}>
+          {/* <Reveal tag="div" y={16} opacityFrom={0}>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900">
                 Latest From the <span className="text-primary">Blog</span>
               </h2>
             </div>
-          </Reveal>
-          <Reveal y={12} opacityFrom={0}>
+          </Reveal> */}
+          {/* <Reveal y={12} opacityFrom={0}>
             <Link
               href="/the-wellness-journal"
               className="mt-6 md:mt-0 border border-black rounded-full px-6 py-2 transition text-gray-900 hover:bg-black hover:text-white"
             >
               Explore Blogs →
             </Link>
-          </Reveal>
+          </Reveal> */}
         </Stagger>
       </div>
 

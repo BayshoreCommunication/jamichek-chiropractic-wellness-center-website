@@ -19,7 +19,7 @@ export default function Home() {
       <Testimonials />
       <OurTeam />
       <PainRelief />
-      <Blog />
+      {/* <Blog /> */}
     </>
   );
 }
