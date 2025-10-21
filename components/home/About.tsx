@@ -58,7 +58,7 @@ export default function About() {
 
               {/* Google Reviews */}
               <Reveal y={10} opacityFrom={0}>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-6">
                   <div className="flex items-center gap-2">
                     <img
                       src="/images/about/google.png"

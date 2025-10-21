@@ -93,7 +93,7 @@ export default function ChiropractorSection() {
                 className="mt-6 self-center lg:self-start inline-block"
               >
                 <span className="bg-black text-white px-6 py-3 rounded-full hover:bg-white hover:border hover:border-black hover:text-black transition">
-                  Explore More
+                  Contact Us
                 </span>
               </Link>
             </Reveal>

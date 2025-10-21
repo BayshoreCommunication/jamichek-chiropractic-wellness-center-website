@@ -46,13 +46,7 @@ export default function Footer() {
                 >
                   <FaFacebookF />
                 </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaTwitter />
-                </a>
+                
                 <a
                   href="https://www.instagram.com/tampa_chiropractic?igsh=N3llNDhpdXRpbjg1"
                   target="_blank"
@@ -60,20 +54,7 @@ export default function Footer() {
                 >
                   <FaInstagram />
                 </a>
-                <a
-                  href="https://www.linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedinIn />
-                </a>
-                <a
-                  href="https://www.youtube.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaYoutube />
-                </a>
+                
               </div>
             </div>
           </div>
@@ -85,6 +66,12 @@ export default function Footer() {
               <li>
                 <a href="/" className="hover:text-primary">
                   Home
+                </a>
+              </li>
+
+              <li>
+                <a href="/services" className="hover:text-primary">
+                  Our Services
                 </a>
               </li>
               <li>
