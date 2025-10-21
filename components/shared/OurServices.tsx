@@ -55,14 +55,14 @@ export default function Services() {
     <section className="w-full px-8 py-8 md:py-16">
       <div className="max-w-[1640px] mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-center mb-12">
           <Stagger>
             <Reveal tag="div" y={16} opacityFrom={0}>
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">
+                <h2 className="text-3xl  md:text-5xl font-bold text-gray-900 text-center">
                   Our Services
                 </h2>
-                <p className="mt-2 text-gray-600 max-w-2xl">
+                <p className="mt-2 text-gray-600 max-w-2xl text-center">
                   Our chiropractors offer various services, including
                   chiropractic adjustments, spinal decompression therapy,
                   rehabilitation exercises, and weight loss, to help our
@@ -70,14 +70,14 @@ export default function Services() {
                 </p>
               </div>
             </Reveal>
-            <Reveal y={12} opacityFrom={0}>
+            {/* <Reveal y={12} opacityFrom={0}>
               <Link
                 href="/help"
                 className="mt-6 md:mt-0 inline-flex items-center gap-2 border border-black rounded-full px-5 py-2  font-medium hover:text-white hover:bg-black transition text-black"
               >
                 Explore More Services →
               </Link>
-            </Reveal>
+            </Reveal> */}
           </Stagger>
         </div>
 
