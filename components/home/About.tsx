@@ -60,9 +60,11 @@ export default function About() {
               <Reveal y={10} opacityFrom={0}>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-6">
                   <div className="flex items-center gap-2">
-                    <img
+                    <Image
                       src="/images/about/google.png"
                       alt="Google"
+                      width={20}
+                      height={20}
                       className="h-5"
                     />
                     <div className="flex text-yellow-400 text-lg">★★★★★</div>

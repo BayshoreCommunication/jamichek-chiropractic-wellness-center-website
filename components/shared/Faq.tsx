@@ -28,12 +28,15 @@ export default function Faq() {
             Are you accepting new patients?
           </p>
           <p>
-            Yes! Click the <span className="text-primary font-medium">Book Now</span> button and take advantage of our new
-            patient special! We also treat Auto Accidents, Workman's Comp, and
-            Slip &amp; Fall cases.
+            Yes! Click the{" "}
+            <span className="text-primary font-medium">Book Now</span> button
+            and take advantage of our new patient special! We also treat Auto
+            Accidents, Workman&apos;s Comp, and Slip &amp; Fall cases.
           </p>
-          <Link href="https://go.carecredit.com/consumer/home?sitecode=CCCALDS2X" target="_blank">
-          
+          <Link
+            href="https://go.carecredit.com/consumer/home?sitecode=CCCALDS2X"
+            target="_blank"
+          >
             <span className="underline">Credit Link</span>
           </Link>
         </div>
