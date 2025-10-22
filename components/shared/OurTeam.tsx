@@ -67,7 +67,7 @@ const teammatesData = [
   },
   {
     id: 5,
-    image: "/images/team/hunter.png",
+    image: "/images/team/hunter.jpg",
     name: "Dr. Hunter Furman",
     designation: "Doctor",
     details:

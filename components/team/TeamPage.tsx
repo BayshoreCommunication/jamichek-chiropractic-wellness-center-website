@@ -60,6 +60,19 @@ const teammatesData = [
       x: "https://x.com",
     },
   },
+  {
+    id: 5,
+    image: "/images/team/hunter.jpg",
+    name: "Dr. Hunter Furman",
+    designation: "Doctor",
+    details:
+      "Dr. Hunter Furman is from Frederick, Maryland. He loves to see how chiropractic can positively change people’s lives, and it continues to be one of the most rewarding experiences he can be a part of.Dr. Furman is deeply passionate about helping others through chiropractic care and takes pride in witnessing the transformation that comes from improved health and well-being.He earned his Bachelor’s degree in Exercise Science from Towson University and went on to receive his Doctorate of Chiropractic from Palmer College of Chiropractic. His education, combined with his dedication to patient-centered care, allows him to provide compassionate and effective treatment to everyone he serves.",
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
+  },
 ];
 
 type Teammate = (typeof teammatesData)[number];
@@ -113,7 +126,7 @@ const TeamPage = () => {
                       </p>
 
                       <div className="flex  items-center justify-between mt-4 lg:mt-6">
-                        <div className="flex gap-4 ">
+                        {/* <div className="flex gap-4 ">
                           <Link
                             href={member.socialsMedia.facebook}
                             target="_blank"
@@ -135,7 +148,7 @@ const TeamPage = () => {
                           >
                             <FaXTwitter />
                           </Link>
-                        </div>
+                        </div> */}
                         <div>
                           <button
                             onClick={() => setSelectedMember(member)}

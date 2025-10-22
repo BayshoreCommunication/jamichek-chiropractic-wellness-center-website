@@ -14,7 +14,7 @@ export default function Faq() {
       {/* FAQ Content */}
       <div className="space-y-8 text-gray-700 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
         <div>
-          <p className="font-semibold text-gray-900 mb-2">
+          <p className="font-semibold text-gray-900 mb-2 ">
             Do you accept insurance?
           </p>
           <p>
@@ -24,7 +24,7 @@ export default function Faq() {
         </div>
 
         <div>
-          <p className="font-semibold text-gray-900 mb-2">
+          <p className="font-semibold text-gray-900 mb-2 ">
             Are you accepting new patients?
           </p>
           <p>
@@ -33,12 +33,14 @@ export default function Faq() {
             and take advantage of our new patient special! We also treat Auto
             Accidents, Workman&apos;s Comp, and Slip &amp; Fall cases.
           </p>
+          <div className="mt-4 text-primary">
           <Link
             href="https://go.carecredit.com/consumer/home?sitecode=CCCALDS2X"
             target="_blank"
           >
             <span className="underline">Credit Link</span>
           </Link>
+          </div>
         </div>
       </div>
     </section>
