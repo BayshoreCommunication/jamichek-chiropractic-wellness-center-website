@@ -15,11 +15,11 @@ const teammatesData = [
     designation: "Doctor",
     details:
       "My team and I provide a safe, whole-body approach to healing, prioritizing each patient's health and wellness. I am board certified in Florida, Pennsylvania, and Maryland. I hold a Bachelor's degree from the University of Tampa and earned my Doctorate from Life Chiropractic College in Marietta, GA in 1997. I am also a certified Neuromechanical Practitioner, trained by Dr. Gudgel.",
-    socialsMedia: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      x: "https://x.com",
-    },
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
   },
   {
     id: 2,
@@ -28,11 +28,11 @@ const teammatesData = [
     designation: "Doctor",
     details:
       "I grew up in a small farming community in Wisconsin & later attended the University of Wisconsin-Eau Claire. Afterward, I earned my Doctor of Chiropractic degree from Northwestern College of Chiropractic in 1985. Soon after graduation, I relocated to Tampa, where I've had the privilege of practicing for nearly 40 years. Tampa is also where met my wife, Kat, and we've been happily married for 34 years. We have two children, Lauren & Brandon, and are blessed with two grandchildren, Cody & Leah. I'm proud to call Tampa home and to have helped many in our community experience positive health transformations.",
-    socialsMedia: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      x: "https://x.com",
-    },
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
   },
   // {
   //   id: 3,
@@ -54,11 +54,11 @@ const teammatesData = [
     designation: "Executive Director",
     details:
       "I was born in Pasadena, California and raised in Cleveland, Ohio until moving to Florida at the age of 10. I studied Journalism at High School in Tampa, where I was active in clubs like Quill & Scroll and the National Honors Society. My career began in the food and beverage industry as a corporate trainer for Applebee's, traveling throughout Florida to train staff for new locations. In 2018, I transitioned to the health industry with a mission to help people live healthier lives without reliance on medications. I have 3 children, Elijah, Nevaeh, and Madison. I enjoy sporting events, spending time with family, community outreach, and learning ASL. Dedicated to personal growth, I strive to make a positive impact at home and in the community.",
-    socialsMedia: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      x: "https://x.com",
-    },
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
   },
   {
     id: 5,
@@ -197,29 +197,31 @@ const TeamPage = () => {
                     <p className="text-gray-700 mt-4">
                       {selectedMember.details}
                     </p>
-                    <div className="flex gap-4 mt-6">
-                      <Link
-                        href={selectedMember.socialsMedia.facebook}
-                        target="_blank"
-                        className="text-black/80 hover:text-blue-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
-                      >
-                        <TbBrandFacebook />
-                      </Link>
-                      <Link
-                        href={selectedMember.socialsMedia.instagram}
-                        target="_blank"
-                        className="text-black/80 hover:text-pink-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
-                      >
-                        <FiInstagram />
-                      </Link>
-                      <Link
-                        href={selectedMember.socialsMedia.x}
-                        target="_blank"
-                        className="text-black/80 hover:text-black p-2 rounded-full bg-[#F2F4F7] text-xl"
-                      >
-                        <FaXTwitter />
-                      </Link>
-                    </div>
+                    {/* {selectedMember.socialsMedia && (
+                      <div className="flex gap-4 mt-6">
+                        <Link
+                          href={selectedMember.socialsMedia.facebook}
+                          target="_blank"
+                          className="text-black/80 hover:text-blue-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
+                        >
+                          <TbBrandFacebook />
+                        </Link>
+                        <Link
+                          href={selectedMember.socialsMedia.instagram}
+                          target="_blank"
+                          className="text-black/80 hover:text-pink-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
+                        >
+                          <FiInstagram />
+                        </Link>
+                        <Link
+                          href={selectedMember.socialsMedia.x}
+                          target="_blank"
+                          className="text-black/80 hover:text-black p-2 rounded-full bg-[#F2F4F7] text-xl"
+                        >
+                          <FaXTwitter />
+                        </Link>
+                      </div>
+                    )} */}
                   </div>
                 </div>
               </Reveal>
