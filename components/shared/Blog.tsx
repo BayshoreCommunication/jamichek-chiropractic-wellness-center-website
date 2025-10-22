@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Reveal from "../motion/Reveal";
@@ -24,12 +26,17 @@ export type BlogItem = {
 };
 
 export type BlogsProps = {
-  blogPost?: { data?: BlogItem[] };
+  blogPost?: { data?: BlogItem[] } | BlogItem[];
 };
 
 export default function Blogs({ blogPost }: BlogsProps) {
-  const posts: BlogItem[] =
-    blogPost?.data?.filter((b: BlogItem) => b.published) || [];
+  const source: unknown = Array.isArray(blogPost)
+    ? blogPost
+    : (blogPost as any)?.data;
+  const rawPosts: BlogItem[] = Array.isArray(source)
+    ? (source as BlogItem[])
+    : [];
+  const posts: BlogItem[] = rawPosts.filter((b: any) => b?.published !== false);
 
   const normalizeDateInput = (date: unknown): Date | null => {
     if (date == null) return null;
@@ -104,63 +111,95 @@ export default function Blogs({ blogPost }: BlogsProps) {
       {posts.length === 0 ? (
         <div className="text-center py-16 text-gray-600">No posts here</div>
       ) : (
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          pagination={{
+            clickable: true,
+            bulletClass: "swiper-pagination-bullet !bg-gray-300 !opacity-100",
+            bulletActiveClass: "swiper-pagination-bullet-active !bg-primary",
+          }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+          className="!pb-12"
+        >
           {posts.map((blog: BlogItem, index: number) => (
-            <Link
-              key={index}
-              href={`/the-wellness-journal/${blog.slug}`}
-              className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col h-full hover:shadow-lg transition-shadow"
-            >
-              {/* Blog Image */}
-              <div className="w-full p-4 lg:p-6">
-                <Image
-                  src={
-                    blog.image ||
-                    blog?.featuredImage?.image?.url ||
-                    "/placeholder.jpg"
-                  }
-                  alt={blog.altText || blog.title}
-                  width={1000}
-                  height={667}
-                  className="object-cover rounded-xl"
-                />
-              </div>
-
-              {/* Blog Content */}
-              <div className="p-4 lg:p-6 pt-0 flex flex-col flex-1 justify-between">
-                <div>
-                  {(() => {
-                    const rawDate: unknown =
-                      (blog as any)?.date ??
-                      (blog as any)?.createdAt ??
-                      (blog as any)?.publishedAt;
-                    const formatted = postDate(rawDate);
-                    if (!formatted) return null;
-                    return (
-                      <p className="text-xs font-medium text-gray-500 uppercase flex items-center gap-2">
-                        {formatted}
-                      </p>
-                    );
-                  })()}
-                  <h3 className="text-lg font-semibold text-gray-900 mt-2">
-                    {blog.title}
-                  </h3>
-                  {blog.body && (
-                    <div className="text-sm text-gray-600 mt-2 line-clamp-3">
-                      {typeof blog.body === "string"
-                        ? parse(blog.body)
-                        : blog.body}
-                    </div>
-                  )}
+            <SwiperSlide key={index}>
+              <Link
+                href={`/the-wellness-journal/${blog.slug}`}
+                className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col h-full hover:shadow-lg transition-shadow block"
+              >
+                {/* Blog Image */}
+                <div className="w-full p-4 lg:p-6">
+                  <Image
+                    src={
+                      blog.image ||
+                      blog?.featuredImage?.image?.url ||
+                      "/placeholder.jpg"
+                    }
+                    alt={blog.altText || blog.title}
+                    width={1000}
+                    height={667}
+                    className="object-cover rounded-xl w-full h-48"
+                  />
                 </div>
 
-                <span className="text-primary text-sm font-medium hover:underline mt-4">
-                  Read More
-                </span>
-              </div>
-            </Link>
+                {/* Blog Content */}
+                <div className="p-4 lg:p-6 pt-0 flex flex-col flex-1 justify-between">
+                  <div>
+                    {(() => {
+                      const anyBlog = blog as any;
+                      const rawDate: unknown =
+                        anyBlog?.date ??
+                        anyBlog?.createdAt ??
+                        anyBlog?.publishedAt ??
+                        anyBlog?.created_at ??
+                        anyBlog?.published_at ??
+                        anyBlog?.attributes?.date ??
+                        anyBlog?.attributes?.createdAt ??
+                        anyBlog?.attributes?.publishedAt ??
+                        anyBlog?.attributes?.created_at ??
+                        anyBlog?.attributes?.published_at;
+                      const formatted = postDate(rawDate) ?? "Date unavailable";
+                      return (
+                        <p className="text-xs font-medium text-gray-500 uppercase flex items-center gap-2">
+                          {formatted}
+                        </p>
+                      );
+                    })()}
+                    <h3 className="text-lg font-semibold text-gray-900 mt-2">
+                      {blog.title}
+                    </h3>
+                    {blog.body && (
+                      <div className="text-sm text-gray-600 mt-2 line-clamp-3">
+                        {typeof blog.body === "string"
+                          ? parse(blog.body)
+                          : blog.body}
+                      </div>
+                    )}
+                  </div>
+
+                  <span className="text-primary text-sm font-medium hover:underline mt-4">
+                    Read More
+                  </span>
+                </div>
+              </Link>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       )}
     </section>
   );

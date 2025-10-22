@@ -4,6 +4,10 @@ import Reveal from "../motion/Reveal";
 import Stagger from "../motion/Stagger";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import { TbBrandFacebook } from "react-icons/tb";
 import { FiInstagram } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
@@ -16,11 +20,11 @@ const teammatesData = [
     designation: "Doctor",
     details:
       "My team and I provide a safe, whole-body approach to healing, prioritizing each patient's health and wellness. I am board certified in Florida, Pennsylvania, and Maryland. I hold a Bachelor's degree from the University of Tampa and earned my Doctorate from Life Chiropractic College in Marietta, GA in 1997. I am also a certified Neuromechanical Practitioner, trained by Dr. Gudgel.",
-    socialsMedia: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      x: "https://x.com",
-    },
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
   },
   {
     id: 2,
@@ -29,11 +33,11 @@ const teammatesData = [
     designation: "Doctor",
     details:
       "I grew up in a small farming community in Wisconsin & later attended the University of Wisconsin-Eau Claire. Afterward, I earned my Doctor of Chiropractic degree from Northwestern College of Chiropractic in 1985. Soon after graduation, I relocated to Tampa, where I've had the privilege of practicing for nearly 40 years. Tampa is also where met my wife, Kat, and we've been happily married for 34 years. We have two children, Lauren & Brandon, and are blessed with two grandchildren, Cody & Leah. I'm proud to call Tampa home and to have helped many in our community experience positive health transformations.",
-    socialsMedia: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      x: "https://x.com",
-    },
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
   },
   // {
   //   id: 3,
@@ -51,15 +55,28 @@ const teammatesData = [
   {
     id: 4,
     image: "/images/team/dana.png",
-    name: "dana",
+    name: "dana osnos",
     designation: "Executive Director",
     details:
       "I was born in Pasadena, California and raised in Cleveland, Ohio until moving to Florida at the age of 10. I studied Journalism at High School in Tampa, where I was active in clubs like Quill & Scroll and the National Honors Society. My career began in the food and beverage industry as a corporate trainer for Applebee's, traveling throughout Florida to train staff for new locations. In 2018, I transitioned to the health industry with a mission to help people live healthier lives without reliance on medications. I have 3 children, Elijah, Nevaeh, and Madison. I enjoy sporting events, spending time with family, community outreach, and learning ASL. Dedicated to personal growth, I strive to make a positive impact at home and in the community.",
-    socialsMedia: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      x: "https://x.com",
-    },
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
+  },
+  {
+    id: 5,
+    image: "/images/team/hunter.png",
+    name: "Dr. Hunter Furman",
+    designation: "Doctor",
+    details:
+      "Dr. Hunter Furman is from Frederick, Maryland. He loves to see how chiropractic can positively change people’s lives, and it continues to be one of the most rewarding experiences he can be a part of.Dr. Furman is deeply passionate about helping others through chiropractic care and takes pride in witnessing the transformation that comes from improved health and well-being.He earned his Bachelor’s degree in Exercise Science from Towson University and went on to receive his Doctorate of Chiropractic from Palmer College of Chiropractic. His education, combined with his dedication to patient-centered care, allows him to provide compassionate and effective treatment to everyone he serves.",
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
   },
 ];
 
@@ -97,61 +114,59 @@ const TeamPage = () => {
           </Stagger>
         </div>
         <div>
-          <div className="grid grid-cols-1">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {teammatesData.map((member, index) => (
-                <Reveal key={member.id} y={30} opacityFrom={0}>
-                  <div
-                    key={member.id}
-                    className={`bg-white shadow-lg rounded-2xl overflow-hidden  flex flex-col  items-center  `}
-                  >
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            pagination={{
+              clickable: true,
+              bulletClass: "swiper-pagination-bullet !bg-gray-300 !opacity-100",
+              bulletActiveClass: "swiper-pagination-bullet-active !bg-primary",
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+            className="!pb-12"
+          >
+            {teammatesData.map((member, index) => (
+              <SwiperSlide key={member.id}>
+                <Reveal y={30} opacityFrom={0}>
+                  <div className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col items-center h-full">
                     <Image
                       src={member.image}
                       alt={member.name}
                       width={400}
                       height={400}
-                      className="  w-full"
+                      className="w-full h-64 object-cover"
                     />
 
-                    <div className="px-6 pt-4 pb-6 ">
+                    <div className="px-6 pt-4 pb-6 flex flex-col flex-1">
                       <h3 className="text-xl uppercase font-semibold text-gray-800">
                         {member.name}
                       </h3>
-                      <p className="text-primary font-medium mt-1 ">
+                      <p className="text-primary font-medium mt-1">
                         {member.designation}
                       </p>
-                      <p className="text-gray-600 mt-3 line-clamp-2">
+                      <p className="text-gray-600 mt-3 line-clamp-2 flex-1">
                         {member.details}
                       </p>
 
-                      <div className="flex  items-center justify-between mt-4 lg:mt-6">
-                        <div className="flex gap-4 ">
-                          <Link
-                            href={member.socialsMedia.facebook}
-                            target="_blank"
-                            className="text-black/80 hover:text-blue-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
-                          >
-                            <TbBrandFacebook />
-                          </Link>
-                          <Link
-                            href={member.socialsMedia.instagram}
-                            target="_blank"
-                            className="text-black/80 hover:text-pink-800 p-2 rounded-full bg-[#F2F4F7] text-xl"
-                          >
-                            <FiInstagram />
-                          </Link>
-                          <Link
-                            href={member.socialsMedia.x}
-                            target="_blank"
-                            className="text-black/80 hover:text-black p-2 rounded-full bg-[#F2F4F7] text-xl"
-                          >
-                            <FaXTwitter />
-                          </Link>
-                        </div>
+                      <div className="flex items-center justify-between mt-4 lg:mt-6">
                         <div>
                           <button
                             onClick={() => setSelectedMember(member)}
-                            className="underline text-primary text-medium"
+                            className="underline text-primary text-medium hover:text-primary/80 transition-colors"
                           >
                             Read More
                           </button>
@@ -160,9 +175,9 @@ const TeamPage = () => {
                     </div>
                   </div>
                 </Reveal>
-              ))}
-            </div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
         {/* Modal */}
         {selectedMember && (
@@ -182,9 +197,9 @@ const TeamPage = () => {
                   <Image
                     src={selectedMember.image}
                     alt={selectedMember.name}
-                    width={350}
-                    height={350}
-                    className="rounded-2xl object-cover w-full md:w-1/2"
+                    width={1000}
+                    height={800}
+                    className="rounded-2xl object-contain object-top w-full md:w-1/2"
                   />
                   <div className="flex-1">
                     <h3 className="text-xl lg:text-3xl font-semibold text-gray-800 uppercase">
@@ -196,7 +211,7 @@ const TeamPage = () => {
                     <p className="text-gray-700 mt-4">
                       {selectedMember.details}
                     </p>
-                    <div className="flex gap-4 mt-6">
+                    {/* <div className="flex gap-4 mt-6">
                       <Link
                         href={selectedMember.socialsMedia.facebook}
                         target="_blank"
@@ -218,7 +233,7 @@ const TeamPage = () => {
                       >
                         <FaXTwitter />
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </Reveal>

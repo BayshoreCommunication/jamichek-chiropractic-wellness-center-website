@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, Target, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -29,6 +29,7 @@ const Navbar: React.FC = () => {
     { href: "/help", label: "Let Us Help You" },
     {
       href: "https://jamichek-weight-loss-tampa-website.vercel.app/",
+      target: "_blank",
       label: "Weight Loss Services",
     },
     { href: "/team", label: "Meet The Team" },
@@ -71,6 +72,12 @@ const Navbar: React.FC = () => {
               <Link
                 key={item.href}
                 href={item.href}
+                target={(item as any)?.target}
+                rel={
+                  (item as any)?.target === "_blank"
+                    ? "noopener noreferrer"
+                    : undefined
+                }
                 className={`transition-colors ${
                   pathname === item.href
                     ? "text-primary font-medium underline"
@@ -121,6 +128,12 @@ const Navbar: React.FC = () => {
             <Link
               key={item.href}
               href={item.href}
+              target={(item as any)?.target}
+              rel={
+                (item as any)?.target === "_blank"
+                  ? "noopener noreferrer"
+                  : undefined
+              }
               onClick={() => setMobileOpen(false)}
               className={`transition-colors ${
                 pathname === item.href

@@ -7,6 +7,7 @@ import PainRelief from "@/components/shared/CallToAction";
 import Services from "@/components/home/Services";
 import Testimonials from "@/components/shared/Testimonials";
 import NewPatientSpecial from "@/components/home/NewPatientSpecial";
+import Faq from "@/components/shared/Faq";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Testimonials />
       <OurTeam />
       <PainRelief />
+      <Faq/>
       {/* <Blog /> */}
     </>
   );

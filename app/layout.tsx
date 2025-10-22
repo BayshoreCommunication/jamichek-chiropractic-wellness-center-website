@@ -16,8 +16,8 @@ const albertSans = Albert_Sans({
 
 
 export const metadata: Metadata = {
-  title: "jamichek-weight-loss",
-  description: "jamichek-weight-loss website",
+  title: "Jachimek Chiropractic",
+  description: "Jachimek Chiropractic website",
   metadataBase: new URL("https://jamichek-weight-loss-website.vercel.app/"),
   alternates: {
     canonical: "/",
