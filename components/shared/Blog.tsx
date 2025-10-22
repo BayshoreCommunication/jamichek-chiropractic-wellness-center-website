@@ -31,12 +31,46 @@ export default function Blogs({ blogPost }: BlogsProps) {
   const posts: BlogItem[] =
     blogPost?.data?.filter((b: BlogItem) => b.published) || [];
 
-  const postDate = (date: BlogItem["date"]) =>
-    new Date(date).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+  const normalizeDateInput = (date: unknown): Date | null => {
+    if (date == null) return null;
+    // Date instance
+    if (date instanceof Date) return isNaN(date.getTime()) ? null : date;
+    // Numeric-like strings or numbers
+    const asNumber =
+      typeof date === "number"
+        ? date
+        : typeof date === "string" && /^\d+$/.test(date)
+        ? Number(date)
+        : null;
+    if (typeof asNumber === "number" && !Number.isNaN(asNumber)) {
+      // Heuristic: seconds vs milliseconds
+      const ms = asNumber < 1e12 ? asNumber * 1000 : asNumber;
+      const d = new Date(ms);
+      return isNaN(d.getTime()) ? null : d;
+    }
+    // ISO or other date strings
+    if (typeof date === "string") {
+      const d = new Date(date);
+      if (!isNaN(d.getTime())) return d;
+      return null;
+    }
+    return null;
+  };
+
+  const postDate = (date: unknown): string | null => {
+    if (date == null) return null;
+    const parsed = normalizeDateInput(date);
+    if (parsed) {
+      return parsed.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    }
+    // Fallback: if we got a string that isn't parseable, show it as-is
+    if (typeof date === "string" && date.trim().length > 0) return date;
+    return null;
+  };
 
   return (
     <section className="max-w-[1640px] mx-auto md:py-16 py-8 px-8">
@@ -95,9 +129,19 @@ export default function Blogs({ blogPost }: BlogsProps) {
               {/* Blog Content */}
               <div className="p-4 lg:p-6 pt-0 flex flex-col flex-1 justify-between">
                 <div>
-                  <p className="text-xs font-medium text-gray-500 uppercase flex items-center gap-2">
-                    {postDate(blog.date)}
-                  </p>
+                  {(() => {
+                    const rawDate: unknown =
+                      (blog as any)?.date ??
+                      (blog as any)?.createdAt ??
+                      (blog as any)?.publishedAt;
+                    const formatted = postDate(rawDate);
+                    if (!formatted) return null;
+                    return (
+                      <p className="text-xs font-medium text-gray-500 uppercase flex items-center gap-2">
+                        {formatted}
+                      </p>
+                    );
+                  })()}
                   <h3 className="text-lg font-semibold text-gray-900 mt-2">
                     {blog.title}
                   </h3>
