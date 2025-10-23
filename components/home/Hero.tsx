@@ -62,9 +62,10 @@ export default function Home() {
             </Reveal>
             <Reveal tag="p" y={16} opacityFrom={0.1}>
               <p className="mt-4 text-black">
-                Helping Tampa families live healthier, pain-free lives through
+                Helping Tampa Families live healthier, pain-free lives through
                 personalized chiropractic
-                <br /> chiropractic care and whole-body wellness.
+                <br />
+                chiropractic care and whole-body wellness
               </p>
             </Reveal>
             <Reveal y={16} opacityFrom={0.1}>

@@ -19,9 +19,9 @@ export default function PainRelief() {
           </Reveal>
           <Reveal tag="p" y={12} opacityFrom={0.1}>
             <p className="text-sm md:text-base mt-4 max-w-2xl mx-auto">
-              Garrett’s presence was limited yet courteous during the inquiry.
-              He supported me with kind and excellent behavior, showing
-              professionalism while arranging everything seamlessly.
+              Helping Tampa Families live healthier, pain-free lives through
+              personalized chiropractic chiropractic care and whole-body
+              wellness
             </p>
           </Reveal>
           <Reveal y={10} opacityFrom={0}>
