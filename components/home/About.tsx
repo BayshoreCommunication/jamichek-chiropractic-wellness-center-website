@@ -63,9 +63,9 @@ export default function About() {
                     <Image
                       src="/images/about/google.png"
                       alt="Google"
-                      width={20}
-                      height={20}
-                      className="h-5"
+                      width={1000}
+                      height={800}
+                      className="w-16"
                     />
                     <div className="flex text-yellow-400 text-lg">★★★★★</div>
                   </div>
