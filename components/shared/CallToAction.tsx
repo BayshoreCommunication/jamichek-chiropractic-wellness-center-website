@@ -19,7 +19,7 @@ export default function PainRelief() {
           </Reveal>
           <Reveal tag="p" y={12} opacityFrom={0.1}>
             <p className="text-sm md:text-base mt-4 max-w-2xl mx-auto">
-              Helping Tampa Families live healthier, pain-free lives through
+              Helping Tampa families live healthier, pain-free lives through
               personalized chiropractic chiropractic care and whole-body
               wellness
             </p>
