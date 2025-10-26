@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, Phone, Target, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     { href: "/", label: "Home" },
     { href: "/help", label: "Let Us Help You" },
     {
-      href: "https://jamichek-weight-loss-tampa-website.vercel.app/",
+      href: "https://www.medicalweightlosstampa.com",
       target: "_blank",
       label: "Weight Loss Services",
     },

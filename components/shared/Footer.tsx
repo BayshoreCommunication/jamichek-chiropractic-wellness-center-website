@@ -74,7 +74,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://jamichek-weight-loss-tampa-website.vercel.app/"
+                  href="https://www.medicalweightlosstampa.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary"
