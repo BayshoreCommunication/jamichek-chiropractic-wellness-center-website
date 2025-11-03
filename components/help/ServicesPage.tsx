@@ -100,7 +100,7 @@ const ServicesPage = () => {
                     </p>
 
                     <Link
-                      href="/contact"
+                      href="https://portal.sked.life/new-patient/time?key=489579519b65115ba47eec5ca31a717befcba2464a5491dc864e7173c4e6cfe6&from=" target="_blank"
                       className="inline-flex gap-2 items-center px-6 py-3 bg-black text-white text-sm font-medium rounded-full hover:bg-primary transition"
                     >
                       Book Now
