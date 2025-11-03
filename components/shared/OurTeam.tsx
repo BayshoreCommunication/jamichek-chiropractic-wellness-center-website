@@ -54,7 +54,7 @@ const teammatesData = [
   // },
   {
     id: 4,
-    image: "/images/team/dana.png",
+    image: "/images/team/dana1.png",
     name: "dana osnos",
     designation: "Executive Director",
     details:
@@ -199,7 +199,7 @@ const TeamPage = () => {
                     alt={selectedMember.name}
                     width={1000}
                     height={800}
-                    className="rounded-2xl object-contain object-top w-full md:w-1/2"
+                    className="rounded-2xl object-contain object-top w-full h-auto md:w-1/2"
                   />
                   <div className="flex-1">
                     <h3 className="text-xl lg:text-3xl font-semibold text-gray-800 uppercase">

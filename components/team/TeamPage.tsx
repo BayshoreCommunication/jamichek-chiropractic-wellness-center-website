@@ -49,7 +49,7 @@ const teammatesData = [
   // },
   {
     id: 3,
-    image: "/images/team/dana.png",
+    image: "/images/team/dana1.png",
     name: "dana",
     designation: "Executive Director",
     details:
