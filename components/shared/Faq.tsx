@@ -29,7 +29,7 @@ export default function Faq() {
           </p>
           <p>
             Yes! Click the{" "}
-            <span className="text-primary font-medium">Book Now</span> button
+            <Link href="https://portal.sked.life/new-patient/time?key=489579519b65115ba47eec5ca31a717befcba2464a5491dc864e7173c4e6cfe6&from="><span className="text-primary font-medium pointer">Book Now</span></Link> button
             and take advantage of our new patient special! We also treat Auto
             Accidents, Workman&apos;s Comp, and Slip &amp; Fall cases.
           </p>
