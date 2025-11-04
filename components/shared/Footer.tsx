@@ -104,7 +104,7 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="#" className="hover:text-primary">
                   Disclaimers
                 </Link>
@@ -123,7 +123,7 @@ export default function Footer() {
                 <Link href="#" className="hover:text-primary">
                   Cookie Policy
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

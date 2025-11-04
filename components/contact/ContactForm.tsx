@@ -1,218 +1,239 @@
 "use client";
-import Image from "next/image";
+
+import { useRef, useState } from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
+import Swal from "sweetalert2";
+import { sendForm } from "emailjs-com";
 import Reveal from "@/components/motion/Reveal";
-import Stagger from "@/components/motion/Stagger";
 
 export default function ContactForm() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+
+  // ================= Validation =================
+  const validate = (form: HTMLFormElement) => {
+    const errors: Record<string, string> = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+    const nameInput = form.elements.namedItem("name") as HTMLInputElement;
+    const emailInput = form.elements.namedItem("email") as HTMLInputElement;
+    const phoneInput = form.elements.namedItem("phone") as HTMLInputElement;
+    const subjectInput = form.elements.namedItem("subject") as HTMLInputElement;
+    const messageInput = form.elements.namedItem("message") as HTMLTextAreaElement;
+
+    const name = nameInput?.value.trim() || "";
+    const email = emailInput?.value.trim() || "";
+    const phone = phoneInput?.value.trim() || "";
+    const subject = subjectInput?.value.trim() || "";
+    const message = messageInput?.value.trim() || "";
+  
+
+    if (!name) errors.name = "Name is required!";
+    if (!email) errors.email = "Email is required!";
+    else if (!emailRegex.test(email)) errors.email = "Invalid email format!";
+    if (!phone) errors.phone = "Phone number is required!";
+    if (!subject) errors.subject = "Subject is required!";
+    if (!message) errors.message = "Message is required!";
+
+    return errors;
+  };
+
+  // ================= Handle Submit =================
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const errors = validate(form);
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong",
+        text: "Please check your input and try again.",
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    sendForm(
+      "service_06nyp8p", // Your EmailJS Service ID
+      "template_hnnzh6s", // Your EmailJS Template ID
+      formRef.current!,
+      "u9W7oXkBTV_cTK0Ki" // Your EmailJS Public Key
+    )
+      .then(() => {
+        setLoading(false);
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Thank you for reaching out. We’ll get back to you soon.",
+          confirmButtonColor: "#131b2a",
+        });
+        form.reset();
+        setFormErrors({});
+      })
+      .catch((err) => {
+        console.error("EmailJS Error:", err);
+        setLoading(false);
+        Swal.fire({
+          icon: "error",
+          title: "Something went wrong",
+          text: "Failed to send message. Please check your file and try again.",
+        });
+      });
+  };
+
   return (
     <section className="max-w-[1640px] px-8 py-8 md:py-16 mx-auto">
-      {/* ===== Header ===== */}
-      {/* <div className="text-center mb-12">
+      {/* ===== Contact Info ===== */}
+      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6 lg:mb-8 items-stretch">
         <Reveal y={20} opacityFrom={0}>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#2a3b47] mb-3">
-            Polk County Bully Project Contact Form
-          </h2>
+          <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-md w-full">
+            <div className="flex items-center justify-center w-10 h-10 bg-blue-100 text-black rounded-lg">
+              <FaMapMarkerAlt size={18} />
+            </div>
+            <div className="text-left">
+              <h4 className="font-semibold text-[#2a3b47] mb-1">Address</h4>
+              <p className="text-gray-600 text-sm">
+                5111 Ehrlich Road Ste 128, Tampa, Florida 33624, United States
+              </p>
+            </div>
+          </div>
         </Reveal>
+
+        <Reveal y={25} opacityFrom={0}>
+          <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-md w-full">
+            <div className="flex items-center justify-center w-10 h-10 bg-blue-100 text-black rounded-lg">
+              <FaEnvelope size={18} />
+            </div>
+            
+            <div className="text-left">
+              <h4 className="font-semibold text-[#2a3b47] mb-1">Email</h4>
+              <p className="text-gray-600 text-sm">support@jachimekchiro.com</p>
+            </div>
+          </div>
+        </Reveal>
+
         <Reveal y={30} opacityFrom={0}>
-          <p className="text-gray-600 max-w-5xl mx-auto text-sm md:text-base">
-            Interested in learning more about our project or one of our awesome
-            pups? Contact us here and we’ll respond as soon as we can.
-          </p>
+          <div className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-md w-full">
+            <div className="flex items-center justify-center w-10 h-10 bg-blue-100 text-black rounded-lg">
+              <FaPhone size={18} />
+            </div>
+            <div className="text-left">
+              <h4 className="font-semibold text-[#2a3b47] mb-1">Phone</h4>
+              <div className="flex flex-wrap gap-4 items-center">
+                <p className="text-gray-600 text-sm">Phone: 813.960.2225</p>
+                <p className="text-gray-600 text-sm">Fax: 813.968.1784</p>
+              </div>
+            </div>
+          </div>
         </Reveal>
-      </div> */}
-
-      {/* ===== Contact Grid ===== */}
-      <div>
-        {" "}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6 lg:mb-8 items-stretch">
-          {/* Address */}
-          <Reveal y={20} opacityFrom={0}>
-            <div className="flex h-full">
-              <div className="flex flex-col justify-between flex-1 bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out">
-                <div className="flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-10 h-10 bg-blue-100 text-black rounded-lg">
-                    <FaMapMarkerAlt size={18} />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-semibold text-[#2a3b47] mb-1">
-                      Address
-                    </h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      5111 Ehrlich Road Ste 128, Tampa, Florida 33624, United
-                      States
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Email */}
-          <Reveal y={25} opacityFrom={0}>
-            <div className="flex h-full">
-              <div className="flex flex-col justify-between flex-1 bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out">
-                <div className="flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-10 h-10 bg-blue-100 text-black rounded-lg">
-                    <FaEnvelope size={18} />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-semibold text-[#2a3b47] mb-1">
-                      Email Address
-                    </h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      support@jachimekchiro.com
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Phone */}
-          <Reveal y={30} opacityFrom={0}>
-            <div className="flex h-full">
-              <div className="flex flex-col justify-between flex-1 bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out">
-                <div className="flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-10 h-10 bg-blue-100 text-black rounded-lg">
-                    <FaPhone size={18} />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-semibold text-[#2a3b47] mb-1">Phone</h4>
-                    <div className="flex flex-wrap gap-4 items-center">
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Phone: 813.960.2225
-                      </p>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Fax: 813.968.1784
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
       </div>
-      <div className="">
-        {/* ===== Left Side: Contact Info ===== */}
 
-        {/* ===== Right Side: Form ===== */}
-        <form
-          action="#"
-          method="POST"
-          className="md:col-span-7 bg-white p-8 rounded-xl shadow-medium flex flex-col justify-between space-y-6"
-        >
-          {/* Name */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label
-                htmlFor="firstName"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Full Name
-              </label>
-              <input
-                id="firstName"
-                name="firstName"
-                type="text"
-                placeholder="Full Name"
-                className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F9F9F9]"
-              />
-            </div>
-            <div>
-            <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Phone
-              </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="Phone"
-                className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F9F9F9]"
-              />
-            </div>
-          </div>
-
-          {/* Email & Phone */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Email"
-                className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F9F9F9]"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Subject
-              </label>
-              <input
-                id="subject"
-                name="subject"
-                type="tel"
-                placeholder="Subject"
-                className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F9F9F9]"
-              />
-            </div>
-          </div>
-
-          {/* File Attachment */}
+      {/* ===== Contact Form ===== */}
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded-xl shadow-md flex flex-col justify-between space-y-6"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label
-              htmlFor="file"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Attach File
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Full Name
             </label>
             <input
-              id="file"
-              name="file"
-              type="file"
-              className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F9F9F9]"
+              name="name"
+              type="text"
+              placeholder="Full Name"
+              className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 bg-[#F9F9F9] focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            {formErrors.name && <span className="text-red-500 text-sm">{formErrors.name}</span>}
           </div>
 
-          {/* Message */}
           <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Message
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Phone
             </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              placeholder="Write your message..."
-              className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F9F9F9]"
-            ></textarea>
+            <input
+              name="phone"
+              type="tel"
+              placeholder="Phone"
+              className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 bg-[#F9F9F9] focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            {formErrors.phone && <span className="text-red-500 text-sm">{formErrors.phone}</span>}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email
+            </label>
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 bg-[#F9F9F9] focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            {formErrors.email && <span className="text-red-500 text-sm">{formErrors.email}</span>}
           </div>
 
-          {/* Submit Button */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Subject
+            </label>
+            <input
+              name="subject"
+              type="text"
+              placeholder="Subject"
+              className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 bg-[#F9F9F9] focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            {formErrors.subject && <span className="text-red-500 text-sm">{formErrors.subject}</span>}
+          </div>
+        </div>
+
+        {/* File Upload */}
+        {/* <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Attach File
+          </label>
+          <input
+            name="file"
+            type="file"
+            accept=".png,.jpg,.jpeg,.pdf"
+            className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 bg-[#F9F9F9] focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {formErrors.file && <span className="text-red-500 text-sm">{formErrors.file}</span>}
+        </div> */}
+
+        {/* Message */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Message
+          </label>
+          <textarea
+            name="message"
+            rows={4}
+            placeholder="Write your message..."
+            className="w-full border border-[#EDEDED] rounded-lg px-4 py-2 bg-[#F9F9F9] focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {formErrors.message && <span className="text-red-500 text-sm">{formErrors.message}</span>}
+        </div>
+
+        <div className="flex justify-start">
           <button
             type="submit"
-            className="self-start bg-primary text-white font-semibold py-2 px-6 rounded-full max-w-40 w-full transition duration-200 mt-4"
+            disabled={loading}
+            className={`self-start bg-primary text-white font-semibold py-2 px-6 rounded-full max-w-40 w-full transition duration-200 mt-4 ${
+              loading ? "opacity-50 cursor-not-allowed" : "hover:bg-green-600"
+            }`}
           >
-            Send
+            {loading ? "Sending..." : "Send Message"}
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </section>
   );
 }
