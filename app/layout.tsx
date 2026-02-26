@@ -37,6 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={albertSans.className}>
+   <script src="https://cdn.userway.org/widget.js" data-account="Ns4hfOuAF8" data-position="3"/>
       <body className="bg-white   text-[#0B0C0E]">
         <Providers>
           <Navbar />
