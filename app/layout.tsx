@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import Script from "next/script";
 import "./globals.css";
 import { Providers } from "./providers";
 
@@ -37,14 +37,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={albertSans.className}>
-   <script src="https://cdn.userway.org/widget.js" data-account="Ns4hfOuAF8" data-position="3"/>
+    <Script src="https://cdn.userway.org/widget.js" data-account="Ns4hfOuAF8" data-position="3" strategy="afterInteractive" />
       <body className="bg-white   text-[#0B0C0E]">
         <Providers>
           <Navbar />
           <main className="">{children}</main>
           <Footer />
         </Providers>
-      </body>
+      </body> 
     </html>
   );
 }
