@@ -65,7 +65,12 @@ export async function generateMetadata({ params }) {
       openGraph: {
         title: theRoleOfChiropracticCareBlog.title,
         description: theRoleOfChiropracticCareBlog.shortDescription,
-        images: theRoleOfChiropracticCareBlog.featuredImage.image.url,
+        images: [
+          {
+            url: theRoleOfChiropracticCareBlog.featuredImage.image.url,
+            alt: theRoleOfChiropracticCareBlog.featuredImage.altText,
+          },
+        ],
         url: `https://www.jachimekchiro.com/the-wellness-journal/${theRoleOfChiropracticCareBlog.slug}`,
         type: "article",
         site_name: "Jachimek Chiropractic & Wellness Center",

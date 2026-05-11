@@ -14,7 +14,13 @@ export const theRoleOfChiropracticCareBlog = {
     image: {
       url: "/images/static-blogs/chiropractic-care-neck-shoulder-tension-relief.webp",
     },
-    altText: "A woman holding the back of her neck because of neck tension",
+    altText:
+      "Chiropractor performing a neck adjustment on a patient to relieve neck and shoulder tension naturally",
+    title: "Chiropractic Care for Neck and Shoulder Tension Relief",
+    description:
+      "A chiropractor providing gentle cervical spine adjustments to help relieve neck stiffness, shoulder tension, poor posture, and muscle tightness in a modern chiropractic clinic setting.",
+    caption:
+      "Chiropractic treatment helping reduce neck stiffness, shoulder tension, and postural strain naturally",
   },
   body: "If your neck and shoulders feel tight and achy, chiropractic care can offer real relief. By gently realigning your spine, chiropractors help melt away muscle stiffness and ease pinched nerves.",
 };
@@ -32,6 +38,9 @@ type RecentBlog = {
       url?: string;
     };
     altText?: string;
+    title?: string;
+    description?: string;
+    caption?: string;
   };
 };
 
@@ -148,11 +157,15 @@ export default function TheRoleOfChiropracticCare({ recentBlogs = [] }: Props) {
               <Image
                 src={blog.featuredImage.image.url}
                 alt={blog.featuredImage.altText}
+                title={blog.featuredImage.title}
                 width={1200}
                 height={760}
                 priority
                 className="h-auto w-full object-cover"
               />
+              <p className="px-4 py-3 text-center text-sm leading-6 text-gray-600">
+                {blog.featuredImage.caption}
+              </p>
             </div>
 
             <div className="bg-white px-6 py-8 shadow-sm sm:px-10 md:px-14 lg:px-[72px] lg:py-[72px]">

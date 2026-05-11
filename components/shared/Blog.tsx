@@ -12,6 +12,9 @@ import parse from "html-react-parser";
 export type BlogFeaturedImage = {
   image?: { url?: string };
   altText?: string;
+  title?: string;
+  description?: string;
+  caption?: string;
 };
 
 export type BlogItem = {
