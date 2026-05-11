@@ -5,8 +5,10 @@ import Link from "next/link";
 import React from "react";
 import parse from "html-react-parser";
 import GetAllPostData from "@/lib/GetPostData";
-import { log } from "console";
 import PainRelief from "@/components/shared/CallToAction";
+import TheRoleOfChiropracticCare, {
+  theRoleOfChiropracticCareBlog,
+} from "@/components/static-blogs/blogs/the-role-of-chiropractic-care";
 
 const css = `
  h1, h2, p, br, nav {
@@ -56,6 +58,21 @@ function truncateText(text, wordLimit) {
 //Social Blog Share
 
 export async function generateMetadata({ params }) {
+  if (params.slug === theRoleOfChiropracticCareBlog.slug) {
+    return {
+      title: theRoleOfChiropracticCareBlog.title,
+      description: theRoleOfChiropracticCareBlog.shortDescription,
+      openGraph: {
+        title: theRoleOfChiropracticCareBlog.title,
+        description: theRoleOfChiropracticCareBlog.shortDescription,
+        images: theRoleOfChiropracticCareBlog.featuredImage.image.url,
+        url: `https://www.jachimekchiro.com/the-wellness-journal/${theRoleOfChiropracticCareBlog.slug}`,
+        type: "article",
+        site_name: "Jachimek Chiropractic & Wellness Center",
+      },
+    };
+  }
+
   const blogPostData = await GetAllPostData();
 
   const blogDetails = blogPostData?.data?.find(
@@ -91,6 +108,24 @@ export async function generateMetadata({ params }) {
 
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
+  const recentBlogs = [
+    theRoleOfChiropracticCareBlog,
+    ...(blogPostData?.data || []),
+  ].filter((blog) => blog?.published !== false);
+
+  if (params.slug === theRoleOfChiropracticCareBlog.slug) {
+    return (
+      <>
+        <BreadcrumbSection
+          subtitle="Get Pain Relief Today With Tampa Bays Chiropractor"
+          title="My Blog"
+          items={[{ label: "Home", href: "/" }, { label: "My Blog" }]}
+        />
+        <TheRoleOfChiropracticCare recentBlogs={recentBlogs} />
+        <PainRelief />
+      </>
+    );
+  }
 
   const blogDetails = blogPostData?.data?.filter(
     (blogs) => blogs.slug === params.slug
@@ -175,13 +210,13 @@ const page = async ({ params }) => {
           <h2 className="font-medium text-4xl text-black border-b-2 border-gray-500 pb-4 mb-6">
             Recent Blogs
           </h2>
-          {blogPostData?.data
+          {recentBlogs
             ?.filter((pub, no) => pub.published === true)
             ?.map((blogs, index) => (
               <Link
                 className="flex items-start gap-2 ps-3 py-3 drop-shadow-lg bg-white my-3"
                 key={index}
-                href={`/blog/${blogs?.slug}`}
+                href={`/the-wellness-journal/${blogs?.slug}`}
               >
                 <Image
                   width={180}

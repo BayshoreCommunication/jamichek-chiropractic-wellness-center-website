@@ -1,12 +1,17 @@
 import BlogSection from "@/components/shared/Blog";
 import BreadcrumbSection from "@/components/shared/BreadcrumbSection";
 import PainRelief from "@/components/shared/CallToAction";
-import { BreadcrumbItem } from "@nextui-org/react";
 import GetAllPostData from "@/lib/GetPostData";
 import React from "react";
+import { theRoleOfChiropracticCareBlog } from "@/components/static-blogs/blogs/the-role-of-chiropractic-care";
 
 const page = async () => {
   const blogPostData = await GetAllPostData();
+  const allPosts = [
+    theRoleOfChiropracticCareBlog,
+    ...(blogPostData?.data || []),
+  ];
+
   return (
     <div>
       <BreadcrumbSection
@@ -17,7 +22,7 @@ const page = async () => {
           { label: "My Blog" }, // current page (no href)
         ]}
       />
-      <BlogSection blogPost={blogPostData} />
+      <BlogSection blogPost={allPosts} />
       <PainRelief />
     </div>
   );
