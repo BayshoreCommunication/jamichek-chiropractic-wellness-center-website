@@ -9,6 +9,9 @@ import PainRelief from "@/components/shared/CallToAction";
 import TheRoleOfChiropracticCare, {
   theRoleOfChiropracticCareBlog,
 } from "@/components/static-blogs/blogs/the-role-of-chiropractic-care";
+import WhatCausesSciaticNervePain, {
+  whatCausesSciaticNervePainBlog,
+} from "@/components/static-blogs/blogs/what-causes-sciatic-nerve-pain";
 
 const css = `
  h1, h2, p, br, nav {
@@ -58,20 +61,25 @@ function truncateText(text, wordLimit) {
 //Social Blog Share
 
 export async function generateMetadata({ params }) {
-  if (params.slug === theRoleOfChiropracticCareBlog.slug) {
+  const staticBlog = [
+    whatCausesSciaticNervePainBlog,
+    theRoleOfChiropracticCareBlog,
+  ].find((blog) => blog.slug === params.slug);
+
+  if (staticBlog) {
     return {
-      title: theRoleOfChiropracticCareBlog.title,
-      description: theRoleOfChiropracticCareBlog.shortDescription,
+      title: staticBlog.title,
+      description: staticBlog.shortDescription,
       openGraph: {
-        title: theRoleOfChiropracticCareBlog.title,
-        description: theRoleOfChiropracticCareBlog.shortDescription,
+        title: staticBlog.title,
+        description: staticBlog.shortDescription,
         images: [
           {
-            url: theRoleOfChiropracticCareBlog.featuredImage.image.url,
-            alt: theRoleOfChiropracticCareBlog.featuredImage.altText,
+            url: staticBlog.featuredImage.image.url,
+            alt: staticBlog.featuredImage.altText,
           },
         ],
-        url: `https://www.jachimekchiro.com/the-wellness-journal/${theRoleOfChiropracticCareBlog.slug}`,
+        url: `https://www.jachimekchiro.com/the-wellness-journal/${staticBlog.slug}`,
         type: "article",
         site_name: "Jachimek Chiropractic & Wellness Center",
       },
@@ -114,11 +122,17 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,
     ...(blogPostData?.data || []),
   ].filter((blog) => blog?.published !== false);
+  const staticBlogComponents = {
+    [whatCausesSciaticNervePainBlog.slug]: WhatCausesSciaticNervePain,
+    [theRoleOfChiropracticCareBlog.slug]: TheRoleOfChiropracticCare,
+  };
+  const StaticBlogComponent = staticBlogComponents[params.slug];
 
-  if (params.slug === theRoleOfChiropracticCareBlog.slug) {
+  if (StaticBlogComponent) {
     return (
       <>
         <BreadcrumbSection
@@ -126,7 +140,7 @@ const page = async ({ params }) => {
           title="My Blog"
           items={[{ label: "Home", href: "/" }, { label: "My Blog" }]}
         />
-        <TheRoleOfChiropracticCare recentBlogs={recentBlogs} />
+        <StaticBlogComponent recentBlogs={recentBlogs} />
         <PainRelief />
       </>
     );
