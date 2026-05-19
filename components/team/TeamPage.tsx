@@ -1,11 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import Reveal from "../motion/Reveal";
 import Image from "next/image";
-import Link from "next/link";
-import { TbBrandFacebook } from "react-icons/tb";
-import { FiInstagram } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
+import { useState } from "react";
+import Reveal from "../motion/Reveal";
 
 const teammatesData = [
   {
@@ -73,7 +69,7 @@ const teammatesData = [
   //     x: "https://x.com",
   //   },
   // },
-];git 
+];
 
 type Teammate = (typeof teammatesData)[number];
 
