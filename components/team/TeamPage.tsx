@@ -72,8 +72,8 @@ const teammatesData = [
   //     instagram: "https://instagram.com",
   //     x: "https://x.com",
   //   },
-  },
-];
+  // },
+];git 
 
 type Teammate = (typeof teammatesData)[number];
 
