@@ -6,6 +6,9 @@ import React from "react";
 import parse from "html-react-parser";
 import GetAllPostData from "@/lib/GetPostData";
 import PainRelief from "@/components/shared/CallToAction";
+import BenefitsOfRegularChiropracticCare, {
+  benefitsOfRegularChiropracticCareBlog,
+} from "@/components/static-blogs/blogs/benefits-of-regular-chiropractic-care";
 import TheRoleOfChiropracticCare, {
   theRoleOfChiropracticCareBlog,
 } from "@/components/static-blogs/blogs/the-role-of-chiropractic-care";
@@ -62,17 +65,23 @@ function truncateText(text, wordLimit) {
 
 export async function generateMetadata({ params }) {
   const staticBlog = [
+    benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,
   ].find((blog) => blog.slug === params.slug);
 
   if (staticBlog) {
     return {
-      title: staticBlog.title,
-      description: staticBlog.shortDescription,
+      title: staticBlog.metaTitle || staticBlog.title,
+      description: staticBlog.metaDescription || staticBlog.shortDescription,
+      alternates: {
+        canonical:
+          staticBlog.canonicalPath ||
+          `/the-wellness-journal/${staticBlog.slug}`,
+      },
       openGraph: {
-        title: staticBlog.title,
-        description: staticBlog.shortDescription,
+        title: staticBlog.metaTitle || staticBlog.title,
+        description: staticBlog.metaDescription || staticBlog.shortDescription,
         images: [
           {
             url: staticBlog.featuredImage.image.url,
@@ -122,11 +131,14 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,
     ...(blogPostData?.data || []),
   ].filter((blog) => blog?.published !== false);
   const staticBlogComponents = {
+    [benefitsOfRegularChiropracticCareBlog.slug]:
+      BenefitsOfRegularChiropracticCare,
     [whatCausesSciaticNervePainBlog.slug]: WhatCausesSciaticNervePain,
     [theRoleOfChiropracticCareBlog.slug]: TheRoleOfChiropracticCare,
   };
