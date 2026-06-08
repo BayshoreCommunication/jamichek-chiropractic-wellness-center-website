@@ -6,10 +6,12 @@ import React from "react";
 import { benefitsOfRegularChiropracticCareBlog } from "@/components/static-blogs/blogs/benefits-of-regular-chiropractic-care";
 import { theRoleOfChiropracticCareBlog } from "@/components/static-blogs/blogs/the-role-of-chiropractic-care";
 import { whatCausesSciaticNervePainBlog } from "@/components/static-blogs/blogs/what-causes-sciatic-nerve-pain";
+import { howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog } from "@/components/static-blogs/blogs/how-chiropractic-treatment-helps-reduce-inflammation-and-improve-mobility";
 
 const page = async () => {
   const blogPostData = await GetAllPostData();
   const allPosts = [
+    howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,

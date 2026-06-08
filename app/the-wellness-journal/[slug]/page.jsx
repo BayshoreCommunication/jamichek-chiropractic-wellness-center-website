@@ -15,6 +15,9 @@ import TheRoleOfChiropracticCare, {
 import WhatCausesSciaticNervePain, {
   whatCausesSciaticNervePainBlog,
 } from "@/components/static-blogs/blogs/what-causes-sciatic-nerve-pain";
+import HowChiropracticTreatmentHelpsReduceInflammationAndImproveMobility, {
+  howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
+} from "@/components/static-blogs/blogs/how-chiropractic-treatment-helps-reduce-inflammation-and-improve-mobility";
 
 const css = `
  h1, h2, p, br, nav {
@@ -65,6 +68,7 @@ function truncateText(text, wordLimit) {
 
 export async function generateMetadata({ params }) {
   const staticBlog = [
+    howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,
@@ -131,12 +135,15 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,
     ...(blogPostData?.data || []),
   ].filter((blog) => blog?.published !== false);
   const staticBlogComponents = {
+    [howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog.slug]:
+      HowChiropracticTreatmentHelpsReduceInflammationAndImproveMobility,
     [benefitsOfRegularChiropracticCareBlog.slug]:
       BenefitsOfRegularChiropracticCare,
     [whatCausesSciaticNervePainBlog.slug]: WhatCausesSciaticNervePain,
