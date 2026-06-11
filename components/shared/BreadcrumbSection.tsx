@@ -34,13 +34,13 @@ const BreadcrumbSection: React.FC<BreadcrumbSectionProps> = ({
         </p>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-5xl font-bold mt-4 text-gray-900">
+        <p className="text-3xl md:text-5xl font-bold mt-4 text-gray-900">
           {title}
           {highlight && (
             <span className="text-[#4E741E] px-3">{highlight}</span>
           )}
           {title2}
-        </h1>
+        </p>
 
         {/* Breadcrumb Navigation */}
         <nav
