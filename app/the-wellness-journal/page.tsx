@@ -12,8 +12,8 @@ import { canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog } from
 const page = async () => {
   const blogPostData = await GetAllPostData();
   const allPosts = [
-    howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
+    howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,

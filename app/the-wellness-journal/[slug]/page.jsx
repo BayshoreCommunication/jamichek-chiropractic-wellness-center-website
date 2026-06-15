@@ -140,11 +140,11 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
     howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,
-    canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
     ...(blogPostData?.data || []),
   ].filter((blog) => blog?.published !== false);
   const staticBlogComponents = {
