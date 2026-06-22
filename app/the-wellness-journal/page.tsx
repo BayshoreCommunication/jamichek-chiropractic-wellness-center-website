@@ -12,15 +12,23 @@ import { whatSupplementsHelpWithWeightLossBlog } from "@/components/static-blogs
 
 const page = async () => {
   const blogPostData = await GetAllPostData();
-  const allPosts = [
+  const rawPosts = [
+    whatSupplementsHelpWithWeightLossBlog,
     canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
     howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,
-    whatSupplementsHelpWithWeightLossBlog,
     ...(blogPostData?.data || []),
   ];
+
+  const getBlogDate = (blog: any) => {
+    const raw = blog?.date || blog?.createdAt || blog?.publishedAt || blog?.created_at || blog?.published_at;
+    if (!raw) return 0;
+    return new Date(raw).getTime() || 0;
+  };
+
+  const allPosts = [...rawPosts].sort((a, b) => getBlogDate(b) - getBlogDate(a));
 
   return (
     <div>
