@@ -8,6 +8,7 @@ import { theRoleOfChiropracticCareBlog } from "@/components/static-blogs/blogs/t
 import { whatCausesSciaticNervePainBlog } from "@/components/static-blogs/blogs/what-causes-sciatic-nerve-pain";
 import { howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog } from "@/components/static-blogs/blogs/how-chiropractic-treatment-helps-reduce-inflammation-and-improve-mobility";
 import { canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog } from "@/components/static-blogs/blogs/can-chiropractic-care-improve-sleep-quality-and-reduce-nighttime-pain";
+import { whatSupplementsHelpWithWeightLossBlog } from "@/components/static-blogs/blogs/what-supplements-help-with-weight-loss";
 
 const page = async () => {
   const blogPostData = await GetAllPostData();
@@ -17,6 +18,7 @@ const page = async () => {
     benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
     theRoleOfChiropracticCareBlog,
+    whatSupplementsHelpWithWeightLossBlog,
     ...(blogPostData?.data || []),
   ];
 
