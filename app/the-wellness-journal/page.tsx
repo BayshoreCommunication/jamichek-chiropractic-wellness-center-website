@@ -3,12 +3,21 @@ import BreadcrumbSection from "@/components/shared/BreadcrumbSection";
 import PainRelief from "@/components/shared/CallToAction";
 import GetAllPostData from "@/lib/GetPostData";
 import React from "react";
+import type { Metadata } from "next";
 import { benefitsOfRegularChiropracticCareBlog } from "@/components/static-blogs/blogs/benefits-of-regular-chiropractic-care";
 import { theRoleOfChiropracticCareBlog } from "@/components/static-blogs/blogs/the-role-of-chiropractic-care";
 import { whatCausesSciaticNervePainBlog } from "@/components/static-blogs/blogs/what-causes-sciatic-nerve-pain";
 import { howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog } from "@/components/static-blogs/blogs/how-chiropractic-treatment-helps-reduce-inflammation-and-improve-mobility";
 import { canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog } from "@/components/static-blogs/blogs/can-chiropractic-care-improve-sleep-quality-and-reduce-nighttime-pain";
 import { whatSupplementsHelpWithWeightLossBlog } from "@/components/static-blogs/blogs/what-supplements-help-with-weight-loss";
+
+export const metadata: Metadata = {
+  title: "The Wellness Journal - Blog | Jachimek Chiropractic",
+  description: "Read the latest articles, health insights, and wellness tips from the chiropractic team at Jachimek Chiropractic & Wellness Center.",
+  alternates: {
+    canonical: "/the-wellness-journal",
+  },
+};
 
 const page = async () => {
   const blogPostData = await GetAllPostData();

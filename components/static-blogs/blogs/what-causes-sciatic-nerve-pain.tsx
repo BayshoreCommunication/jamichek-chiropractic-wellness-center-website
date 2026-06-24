@@ -9,6 +9,8 @@ export const whatCausesSciaticNervePainBlog = {
   category: "Chiropractic Care",
   createdAt: "2026-05-14",
   published: true,
+  metaTitle: "Stop Sciatic Nerve Pain: Expert Chiropractic Care",
+  metaDescription: "Chronic leg pain often stems from hidden spinal compression. We investigate the source of your sciatica to provide real, drug-free pressure relief.",
   shortDescription:
     "Sciatica occurs when the sciatic nerve becomes irritated, inflamed, or compressed from a herniated disc, spinal stenosis, or piriformis syndrome.",
   featuredImage: {

@@ -8,6 +8,8 @@ export const theRoleOfChiropracticCareBlog = {
   category: "Chiropractic Care",
   createdAt: "2026-05-11",
   published: true,
+  metaTitle: "Chiropractic Care for Neck & Shoulder Tension",
+  metaDescription: "Struggling with neck stiffness or shoulder knots? Learn how chiropractic adjustments and posture changes can provide lasting relief. Book your visit today!",
   shortDescription:
     "If your neck and shoulders feel tight and achy, chiropractic care can offer real relief by improving spinal movement, easing stiffness, and supporting better posture.",
   featuredImage: {

@@ -128,13 +128,16 @@ export async function generateMetadata({ params }) {
   return {
     title: blogDetails?.title,
     description: shortDescription,
+    alternates: {
+      canonical: `/the-wellness-journal/${blogDetails?.slug}`,
+    },
     openGraph: {
       title: blogDetails?.title,
       description: shortDescription,
       images: blogDetails?.featuredImage?.image?.url,
-      url: `https://hessspinalandmedicalcenters-website.vercel.app/blog/${blogDetails?.slug}`,
+      url: `https://www.jachimekchiro.com/the-wellness-journal/${blogDetails?.slug}`,
       type: "article",
-      site_name: "melamedlawpllc.com",
+      site_name: "Jachimek Chiropractic & Wellness Center",
     },
   };
 }
