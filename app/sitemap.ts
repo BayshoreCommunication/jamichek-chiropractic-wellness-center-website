@@ -27,6 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "how-chiropractic-treatment-helps-reduce-inflammation-and-improve-mobility",
     "can-chiropractic-care-improve-sleep-quality-and-reduce-nighttime-pain",
     "what-supplements-help-with-weight-loss",
+    "chiropractic-therapy-slip-fall-recovery",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({
