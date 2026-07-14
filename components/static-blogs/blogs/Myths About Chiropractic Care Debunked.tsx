@@ -287,7 +287,7 @@ export default function MythsAboutChiropracticCareDebunked({
                     </p>
 
                     <div className="border border-[#dbe4d2] bg-[#fbfdf8] p-6 rounded-[8px] my-6">
-                      <h4 className="font-bold text-[#202124] text-[16px] mb-3">Survey Insight:</h4>
+                      <h3 className="font-bold text-[#202124] text-[16px] mb-3">Survey Insight:</h3>
                       <ul className="space-y-2">
                         <li className="flex items-start gap-3 text-sm text-gray-700">
                           <span className="text-[#4E741E] font-bold mt-0.5">•</span>
@@ -359,9 +359,9 @@ export default function MythsAboutChiropracticCareDebunked({
                     </div>
 
                     <div className="mt-8 border border-[#4E741E] bg-[#f6fff0] p-6 text-center rounded-[8px] flex flex-col items-center justify-center gap-3">
-                      <h4 className="text-lg font-bold text-[#202124]">
+                      <h2 className="text-lg font-bold text-[#202124]">
                         Stop Living With Unexplained Pain in Tampa
-                      </h4>
+                      </h2>
                       <p className="text-sm font-semibold text-gray-700">
                         Our $47 New Patient Special includes a full consultation, exam, and personalized treatment plan.
                       </p>
@@ -476,7 +476,7 @@ export default function MythsAboutChiropracticCareDebunked({
                     </p>
 
                     <div className="border border-[#dbe4d2] bg-[#fbfdf8] p-6 rounded-[8px] my-6">
-                      <h4 className="font-bold text-[#202124] text-[16px] mb-3">Survey Insight:</h4>
+                      <h3 className="font-bold text-[#202124] text-[16px] mb-3">Survey Insight:</h3>
                       <ul className="space-y-2">
                         <li className="flex items-start gap-3 text-sm text-gray-700">
                           <span className="text-[#4E741E] font-bold mt-0.5">•</span>
@@ -543,9 +543,9 @@ export default function MythsAboutChiropracticCareDebunked({
                     </div>
 
                     <div className="mt-8 border border-[#4E741E] bg-[#f6fff0] p-6 text-center rounded-[8px] flex flex-col items-center justify-center gap-3">
-                      <h3 className="text-lg font-bold text-[#202124]">
+                      <h2 className="text-lg font-bold text-[#202124]">
                         Ready to Finally Get Pain-Free in Tampa?
-                      </h3>
+                      </h2>
                       <p className="text-sm font-semibold text-gray-700">
                         Book your $47 New Patient Special today. No long waits. No judgment. Just results.
                       </p>
