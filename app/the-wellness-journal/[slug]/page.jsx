@@ -27,6 +27,9 @@ import WhatSupplementsHelpWithWeightLoss, {
 import HowChiropracticTherapySupportsRecoveryAfterSlipAndFallInjuries, {
   chiropracticTherapySlipFallRecoveryBlog,
 } from "@/components/static-blogs/blogs/How Chiropractic Therapy Supports Recovery After Slip and Fall Injuries";
+import MythsAboutChiropracticCareDebunked, {
+  chiropracticCareMythsDebunkedBlog,
+} from "@/components/static-blogs/blogs/Myths About Chiropractic Care Debunked";
 
 
 const css = `
@@ -85,6 +88,7 @@ export async function generateMetadata({ params }) {
     canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
     whatSupplementsHelpWithWeightLossBlog,
     chiropracticTherapySlipFallRecoveryBlog,
+    chiropracticCareMythsDebunkedBlog,
   ].find((blog) => blog.slug === params.slug);
 
   if (staticBlog) {
@@ -158,6 +162,7 @@ const page = async ({ params }) => {
     theRoleOfChiropracticCareBlog,
     whatSupplementsHelpWithWeightLossBlog,
     chiropracticTherapySlipFallRecoveryBlog,
+    chiropracticCareMythsDebunkedBlog,
     ...(blogPostData?.data || []),
   ].filter((blog) => blog?.published !== false);
   const staticBlogComponents = {
@@ -173,6 +178,8 @@ const page = async ({ params }) => {
       WhatSupplementsHelpWithWeightLoss,
     [chiropracticTherapySlipFallRecoveryBlog.slug]:
       HowChiropracticTherapySupportsRecoveryAfterSlipAndFallInjuries,
+    [chiropracticCareMythsDebunkedBlog.slug]:
+      MythsAboutChiropracticCareDebunked,
   };
   const StaticBlogComponent = staticBlogComponents[params.slug];
 

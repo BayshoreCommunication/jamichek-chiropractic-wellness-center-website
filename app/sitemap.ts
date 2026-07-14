@@ -28,6 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "can-chiropractic-care-improve-sleep-quality-and-reduce-nighttime-pain",
     "what-supplements-help-with-weight-loss",
     "chiropractic-therapy-slip-fall-recovery",
+    "chiropractic-care-myths-debunked",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({
