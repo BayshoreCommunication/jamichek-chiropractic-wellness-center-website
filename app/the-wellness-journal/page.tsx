@@ -12,6 +12,7 @@ import { canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog } from
 import { whatSupplementsHelpWithWeightLossBlog } from "@/components/static-blogs/blogs/what-supplements-help-with-weight-loss";
 import { chiropracticTherapySlipFallRecoveryBlog } from "@/components/static-blogs/blogs/How Chiropractic Therapy Supports Recovery After Slip and Fall Injuries";
 import { chiropracticCareMythsDebunkedBlog } from "@/components/static-blogs/blogs/Myths About Chiropractic Care Debunked";
+import { chiropracticCareDeskWorkersBlog } from "@/components/static-blogs/blogs/is-chiropractic-care-effective-for-desk-workers-with-back-and-neck-pain";
 
 export const metadata: Metadata = {
   title: "The Wellness Journal - Blog | Jachimek Chiropractic",
@@ -32,6 +33,7 @@ const page = async () => {
     theRoleOfChiropracticCareBlog,
     chiropracticTherapySlipFallRecoveryBlog,
     chiropracticCareMythsDebunkedBlog,
+    chiropracticCareDeskWorkersBlog,
     ...(blogPostData?.data || []),
   ];
 
