@@ -374,9 +374,9 @@ export default function IsChiropracticCareEffectiveForDeskWorkersWithBackAndNeck
                     </p>
 
                     <div className="mt-8 border border-[#4E741E] bg-[#f6fff0] p-6 text-center rounded-[8px] flex flex-col items-center justify-center gap-3">
-                      <h3 className="text-lg font-bold text-[#202124]">
+                      <h2 className="text-lg font-bold text-[#202124]">
                         Stop Letting Desk Pain Win
-                      </h3>
+                      </h2>
                       <p className="text-sm font-semibold text-gray-700">
                         Jachimek Chiropractic offers a full consultation, exam, and treatment plan for just $47.
                       </p>
@@ -542,8 +542,7 @@ export default function IsChiropracticCareEffectiveForDeskWorkersWithBackAndNeck
                     </p>
 
                     <div className="border border-[#dbe4d2] bg-[#fbfdf8] p-6 rounded-[8px]">
-                      <h3 className="flex items-center gap-2 font-bold text-[#202124] text-[17px] mb-4">
-                        <Check className="h-5 w-5 text-[#4E741E]" />
+                      <h3 className="font-bold text-[#202124] text-[17px] mb-4">
                         Desk Habits That Protect Your Progress
                       </h3>
                       <ul className="space-y-3">
