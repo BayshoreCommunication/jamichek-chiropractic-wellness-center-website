@@ -13,6 +13,8 @@ import { whatSupplementsHelpWithWeightLossBlog } from "@/components/static-blogs
 import { chiropracticTherapySlipFallRecoveryBlog } from "@/components/static-blogs/blogs/How Chiropractic Therapy Supports Recovery After Slip and Fall Injuries";
 import { chiropracticCareMythsDebunkedBlog } from "@/components/static-blogs/blogs/Myths About Chiropractic Care Debunked";
 import { chiropracticCareDeskWorkersBlog } from "@/components/static-blogs/blogs/is-chiropractic-care-effective-for-desk-workers-with-back-and-neck-pain";
+import { whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog } from "@/components/static-blogs/blogs/what-is-the-difference-between-sciatica-and-lower-back-pain";
+
 
 export const metadata: Metadata = {
   title: "The Wellness Journal - Blog | Jachimek Chiropractic",
@@ -34,6 +36,7 @@ const page = async () => {
     chiropracticTherapySlipFallRecoveryBlog,
     chiropracticCareMythsDebunkedBlog,
     chiropracticCareDeskWorkersBlog,
+    whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog,
     ...(blogPostData?.data || []),
   ];
 

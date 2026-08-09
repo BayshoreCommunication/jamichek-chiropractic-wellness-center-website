@@ -30,6 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "chiropractic-therapy-slip-fall-recovery",
     "chiropractic-care-myths-debunked",
     "is-chiropractic-care-effective-for-desk-workers-with-back-and-neck-pain",
+    "what-is-the-difference-between-sciatica-and-lower-back-pain",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({

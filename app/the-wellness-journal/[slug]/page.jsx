@@ -33,6 +33,9 @@ import MythsAboutChiropracticCareDebunked, {
 import IsChiropracticCareEffectiveForDeskWorkersWithBackAndNeckPain, {
   chiropracticCareDeskWorkersBlog,
 } from "@/components/static-blogs/blogs/is-chiropractic-care-effective-for-desk-workers-with-back-and-neck-pain";
+import WhatIsTheDifferenceBetweenSciaticaAndLowerBackPain, {
+  whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog,
+} from "@/components/static-blogs/blogs/what-is-the-difference-between-sciatica-and-lower-back-pain";
 
 
 const css = `
@@ -93,6 +96,7 @@ export async function generateMetadata({ params }) {
     chiropracticTherapySlipFallRecoveryBlog,
     chiropracticCareMythsDebunkedBlog,
     chiropracticCareDeskWorkersBlog,
+    whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog,
   ].find((blog) => blog.slug === params.slug);
 
   if (staticBlog) {
@@ -168,6 +172,7 @@ const page = async ({ params }) => {
     chiropracticTherapySlipFallRecoveryBlog,
     chiropracticCareMythsDebunkedBlog,
     chiropracticCareDeskWorkersBlog,
+    whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog,
     ...(blogPostData?.data || []),
   ].filter((blog) => blog?.published !== false);
   const staticBlogComponents = {
@@ -187,6 +192,8 @@ const page = async ({ params }) => {
       MythsAboutChiropracticCareDebunked,
     [chiropracticCareDeskWorkersBlog.slug]:
       IsChiropracticCareEffectiveForDeskWorkersWithBackAndNeckPain,
+    [whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog.slug]:
+      WhatIsTheDifferenceBetweenSciaticaAndLowerBackPain,
   };
   const StaticBlogComponent = staticBlogComponents[params.slug];
 
