@@ -1,16 +1,13 @@
 "use client";
-import React, { useState } from "react";
-import Reveal from "../motion/Reveal";
-import Stagger from "../motion/Stagger";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { TbBrandFacebook } from "react-icons/tb";
-import { FiInstagram } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Reveal from "../motion/Reveal";
+import Stagger from "../motion/Stagger";
 
 const teammatesData = [
   {
@@ -72,6 +69,23 @@ const teammatesData = [
     designation: "Doctor",
     details:
       "Dr. Hunter Furman is from Frederick, Maryland. He loves to see how chiropractic can positively change people’s lives, and it continues to be one of the most rewarding experiences he can be a part of.Dr. Furman is deeply passionate about helping others through chiropractic care and takes pride in witnessing the transformation that comes from improved health and well-being.He earned his Bachelor’s degree in Exercise Science from Towson University and went on to receive his Doctorate of Chiropractic from Palmer College of Chiropractic. His education, combined with his dedication to patient-centered care, allows him to provide compassionate and effective treatment to everyone he serves.",
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
+  },
+
+  {
+    id: 5,
+    image: "/images/chiro-photo.jpeg",
+    name: `Dr. Donny Morris, DC`,
+    designation: "Chiropractic Physician",
+    details: `Dr. Donny Morris is a board-certified Chiropractic Physician originally from Leesburg, Virginia. He completed his undergraduate studies at Radford University before earning his Doctor of Chiropractic degree from Palmer College of Chiropractic in Daytona Beach, Florida. Dr. Morris’s passion for helping others began with his own experience with chronic back pain while working in construction. That firsthand understanding of how pain can impact everyday life inspired him to pursue a career in healthcare and help others find relief, restore function, and get back to doing the things they love.
+
+Today, Dr. Morris is dedicated to providing patient-centered care focused on meaningful pain relief, improved mobility, and long-term wellness. He believes that lasting health goes beyond simply addressing symptoms and encourages patients to take an active role in their overall well-being.
+
+  Outside of the office, Dr. Morris has a strong passion for fitness and weightlifting. He enjoys challenging himself daily, spending time at the beach, and staying active outdoors. His commitment to living an active, balanced lifestyle is something he strives to share with his patients as they work toward becoming healthier, stronger, and more confident in their everyday lives.`,
     // socialsMedia: {
     //   facebook: "https://facebook.com",
     //   instagram: "https://instagram.com",
@@ -148,7 +162,7 @@ const TeamPage = () => {
                       alt={member.name}
                       width={400}
                       height={400}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-64 object-cover object-[center_15%]"
                     />
 
                     <div className="px-6 pt-4 pb-6 flex flex-col flex-1">

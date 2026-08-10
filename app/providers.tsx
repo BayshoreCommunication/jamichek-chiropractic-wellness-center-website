@@ -5,7 +5,9 @@ import { useEffect } from "react";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-reveal]"),
+    );
 
     // Initialize with base reveal class and direction modifiers
     for (const el of elements) {
@@ -38,7 +40,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           }
         }
       },
-      { root: null, rootMargin: "0px", threshold: 0.15 }
+      { root: null, rootMargin: "0px", threshold: 0.15 },
     );
 
     elements.forEach((el) => observer.observe(el));
