@@ -81,7 +81,9 @@ const teammatesData = [
     image: "/images/chiro-photo.jpeg",
     name: `Dr. Donny Morris, DC`,
     designation: "Chiropractic Physician",
-    details: `Dr. Donny Morris is a board-certified Chiropractic Physician originally from Leesburg, Virginia. He completed his undergraduate studies at Radford University before earning his Doctor of Chiropractic degree from Palmer College of Chiropractic in Daytona Beach, Florida. Dr. Morris’s passion for helping others began with his own experience with chronic back pain while working in construction. That firsthand understanding of how pain can impact everyday life inspired him to pursue a career in healthcare and help others find relief, restore function, and get back to doing the things they love.
+    details: `Dr. Donny Morris is a board-certified Chiropractic Physician originally from Leesburg, Virginia. He completed his undergraduate studies at Radford University before earning his Doctor of Chiropractic degree from Palmer College of Chiropractic in Daytona Beach, Florida. 
+    
+    Dr. Morris’s passion for helping others began with his own experience with chronic back pain while working in construction. That firsthand understanding of how pain can impact everyday life inspired him to pursue a career in healthcare and help others find relief, restore function, and get back to doing the things they love.
 
 Today, Dr. Morris is dedicated to providing patient-centered care focused on meaningful pain relief, improved mobility, and long-term wellness. He believes that lasting health goes beyond simply addressing symptoms and encourages patients to take an active role in their overall well-being.
 
@@ -222,7 +224,7 @@ const TeamPage = () => {
                     <p className="text-primary font-medium mt-1">
                       {selectedMember.designation}
                     </p>
-                    <p className="text-gray-700 mt-4">
+                    <p className="text-gray-700 mt-4 whitespace-pre-line">
                       {selectedMember.details}
                     </p>
                     {/* <div className="flex gap-4 mt-6">
