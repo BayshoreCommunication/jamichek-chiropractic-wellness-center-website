@@ -212,6 +212,131 @@ function ExternalSource({
   );
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.jachimekchiro.com/",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Wellness Journal",
+          "item": "https://www.jachimekchiro.com/the-wellness-journal",
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Is the Difference Between Sciatica and Lower Back Pain?",
+          "item":
+            "https://www.jachimekchiro.com/the-wellness-journal/what-is-the-difference-between-sciatica-and-lower-back-pain",
+        },
+      ],
+    },
+    {
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id":
+          "https://www.jachimekchiro.com/the-wellness-journal/what-is-the-difference-between-sciatica-and-lower-back-pain",
+      },
+      "headline": "What Is the Difference Between Sciatica and Lower Back Pain?",
+      "name": "The hidden dangers of sciatica vs lower back pain",
+      "description":
+        "One is a muscle but the other is a nerve. Mixing up sciatica vs lower back pain wastes months on bad routines. Spot the travel sign before surgery.",
+      "url":
+        "https://www.jachimekchiro.com/the-wellness-journal/what-is-the-difference-between-sciatica-and-lower-back-pain",
+      "image":
+        "https://www.jachimekchiro.com/images/static-blogs/sciatica-vs-lower-back-pain-differences-chiropractic.webp",
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://www.jachimekchiro.com/the-wellness-journal",
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Sciatica and Lower Back Pain",
+        "description":
+          "An overview of the differences between sciatica and general lower back pain, including symptoms, causes, nerve involvement, warning signs, and conservative treatment approaches.",
+      },
+      "keywords": [
+        "sciatica vs lower back pain",
+        "difference between sciatica and lower back pain",
+        "sciatica symptoms",
+        "lower back pain symptoms",
+        "sciatic nerve pain",
+        "lower back pain Tampa",
+        "sciatica treatment Tampa",
+        "chiropractor for sciatica",
+        "chiropractor for lower back pain",
+        "spinal decompression Tampa",
+        "back pain treatment",
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Jachimek Chiropractic & Wellness",
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jachimek Chiropractic & Wellness",
+        "url": "https://www.jachimekchiro.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.jachimekchiro.com/images/hero/logo.png",
+        },
+      },
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09",
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can sciatica happen on both sides of the body at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "It's uncommon. Bilateral sciatica does happen sometimes. It usually comes from central spinal stenosis or a massive disc herniation affecting both nerve roots at once. Most cases remain on one side.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Is a herniated disc the only cause of sciatica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "No it doesn’t. Plenty of people have disc herniations that show up on scans but they feel zero pain. Sciatica only occurs if the herniation physically touches or pinches a nerve root.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use heat or ice for sciatica nerve pain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "Use ice for the first couple of days to bring down the inflammation around the nerve root. After that you want to switch to heat because heat relaxes the tight muscles that are squeezing the nerve. Do not leave heating pads on for hours though.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Does walking make sciatica better or worse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "Walking is good actually but don’t take long strides and stay away from hills. It heals the area by pumping nutrients and blood into the discs.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function WhatIsTheDifferenceBetweenSciaticaAndLowerBackPain({
   recentBlogs = [],
 }: Props) {
@@ -225,6 +350,12 @@ export default function WhatIsTheDifferenceBetweenSciaticaAndLowerBackPain({
 
   return (
     <section className="bg-[#f5f6f2]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       <div className="max-w-[1640px] mx-auto px-4 sm:px-8 py-10 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_390px] gap-10 lg:gap-12">
           <article className="min-w-0">
