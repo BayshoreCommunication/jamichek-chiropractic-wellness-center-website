@@ -3,12 +3,12 @@ import CallToAction from "@/components/shared/CallToAction";
 import FbReviewSection from "@/components/team/FbReviewSection";
 import Instagram from "@/components/team/InstagramSection";
 import TeamPage from "@/components/team/TeamPage";
-import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Team | Jachimek Chiropractic",
-  description: "Meet the team of board-certified chiropractors and specialists at Jachimek Chiropractic & Wellness Center in Tampa, FL.",
+  description:
+    "Meet the team of board-certified chiropractors and specialists at Jachimek Chiropractic & Wellness Center in Tampa, FL.",
   alternates: {
     canonical: "/team",
   },

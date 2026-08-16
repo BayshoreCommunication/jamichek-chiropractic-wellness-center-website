@@ -44,9 +44,9 @@ const teammatesData = [
   //   },
   // },
   {
-    id: 3,
+    id: 4,
     image: "/images/team/dana1.png",
-    name: "dana",
+    name: "dana osnos",
     designation: "Executive Director",
     details:
       "I was born in Pasadena, California and raised in Cleveland, Ohio until moving to Florida at the age of 10. I studied Journalism at High School in Tampa, where I was active in clubs like Quill & Scroll and the National Honors Society. My career began in the food and beverage industry as a corporate trainer for Applebee's, traveling throughout Florida to train staff for new locations. In 2018, I transitioned to the health industry with a mission to help people live healthier lives without reliance on medications. I have 3 children, Elijah, Nevaeh, and Madison. I enjoy sporting events, spending time with family, community outreach, and learning ASL. Dedicated to personal growth, I strive to make a positive impact at home and in the community.",
@@ -57,18 +57,37 @@ const teammatesData = [
     // },
   },
   // {
-  //   id: 5,
-  //   image: "/images/team/hunter.jpg",
-  //   name: "Dr. Hunter Furman",
-  //   designation: "Doctor",
-  //   details:
-  //     "Dr. Hunter Furman is from Frederick, Maryland. He loves to see how chiropractic can positively change people’s lives, and it continues to be one of the most rewarding experiences he can be a part of.Dr. Furman is deeply passionate about helping others through chiropractic care and takes pride in witnessing the transformation that comes from improved health and well-being.He earned his Bachelor’s degree in Exercise Science from Towson University and went on to receive his Doctorate of Chiropractic from Palmer College of Chiropractic. His education, combined with his dedication to patient-centered care, allows him to provide compassionate and effective treatment to everyone he serves.",
-  //   socialsMedia: {
-  //     facebook: "https://facebook.com",
-  //     instagram: "https://instagram.com",
-  //     x: "https://x.com",
-  //   },
+  // id: 5,
+  // image: "/images/team/hunter.jpg",
+  // name: "Dr. Hunter Furman",
+  // designation: "Doctor",
+  // details:
+  //   "Dr. Hunter Furman is from Frederick, Maryland. He loves to see how chiropractic can positively change people’s lives, and it continues to be one of the most rewarding experiences he can be a part of.Dr. Furman is deeply passionate about helping others through chiropractic care and takes pride in witnessing the transformation that comes from improved health and well-being.He earned his Bachelor’s degree in Exercise Science from Towson University and went on to receive his Doctorate of Chiropractic from Palmer College of Chiropractic. His education, combined with his dedication to patient-centered care, allows him to provide compassionate and effective treatment to everyone he serves.",
+  // socialsMedia: {
+  //   facebook: "https://facebook.com",
+  //   instagram: "https://instagram.com",
+  //   x: "https://x.com",
   // },
+  // },
+
+  {
+    id: 5,
+    image: "/images/chiro-photo.jpeg",
+    name: `Dr. Donny Morris, DC`,
+    designation: "Chiropractic Physician",
+    details: `Dr. Donny Morris is a board-certified Chiropractic Physician originally from Leesburg, Virginia. He completed his undergraduate studies at Radford University before earning his Doctor of Chiropractic degree from Palmer College of Chiropractic in Daytona Beach, Florida. 
+    
+    Dr. Morris’s passion for helping others began with his own experience with chronic back pain while working in construction. That firsthand understanding of how pain can impact everyday life inspired him to pursue a career in healthcare and help others find relief, restore function, and get back to doing the things they love.
+
+Today, Dr. Morris is dedicated to providing patient-centered care focused on meaningful pain relief, improved mobility, and long-term wellness. He believes that lasting health goes beyond simply addressing symptoms and encourages patients to take an active role in their overall well-being.
+
+  Outside of the office, Dr. Morris has a strong passion for fitness and weightlifting. He enjoys challenging himself daily, spending time at the beach, and staying active outdoors. His commitment to living an active, balanced lifestyle is something he strives to share with his patients as they work toward becoming healthier, stronger, and more confident in their everyday lives.`,
+    // socialsMedia: {
+    //   facebook: "https://facebook.com",
+    //   instagram: "https://instagram.com",
+    //   x: "https://x.com",
+    // },
+  },
 ];
 
 type Teammate = (typeof teammatesData)[number];
@@ -97,27 +116,27 @@ const TeamPage = () => {
           <div className="grid grid-cols-1 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {teammatesData.map((member, index) => (
-                <Reveal key={member.id} y={30} opacityFrom={0}>
+                <Reveal key={member.id} y={30} opacityFrom={0} className="h-full">
                   <div
                     key={member.id}
-                    className={`bg-white shadow-lg rounded-2xl overflow-hidden  flex flex-col  items-center  `}
+                    className={`bg-white shadow-lg rounded-2xl overflow-hidden  flex flex-col  items-center h-full `}
                   >
                     <Image
                       src={member.image}
                       alt={member.name}
                       width={400}
                       height={400}
-                      className="  w-full"
+                      className="w-full h-64 object-cover object-[center_15%]"
                     />
 
-                    <div className="px-6 pt-4 pb-6 ">
+                    <div className="px-6 pt-4 pb-6 flex flex-col flex-1 w-full">
                       <h3 className="text-xl uppercase font-semibold text-gray-800">
                         {member.name}
                       </h3>
                       <p className="text-primary font-medium mt-1 ">
                         {member.designation}
                       </p>
-                      <p className="text-gray-600 mt-3 line-clamp-2">
+                      <p className="text-gray-600 mt-3 line-clamp-2 flex-1">
                         {member.details}
                       </p>
 
@@ -190,7 +209,7 @@ const TeamPage = () => {
                     <p className="text-primary font-medium mt-1">
                       {selectedMember.designation}
                     </p>
-                    <p className="text-gray-700 mt-4">
+                    <p className="text-gray-700 mt-4 leading-relaxed whitespace-pre-line">
                       {selectedMember.details}
                     </p>
                     {/* {selectedMember.socialsMedia && (
