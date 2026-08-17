@@ -31,6 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "chiropractic-care-myths-debunked",
     "is-chiropractic-care-effective-for-desk-workers-with-back-and-neck-pain",
     "what-is-the-difference-between-sciatica-and-lower-back-pain",
+    "when-should-you-see-a-chiropractor-for-back-pain-symptoms",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({

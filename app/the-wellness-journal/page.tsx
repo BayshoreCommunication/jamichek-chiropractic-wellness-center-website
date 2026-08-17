@@ -14,6 +14,7 @@ import { chiropracticTherapySlipFallRecoveryBlog } from "@/components/static-blo
 import { chiropracticCareMythsDebunkedBlog } from "@/components/static-blogs/blogs/Myths About Chiropractic Care Debunked";
 import { chiropracticCareDeskWorkersBlog } from "@/components/static-blogs/blogs/is-chiropractic-care-effective-for-desk-workers-with-back-and-neck-pain";
 import { whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog } from "@/components/static-blogs/blogs/what-is-the-difference-between-sciatica-and-lower-back-pain";
+import { whenShouldYouSeeAChiropractorForBackPainSymptomsBlog } from "@/components/static-blogs/blogs/when-should-you-see-a-chiropractor-for-back-pain-symptoms";
 
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 const page = async () => {
   const blogPostData = await GetAllPostData();
   const rawPosts = [
+    whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
     whatSupplementsHelpWithWeightLossBlog,
     canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
     howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,

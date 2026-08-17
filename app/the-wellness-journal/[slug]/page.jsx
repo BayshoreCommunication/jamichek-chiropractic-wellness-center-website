@@ -36,6 +36,9 @@ import IsChiropracticCareEffectiveForDeskWorkersWithBackAndNeckPain, {
 import WhatIsTheDifferenceBetweenSciaticaAndLowerBackPain, {
   whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog,
 } from "@/components/static-blogs/blogs/what-is-the-difference-between-sciatica-and-lower-back-pain";
+import WhenShouldYouSeeAChiropractorForBackPainSymptoms, {
+  whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
+} from "@/components/static-blogs/blogs/when-should-you-see-a-chiropractor-for-back-pain-symptoms";
 
 
 const css = `
@@ -97,6 +100,7 @@ export async function generateMetadata({ params }) {
     chiropracticCareMythsDebunkedBlog,
     chiropracticCareDeskWorkersBlog,
     whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog,
+    whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
   ].find((blog) => blog.slug === params.slug);
 
   if (staticBlog) {
@@ -163,6 +167,7 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
     canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
     howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
@@ -194,6 +199,8 @@ const page = async ({ params }) => {
       IsChiropracticCareEffectiveForDeskWorkersWithBackAndNeckPain,
     [whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog.slug]:
       WhatIsTheDifferenceBetweenSciaticaAndLowerBackPain,
+    [whenShouldYouSeeAChiropractorForBackPainSymptomsBlog.slug]:
+      WhenShouldYouSeeAChiropractorForBackPainSymptoms,
   };
   const StaticBlogComponent = staticBlogComponents[params.slug];
 
