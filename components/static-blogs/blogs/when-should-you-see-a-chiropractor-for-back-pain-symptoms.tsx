@@ -230,87 +230,126 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://www.jachimekchiro.com/",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.jachimekchiro.com/",
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "The Wellness Journal",
-          item: "https://www.jachimekchiro.com/the-wellness-journal",
+          "position": 2,
+          "name": "The Wellness Journal",
+          "item": "https://www.jachimekchiro.com/the-wellness-journal",
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "When Should You See a Chiropractor for Back Pain Symptoms?",
-          item:
+          "position": 3,
+          "name": "When Should You See a Chiropractor for Back Pain Symptoms?",
+          "item":
             "https://www.jachimekchiro.com/the-wellness-journal/when-should-you-see-a-chiropractor-for-back-pain-symptoms",
         },
       ],
     },
     {
       "@type": "BlogPosting",
-      mainEntityOfPage: {
+      "mainEntityOfPage": {
         "@type": "WebPage",
         "@id":
           "https://www.jachimekchiro.com/the-wellness-journal/when-should-you-see-a-chiropractor-for-back-pain-symptoms",
       },
-      headline: "When Should You See a Chiropractor for Back Pain Symptoms?",
-      name: "When to See a Chiropractor for Back Pain",
-      description:
+      "headline": "When Should You See a Chiropractor for Back Pain Symptoms?",
+      "name": "When to See a Chiropractor for Back Pain",
+      "description":
         "Learn when back pain needs a chiropractor versus a doctor. Red flags, timelines, and Tampa care from Jachimek Chiropractic.",
-      url:
+      "url":
         "https://www.jachimekchiro.com/the-wellness-journal/when-should-you-see-a-chiropractor-for-back-pain-symptoms",
-      image:
+      "image":
         "https://www.jachimekchiro.com/images/static-blogs/when-to-see-a-chiropractor-for-back-pain-symptoms.jpg",
-      isPartOf: {
+      "isPartOf": {
         "@type": "Blog",
         "@id": "https://www.jachimekchiro.com/the-wellness-journal",
       },
-      about: {
+      "about": {
         "@type": "Thing",
-        name: "Chiropractic Care for Back Pain Symptoms",
-        description:
-          "Comprehensive guide explaining when to see a chiropractor for back pain symptoms, red flags, treatment options, and timelines.",
+        "name": "Chiropractic Care for Back Pain",
+        "description":
+          "An overview of when chiropractic care may be appropriate for back pain, including persistent pain, muscle strain, sciatica, stiffness, injury-related pain, and symptoms that require urgent medical evaluation.",
       },
-      keywords: [
+      "keywords": [
+        "when should you see a chiropractor for back pain",
         "when to see a chiropractor for back pain",
+        "back pain chiropractor",
+        "chiropractic care for back pain",
+        "chiropractor for back pain",
         "back pain symptoms",
-        "chiropractor Tampa",
-        "lower back pain treatment",
+        "persistent back pain",
         "sciatica chiropractor",
-        "Jachimek Chiropractic",
+        "chiropractic treatment for back pain",
+        "Tampa chiropractor",
+        "back pain relief Tampa",
       ],
-      author: {
+      "author": {
         "@type": "Organization",
-        name: "Jachimek Chiropractic & Wellness",
+        "name": "Jachimek Chiropractic & Wellness",
       },
-      publisher: {
+      "publisher": {
         "@type": "Organization",
-        name: "Jachimek Chiropractic & Wellness",
-        url: "https://www.jachimekchiro.com/",
-        logo: {
+        "name": "Jachimek Chiropractic & Wellness",
+        "url": "https://www.jachimekchiro.com/",
+        "logo": {
           "@type": "ImageObject",
-          url: "https://www.jachimekchiro.com/images/hero/logo.png",
+          "url": "https://www.jachimekchiro.com/images/hero/logo.png",
         },
       },
-      datePublished: "2026-08-17",
-      dateModified: "2026-08-17",
+      "datePublished": "2026-08-17",
+      "dateModified": "2026-08-17",
     },
     {
       "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.a,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is chiropractic care safe for older adults with back pain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with techniques adjusted for bone density and mobility. ",
+          },
         },
-      })),
+        {
+          "@type": "Question",
+          "name": "Can chiropractic care help with sleep affected by back pain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often yes, since reduced nerve irritation improves rest quality. ",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "How many chiropractic visits does back pain usually need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most mechanical cases improve within six to twelve visits.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Does insurance typically cover chiropractic visits in Florida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many Florida plans cover it, especially after auto accidents.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Can pregnancy related back pain be treated by a chiropractor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, through pregnancy safe techniques and positioning adjustments.",
+          },
+        },
+      ],
     },
   ],
 };
