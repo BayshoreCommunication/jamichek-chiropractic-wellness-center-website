@@ -1,17 +1,15 @@
 "use client";
+import { Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram } from "lucide-react";
-import React from "react";
 import Reveal from "../motion/Reveal";
-import Stagger from "../motion/Stagger";
 
 const instagramFeed = [
   {
     id: 1,
     imageUrl: "/images/insta/insta-1.png",
     postUrl:
-      "https://www.instagram.com/medicalweightlosstampa/reel/DPDKPdyjXZl/",
+      "https://www.instagram.com/tampa_thewellnessreset?igsh=Mm05djZxbG9jOW55",
   },
   {
     id: 2,
@@ -42,12 +40,12 @@ const InstagramSection = () => {
             </h2>
           </Reveal>
           <Reveal y={20} opacityFrom={0}>
-          <Link
-            href="https://www.instagram.com/medicalweightlosstampa/"
-            target="_blank"
-            className="underline text-primary text-medium"
-          >
-                Follow me on Instagram
+            <Link
+              href="https://www.instagram.com/medicalweightlosstampa/"
+              target="_blank"
+              className="underline text-primary text-medium"
+            >
+              Follow me on Instagram
             </Link>
           </Reveal>
         </div>
@@ -56,29 +54,29 @@ const InstagramSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {instagramFeed.map((post) => (
             <Reveal key={post.id} y={30} opacityFrom={0}>
-            <div
-              key={post.id}
-              className="relative group  overflow-hidden   transition p-8 bg-white shadow-medium rounded-2xl border-0"
-            >
-              <Link
-                href={post.postUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className=""
+              <div
+                key={post.id}
+                className="relative group  overflow-hidden   transition p-8 bg-white shadow-medium rounded-2xl border-0"
               >
-                <Image
-                  src={post.imageUrl}
-                  alt={`Instagram post ${post.id}`}
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-                {/* Hover Overlay */}
-                <div className=" w-16 h-16 rounded-3xl absolute right-0 bottom-0   bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                  <Instagram className="text-primary w-10 h-10" />
-                </div>
-              </Link>
-            </div>
+                <Link
+                  href={post.postUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=""
+                >
+                  <Image
+                    src={post.imageUrl}
+                    alt={`Instagram post ${post.id}`}
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  {/* Hover Overlay */}
+                  <div className=" w-16 h-16 rounded-3xl absolute right-0 bottom-0   bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <Instagram className="text-primary w-10 h-10" />
+                  </div>
+                </Link>
+              </div>
             </Reveal>
           ))}
         </div>
