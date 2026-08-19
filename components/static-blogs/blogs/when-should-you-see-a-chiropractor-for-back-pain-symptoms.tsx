@@ -19,7 +19,7 @@ export const whenShouldYouSeeAChiropractorForBackPainSymptomsBlog = {
     "See a chiropractor when back pain lasts more than two weeks. Also see one if pain returns after rest, or limits movement. Seek care fast after a fall, car crash, or heavy lifting.",
   featuredImage: {
     image: {
-      url: "/images/static-blogs/when-to-see-a-chiropractor-for-back-pain-symptoms.jpg",
+      url: "/images/static-blogs/when-to-see-a-chiropractor-for-back-pain-symptoms.webp",
     },
     altText:
       "Chiropractor examining a male patient's painful spine with a glowing red alignment graphic during treatment.",
