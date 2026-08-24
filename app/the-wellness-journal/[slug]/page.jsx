@@ -39,6 +39,9 @@ import WhatIsTheDifferenceBetweenSciaticaAndLowerBackPain, {
 import WhenShouldYouSeeAChiropractorForBackPainSymptoms, {
   whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
 } from "@/components/static-blogs/blogs/when-should-you-see-a-chiropractor-for-back-pain-symptoms";
+import WhatIsTheBestSleepingPositionToReduceLowerBackPainAtNight, {
+  whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
+} from "@/components/static-blogs/blogs/what-is-the-best-sleeping-position-to-reduce-lower-back-pain-at-night";
 
 
 const css = `
@@ -101,6 +104,7 @@ export async function generateMetadata({ params }) {
     chiropracticCareDeskWorkersBlog,
     whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog,
     whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
+    whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
   ].find((blog) => blog.slug === params.slug);
 
   if (staticBlog) {
@@ -167,6 +171,7 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
     whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
     canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
     howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
@@ -201,6 +206,8 @@ const page = async ({ params }) => {
       WhatIsTheDifferenceBetweenSciaticaAndLowerBackPain,
     [whenShouldYouSeeAChiropractorForBackPainSymptomsBlog.slug]:
       WhenShouldYouSeeAChiropractorForBackPainSymptoms,
+    [whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog.slug]:
+      WhatIsTheBestSleepingPositionToReduceLowerBackPainAtNight,
   };
   const StaticBlogComponent = staticBlogComponents[params.slug];
 

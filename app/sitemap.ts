@@ -32,6 +32,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "is-chiropractic-care-effective-for-desk-workers-with-back-and-neck-pain",
     "what-is-the-difference-between-sciatica-and-lower-back-pain",
     "when-should-you-see-a-chiropractor-for-back-pain-symptoms",
+    "what-is-the-best-sleeping-position-to-reduce-lower-back-pain-at-night",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({

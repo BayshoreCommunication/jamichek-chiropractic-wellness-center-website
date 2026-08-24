@@ -15,6 +15,8 @@ import { chiropracticCareMythsDebunkedBlog } from "@/components/static-blogs/blo
 import { chiropracticCareDeskWorkersBlog } from "@/components/static-blogs/blogs/is-chiropractic-care-effective-for-desk-workers-with-back-and-neck-pain";
 import { whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog } from "@/components/static-blogs/blogs/what-is-the-difference-between-sciatica-and-lower-back-pain";
 import { whenShouldYouSeeAChiropractorForBackPainSymptomsBlog } from "@/components/static-blogs/blogs/when-should-you-see-a-chiropractor-for-back-pain-symptoms";
+import { whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog } from "@/components/static-blogs/blogs/what-is-the-best-sleeping-position-to-reduce-lower-back-pain-at-night";
+
 
 
 export const metadata: Metadata = {
@@ -28,6 +30,7 @@ export const metadata: Metadata = {
 const page = async () => {
   const blogPostData = await GetAllPostData();
   const rawPosts = [
+    whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
     whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
     whatSupplementsHelpWithWeightLossBlog,
     canChiropracticCareImproveSleepQualityAndReduceNighttimePainBlog,
