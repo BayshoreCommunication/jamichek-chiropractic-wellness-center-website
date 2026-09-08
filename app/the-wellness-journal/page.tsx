@@ -16,8 +16,7 @@ import { chiropracticCareDeskWorkersBlog } from "@/components/static-blogs/blogs
 import { whatIsTheDifferenceBetweenSciaticaAndLowerBackPainBlog } from "@/components/static-blogs/blogs/what-is-the-difference-between-sciatica-and-lower-back-pain";
 import { whenShouldYouSeeAChiropractorForBackPainSymptomsBlog } from "@/components/static-blogs/blogs/when-should-you-see-a-chiropractor-for-back-pain-symptoms";
 import { whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog } from "@/components/static-blogs/blogs/what-is-the-best-sleeping-position-to-reduce-lower-back-pain-at-night";
-
-
+import { whyDoesBackPainGetWorseAfterSittingAllDayBlog } from "@/components/static-blogs/blogs/why-does-back-pain-get-worse-after-sitting-all-day";
 
 export const metadata: Metadata = {
   title: "The Wellness Journal - Blog | Jachimek Chiropractic",
@@ -30,6 +29,7 @@ export const metadata: Metadata = {
 const page = async () => {
   const blogPostData = await GetAllPostData();
   const rawPosts = [
+    whyDoesBackPainGetWorseAfterSittingAllDayBlog,
     whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
     whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
     whatSupplementsHelpWithWeightLossBlog,
