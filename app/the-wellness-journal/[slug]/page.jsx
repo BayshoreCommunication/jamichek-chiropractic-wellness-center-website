@@ -45,6 +45,9 @@ import WhatIsTheBestSleepingPositionToReduceLowerBackPainAtNight, {
 import WhyDoesBackPainGetWorseAfterSittingAllDay, {
   whyDoesBackPainGetWorseAfterSittingAllDayBlog,
 } from "@/components/static-blogs/blogs/why-does-back-pain-get-worse-after-sitting-all-day";
+import CanYourSleepingPositionContributeToNeckPain, {
+  canYourSleepingPositionContributeToNeckPainBlog,
+} from "@/components/static-blogs/blogs/can-your-sleeping-position-contribute-to-neck-pain";
 
 
 
@@ -110,6 +113,7 @@ export async function generateMetadata({ params }) {
     whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
     whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
     whyDoesBackPainGetWorseAfterSittingAllDayBlog,
+    canYourSleepingPositionContributeToNeckPainBlog,
   ].find((blog) => blog.slug === params.slug);
 
   if (staticBlog) {
@@ -176,6 +180,7 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    canYourSleepingPositionContributeToNeckPainBlog,
     whyDoesBackPainGetWorseAfterSittingAllDayBlog,
     whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
     whenShouldYouSeeAChiropractorForBackPainSymptomsBlog,
@@ -216,6 +221,8 @@ const page = async ({ params }) => {
       WhatIsTheBestSleepingPositionToReduceLowerBackPainAtNight,
     [whyDoesBackPainGetWorseAfterSittingAllDayBlog.slug]:
       WhyDoesBackPainGetWorseAfterSittingAllDay,
+    [canYourSleepingPositionContributeToNeckPainBlog.slug]:
+      CanYourSleepingPositionContributeToNeckPain,
   };
   const StaticBlogComponent = staticBlogComponents[params.slug];
 

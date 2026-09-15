@@ -34,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "when-should-you-see-a-chiropractor-for-back-pain-symptoms",
     "what-is-the-best-sleeping-position-to-reduce-lower-back-pain-at-night",
     "why-does-back-pain-get-worse-after-sitting-all-day",
+    "can-your-sleeping-position-contribute-to-neck-pain",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({
