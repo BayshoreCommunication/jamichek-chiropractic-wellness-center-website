@@ -35,6 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "what-is-the-best-sleeping-position-to-reduce-lower-back-pain-at-night",
     "why-does-back-pain-get-worse-after-sitting-all-day",
     "can-your-sleeping-position-contribute-to-neck-pain",
+    "why-does-looking-down-at-your-phone-make-your-neck-hurt",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({

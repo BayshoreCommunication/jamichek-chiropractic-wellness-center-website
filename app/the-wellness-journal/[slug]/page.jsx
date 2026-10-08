@@ -48,6 +48,9 @@ import WhyDoesBackPainGetWorseAfterSittingAllDay, {
 import CanYourSleepingPositionContributeToNeckPain, {
   canYourSleepingPositionContributeToNeckPainBlog,
 } from "@/components/static-blogs/blogs/can-your-sleeping-position-contribute-to-neck-pain";
+import WhyDoesLookingDownAtYourPhoneMakeYourNeckHurt, {
+  whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog,
+} from "@/components/static-blogs/blogs/why-does-looking-down-at-your-phone-make-your-neck-hurt";
 
 
 
@@ -114,6 +117,7 @@ export async function generateMetadata({ params }) {
     whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
     whyDoesBackPainGetWorseAfterSittingAllDayBlog,
     canYourSleepingPositionContributeToNeckPainBlog,
+    whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog,
   ].find((blog) => blog.slug === params.slug);
 
   if (staticBlog) {
@@ -180,6 +184,7 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog,
     canYourSleepingPositionContributeToNeckPainBlog,
     whyDoesBackPainGetWorseAfterSittingAllDayBlog,
     whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog,
@@ -223,6 +228,8 @@ const page = async ({ params }) => {
       WhyDoesBackPainGetWorseAfterSittingAllDay,
     [canYourSleepingPositionContributeToNeckPainBlog.slug]:
       CanYourSleepingPositionContributeToNeckPain,
+    [whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog.slug]:
+      WhyDoesLookingDownAtYourPhoneMakeYourNeckHurt,
   };
   const StaticBlogComponent = staticBlogComponents[params.slug];
 

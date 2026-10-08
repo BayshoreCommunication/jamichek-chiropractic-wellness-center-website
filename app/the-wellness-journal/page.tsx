@@ -18,6 +18,7 @@ import { whenShouldYouSeeAChiropractorForBackPainSymptomsBlog } from "@/componen
 import { whatIsTheBestSleepingPositionToReduceLowerBackPainAtNightBlog } from "@/components/static-blogs/blogs/what-is-the-best-sleeping-position-to-reduce-lower-back-pain-at-night";
 import { whyDoesBackPainGetWorseAfterSittingAllDayBlog } from "@/components/static-blogs/blogs/why-does-back-pain-get-worse-after-sitting-all-day";
 import { canYourSleepingPositionContributeToNeckPainBlog } from "@/components/static-blogs/blogs/can-your-sleeping-position-contribute-to-neck-pain";
+import { whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog } from "@/components/static-blogs/blogs/why-does-looking-down-at-your-phone-make-your-neck-hurt";
 
 export const metadata: Metadata = {
   title: "The Wellness Journal - Blog | Jachimek Chiropractic",
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 const page = async () => {
   const blogPostData = await GetAllPostData();
   const rawPosts = [
+    whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog,
     canYourSleepingPositionContributeToNeckPainBlog,
     whyDoesBackPainGetWorseAfterSittingAllDayBlog,
 
