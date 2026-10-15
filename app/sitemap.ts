@@ -36,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "why-does-back-pain-get-worse-after-sitting-all-day",
     "can-your-sleeping-position-contribute-to-neck-pain",
     "why-does-looking-down-at-your-phone-make-your-neck-hurt",
+    "what-is-spinal-decompression-and-who-may-benefit-from-it",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({

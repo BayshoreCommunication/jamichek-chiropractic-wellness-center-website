@@ -51,6 +51,9 @@ import CanYourSleepingPositionContributeToNeckPain, {
 import WhyDoesLookingDownAtYourPhoneMakeYourNeckHurt, {
   whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog,
 } from "@/components/static-blogs/blogs/why-does-looking-down-at-your-phone-make-your-neck-hurt";
+import WhatIsSpinalDecompressionAndWhoMayBenefitFromIt, {
+  whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog,
+} from "@/components/static-blogs/blogs/what-is-spinal-decompression-and-who-may-benefit-from-it";
 
 
 
@@ -103,6 +106,7 @@ function truncateText(text, wordLimit) {
 
 export async function generateMetadata({ params }) {
   const staticBlog = [
+    whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog,
     howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
     whatCausesSciaticNervePainBlog,
@@ -127,7 +131,7 @@ export async function generateMetadata({ params }) {
       alternates: {
         canonical:
           staticBlog.canonicalPath ||
-          `/the-wellness-journal/${staticBlog.slug}`,
+          `https://www.jachimekchiro.com/the-wellness-journal/${staticBlog.slug}`,
       },
       openGraph: {
         title: staticBlog.metaTitle || staticBlog.title,
@@ -184,6 +188,7 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog,
     whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog,
     canYourSleepingPositionContributeToNeckPainBlog,
     whyDoesBackPainGetWorseAfterSittingAllDayBlog,
@@ -202,6 +207,8 @@ const page = async ({ params }) => {
     ...(blogPostData?.data || []),
   ].filter((blog) => blog?.published !== false);
   const staticBlogComponents = {
+    [whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog.slug]:
+      WhatIsSpinalDecompressionAndWhoMayBenefitFromIt,
     [howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog.slug]:
       HowChiropracticTreatmentHelpsReduceInflammationAndImproveMobility,
     [benefitsOfRegularChiropracticCareBlog.slug]:
