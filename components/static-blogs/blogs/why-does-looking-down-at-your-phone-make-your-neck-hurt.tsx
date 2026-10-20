@@ -256,6 +256,8 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/why-does-looking-down-at-your-phone-make-your-neck-hurt#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
@@ -272,13 +274,16 @@ const jsonLd = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Why Does Looking Down at Your Phone Make Your Neck Hurt",
-          item: "https://www.jachimekchiro.com/the-wellness-journal/why-does-looking-down-at-your-phone-make-your-neck-hurt",
+          name: "Why Does Looking Down at Your Phone Make Your Neck Hurt?",
+          item:
+            "https://www.jachimekchiro.com/the-wellness-journal/why-does-looking-down-at-your-phone-make-your-neck-hurt",
         },
       ],
     },
     {
       "@type": "BlogPosting",
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/why-does-looking-down-at-your-phone-make-your-neck-hurt#blogposting",
       mainEntityOfPage: {
         "@type": "WebPage",
         "@id":
@@ -289,35 +294,43 @@ const jsonLd = {
       name: "Why Phones Hurt Your Neck: Tampa Chiro Explains",
       description:
         "Looking down at your phone loads your neck like a weight rack. See the real Tampa Bay data and how Jachimek Chiropractic treats text neck for good.",
-      url: "https://www.jachimekchiro.com/the-wellness-journal/why-does-looking-down-at-your-phone-make-your-neck-hurt",
-      image:
-        "https://www.jachimekchiro.com/images/static-blogs/why-does-looking-down-at-your-phone-make-your-neck-hurt.webp",
+      url:
+        "https://www.jachimekchiro.com/the-wellness-journal/why-does-looking-down-at-your-phone-make-your-neck-hurt",
+      image: {
+        "@type": "ImageObject",
+        url:
+          "https://www.jachimekchiro.com/images/static-blogs/why-does-looking-down-at-your-phone-make-your-neck-hurt.webp",
+      },
       isPartOf: {
         "@type": "Blog",
-        "@id": "https://www.jachimekchiro.com/the-wellness-journal",
+        "@id": "https://www.jachimekchiro.com/the-wellness-journal#blog",
+        name: "The Wellness Journal",
+        url: "https://www.jachimekchiro.com/the-wellness-journal",
       },
       about: {
         "@type": "Thing",
-        name: "Text Neck & Forward Head Posture Strain",
-        description:
-          "An in-depth clinical guide on smartphone neck strain, cervical spine biomechanics, Tampa Bay lifestyle factors, and chiropractic treatments.",
+        name: "Text Neck and Smartphone-Related Neck Pain",
       },
       keywords: [
         "why does looking down at your phone make your neck hurt",
-        "text neck pain",
+        "text neck",
+        "smartphone neck pain",
         "forward head posture",
-        "smartphone neck strain",
-        "cervical spine pressure",
-        "chiropractor Tampa neck pain",
-        "Jachimek Chiropractic",
+        "neck muscle tension",
+        "neck pain from phone use",
+        "cervical spine posture",
+        "neck pain relief",
+        "chiropractic care for neck pain",
+        "Tampa chiropractor",
       ],
       author: {
         "@type": "Organization",
         name: "Jachimek Chiropractic & Wellness",
+        url: "https://www.jachimekchiro.com/",
       },
       publisher: {
         "@type": "Organization",
-        name: "Jachimek Chiropractic & Wellness",
+        name: "Jachimek Chiropractic & Wellness Center",
         url: "https://www.jachimekchiro.com/",
         logo: {
           "@type": "ImageObject",
@@ -326,17 +339,52 @@ const jsonLd = {
       },
       datePublished: "2026-10-07",
       dateModified: "2026-10-07",
+      inLanguage: "en-US",
     },
     {
       "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.a,
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/why-does-looking-down-at-your-phone-make-your-neck-hurt#faq",
+      url:
+        "https://www.jachimekchiro.com/the-wellness-journal/why-does-looking-down-at-your-phone-make-your-neck-hurt",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Does it take a long time to fix head posture?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Well, most people feel less pain after a couple of weeks, maybe 4, if they're consistent with treatment. But getting your posture back to normal and building up those deep neck muscles takes closer to 2-3 months.",
+          },
         },
-      })),
+        {
+          "@type": "Question",
+          name: "Is text neck the same as a pinched nerve?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Not exactly. Text neck describes the postural pattern and muscle strain, while a pinched nerve involves actual nerve compression, often from a disc or joint change that developed after prolonged poor posture.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do kids and teens get text neck too?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Yes, and often earlier than adults expect. Teens who spend hours on phones and laptops for schoolwork show the same forward flexed posture patterns, sometimes with faster onset of symptoms since their postural habits are still forming.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Will a standing desk fix neck pain from screen use?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "A standing desk changes hip and lower back load more than neck angle. Screen height relative to eye level matters far more for the neck than whether someone is sitting or standing.",
+          },
+        },
+      ],
     },
   ],
 };
@@ -605,9 +653,9 @@ export default function WhyDoesLookingDownAtYourPhoneMakeYourNeckHurt({
 
                     {/* Progress Chart Visual */}
                     <div className="my-8 rounded-[8px] border border-[#d8dfd1] bg-[#fbfdf8] p-6 text-left">
-                      <h3 className="text-base font-bold text-[#202124] mb-4">
+                      <h2 className="text-base font-bold text-[#202124] mb-4">
                         Cervical Spine Effective Load by Head Tilt Angle
-                      </h3>
+                      </h2>
                       <div className="space-y-4">
                         {tiltChartData.map((item) => (
                           <div key={item.angle} className="space-y-1">

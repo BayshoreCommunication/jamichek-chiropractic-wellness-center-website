@@ -228,88 +228,142 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/can-your-sleeping-position-contribute-to-neck-pain#breadcrumb",
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.jachimekchiro.com/",
+          position: 1,
+          name: "Home",
+          item: "https://www.jachimekchiro.com/",
         },
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": "The Wellness Journal",
-          "item": "https://www.jachimekchiro.com/the-wellness-journal",
+          position: 2,
+          name: "The Wellness Journal",
+          item: "https://www.jachimekchiro.com/the-wellness-journal",
         },
         {
           "@type": "ListItem",
-          "position": 3,
-          "name": "Can Your Sleeping Position Contribute to Neck Pain",
-          "item":
+          position: 3,
+          name: "Can Your Sleeping Position Contribute to Neck Pain",
+          item:
             "https://www.jachimekchiro.com/the-wellness-journal/can-your-sleeping-position-contribute-to-neck-pain",
         },
       ],
     },
     {
       "@type": "BlogPosting",
-      "mainEntityOfPage": {
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/can-your-sleeping-position-contribute-to-neck-pain#blogposting",
+      mainEntityOfPage: {
         "@type": "WebPage",
         "@id":
           "https://www.jachimekchiro.com/the-wellness-journal/can-your-sleeping-position-contribute-to-neck-pain",
       },
-      "headline": "Can Your Sleeping Position Contribute to Neck Pain",
-      "name": "Sleep Position and Neck Pain, Tampa Chiro Guide",
-      "description":
+      headline: "Can Your Sleeping Position Contribute to Neck Pain",
+      name: "Sleep Position and Neck Pain, Tampa Chiro Guide",
+      description:
         "Learn how your sleeping position causes neck pain and what Tampa's Jachimek Chiropractic recommends to fix it fast, backed by research.",
-      "url":
+      url:
         "https://www.jachimekchiro.com/the-wellness-journal/can-your-sleeping-position-contribute-to-neck-pain",
-      "image":
+      image:
         "https://www.jachimekchiro.com/images/static-blogs/can-your-sleeping-position-contribute-to-neck-pain.webp",
-      "isPartOf": {
+      isPartOf: {
         "@type": "Blog",
-        "@id": "https://www.jachimekchiro.com/the-wellness-journal",
+        name: "The Wellness Journal",
+        url: "https://www.jachimekchiro.com/the-wellness-journal",
       },
-      "about": {
+      about: {
         "@type": "Thing",
-        "name": "Sleeping Position and Neck Pain",
-        "description":
-          "An in-depth guide covering cervical alignment, side, back, and stomach sleeping positions, pillow loft selection, and chiropractic care for morning neck stiffness.",
+        name: "Sleeping Position and Neck Pain",
       },
-      "keywords": [
-        "can your sleeping position contribute to neck pain",
-        "neck pain from sleeping position",
-        "stomach sleeping neck strain",
-        "pillow height for side sleepers",
-        "cervical alignment sleep",
-        "chiropractor Tampa neck pain",
+      keywords: [
+        "sleeping position and neck pain",
+        "sleeping position neck pain",
+        "best sleeping position for neck pain",
+        "neck pain while sleeping",
+        "sleep posture",
+        "neck pain",
+        "sleeping posture",
+        "pillow for neck pain",
+        "spinal alignment",
+        "neck tension",
+        "chiropractic care for neck pain",
+        "Tampa neck pain chiropractor",
         "Jachimek Chiropractic",
       ],
-      "author": {
+      author: {
         "@type": "Organization",
-        "name": "Jachimek Chiropractic & Wellness",
+        name: "Jachimek Chiropractic & Wellness",
+        url: "https://www.jachimekchiro.com/",
       },
-      "publisher": {
+      publisher: {
         "@type": "Organization",
-        "name": "Jachimek Chiropractic & Wellness",
-        "url": "https://www.jachimekchiro.com/",
-        "logo": {
+        name: "Jachimek Chiropractic & Wellness",
+        url: "https://www.jachimekchiro.com/",
+        logo: {
           "@type": "ImageObject",
-          "url": "https://www.jachimekchiro.com/images/hero/logo.png",
+          url: "https://www.jachimekchiro.com/images/hero/logo.png",
         },
       },
-      "datePublished": "2026-09-15",
-      "dateModified": "2026-09-15",
+      datePublished: "2026-09-15",
+      dateModified: "2026-09-15",
     },
     {
       "@type": "FAQPage",
-      "mainEntity": faqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a,
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/can-your-sleeping-position-contribute-to-neck-pain#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Can changing my pillow alone fix sleep related neck pain?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Sometimes, but only if pillow height was the entire problem. If pain has lasted more than a few weeks, position and posture usually need addressing too.",
+          },
         },
-      })),
+        {
+          "@type": "Question",
+          name:
+            "Is it bad to sleep with my neck twisted to check my phone before bed?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Yes. Even a short period of extreme neck flexion right before sleep can carry tension into the night and worsen morning stiffness.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does a firmer mattress help neck pain more than a softer one?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Not universally. What matters most is whether the mattress keeps your spine level, which depends on your body weight and sleep position, not firmness alone.",
+          },
+        },
+        {
+          "@type": "Question",
+          name:
+            "Can neck pillows with memory foam make pain worse in Florida's climate?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "They can if heat retention causes frequent repositioning overnight. A cooling gel infused option often performs better in warm, humid bedrooms.",
+          },
+        },
+        {
+          "@type": "Question",
+          name:
+            "How long should I try fixing my sleep posture before seeing a chiropractor?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Give it two to three weeks of consistent changes. If mornings are still painful after that, a professional evaluation is the next step.",
+          },
+        },
+      ],
     },
   ],
 };

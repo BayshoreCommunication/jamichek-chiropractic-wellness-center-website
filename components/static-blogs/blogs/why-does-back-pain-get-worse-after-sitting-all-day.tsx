@@ -251,89 +251,120 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/why-does-back-pain-get-worse-after-sitting-all-day#breadcrumb",
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.jachimekchiro.com/",
+          position: 1,
+          name: "Home",
+          item: "https://www.jachimekchiro.com/",
         },
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": "The Wellness Journal",
-          "item": "https://www.jachimekchiro.com/the-wellness-journal",
+          position: 2,
+          name: "The Wellness Journal",
+          item: "https://www.jachimekchiro.com/the-wellness-journal",
         },
         {
           "@type": "ListItem",
-          "position": 3,
-          "name": "Why Does Back Pain Get Worse After Sitting All Day?",
-          "item":
+          position: 3,
+          name: "Why Does Back Pain Get Worse After Sitting All Day?",
+          item:
             "https://www.jachimekchiro.com/the-wellness-journal/why-does-back-pain-get-worse-after-sitting-all-day",
         },
       ],
     },
     {
       "@type": "BlogPosting",
-      "mainEntityOfPage": {
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/why-does-back-pain-get-worse-after-sitting-all-day#blogposting",
+      mainEntityOfPage: {
         "@type": "WebPage",
         "@id":
           "https://www.jachimekchiro.com/the-wellness-journal/why-does-back-pain-get-worse-after-sitting-all-day",
       },
-      "headline": "Why Does Back Pain Get Worse After Sitting All Day?",
-      "name": "Why Does Back Pain Get Worse After Sitting",
-      "description":
+      headline: "Why Does Back Pain Get Worse After Sitting All Day?",
+      name: "Why Does Back Pain Get Worse After Sitting",
+      description:
         "Sitting spikes lumbar disc pressure up to 40 percent. See why back pain worsens by afternoon and how Jachimek Chiropractic in Tampa treats it fast.",
-      "url":
+      url:
         "https://www.jachimekchiro.com/the-wellness-journal/why-does-back-pain-get-worse-after-sitting-all-day",
-      "image":
+      image:
         "https://www.jachimekchiro.com/images/static-blogs/why-does-back-pain-worse-after-sitting-all-day.webp",
-      "isPartOf": {
+      isPartOf: {
         "@type": "Blog",
-        "@id": "https://www.jachimekchiro.com/the-wellness-journal",
+        name: "The Wellness Journal",
+        url: "https://www.jachimekchiro.com/the-wellness-journal",
       },
-      "about": {
+      about: {
         "@type": "Thing",
-        "name": "Lower Back Pain from Sitting",
-        "description":
-          "An in-depth guide covering intradiscal pressure, slouched sitting posture, core muscle fatigue, desk job pain timelines, and chiropractic treatments for sitting-related lower back pain.",
+        name: "Back Pain From Sitting",
       },
-      "keywords": [
-        "why does back pain get worse after sitting all day",
-        "lower back pain sitting all day",
-        "back pain worsens after sitting",
-        "lumbar disc pressure sitting vs standing",
-        "desk posture back pain relief",
-        "chiropractic treatment for sitting back pain",
-        "Tampa chiropractor back pain",
-        "Jachimek Chiropractic",
+      keywords: [
+        "back pain from sitting",
+        "back pain after sitting all day",
+        "lower back pain from sitting",
+        "sitting all day back pain",
+        "back pain and posture",
+        "sitting-related back pain",
+        "lumbar disc pressure",
+        "desk job back pain",
+        "back pain relief",
+        "chiropractic care",
+        "spinal decompression",
+        "Tampa chiropractor",
       ],
-      "author": {
+      author: {
         "@type": "Organization",
-        "name": "Jachimek Chiropractic & Wellness",
+        name: "Jachimek Chiropractic & Wellness",
+        url: "https://www.jachimekchiro.com/",
       },
-      "publisher": {
+      publisher: {
         "@type": "Organization",
-        "name": "Jachimek Chiropractic & Wellness",
-        "url": "https://www.jachimekchiro.com/",
-        "logo": {
+        name: "Jachimek Chiropractic & Wellness",
+        url: "https://www.jachimekchiro.com/",
+        logo: {
           "@type": "ImageObject",
-          "url": "https://www.jachimekchiro.com/images/hero/logo.png",
+          url: "https://www.jachimekchiro.com/images/hero/logo.png",
         },
       },
-      "datePublished": "2026-09-08",
-      "dateModified": "2026-09-08",
+      datePublished: "2026-09-08",
+      dateModified: "2026-09-08",
     },
     {
       "@type": "FAQPage",
-      "mainEntity": faqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a,
+      "@id":
+        "https://www.jachimekchiro.com/the-wellness-journal/why-does-back-pain-get-worse-after-sitting-all-day#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is it better to sit or stand all day for back pain?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Neither, honestly. Standing all day just trades disc pressure for a different problem, static fatigue in your legs and lower back. Switch between sitting and standing throughout your day.",
+          },
         },
-      })),
+        {
+          "@type": "Question",
+          name: "Can a bad mattress make sitting-related back pain worse?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "It can. If your mattress doesn't support your lumbar curve overnight, your discs don't get the recovery and rehydration they need. Then the pain from your desk day just carries straight into the next one.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How many minutes should I stand for every hour I sit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Most occupational research points to something like 5 to 10 minutes on your feet for every 30 to 45 minutes seated.",
+          },
+        },
+      ],
     },
   ],
 };

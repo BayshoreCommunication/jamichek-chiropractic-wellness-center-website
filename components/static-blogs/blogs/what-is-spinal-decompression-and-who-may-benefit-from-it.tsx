@@ -745,9 +745,9 @@ export default function WhatIsSpinalDecompressionAndWhoMayBenefitFromIt({
                   <div className="my-7 rounded-r-[8px] border-l-4 border-[#9b2c2c] bg-[#fbeaea] p-6 shadow-xs">
                     <div className="flex items-center gap-2 text-[#9b2c2c]">
                       <AlertTriangle className="h-5 w-5 shrink-0" />
-                      <h3 className="text-base sm:text-lg font-bold">
+                      <h2 className="text-base sm:text-lg font-bold">
                         Who Should Not Use Spinal Decompression
-                      </h3>
+                      </h2>
                     </div>
                     <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#1a1a2e] text-justify sm:text-left">
                       Decompression therapy is not appropriate for pregnant
@@ -857,9 +857,9 @@ export default function WhatIsSpinalDecompressionAndWhoMayBenefitFromIt({
 
                   {/* Navy Blue High-Converting CTA Box (from Doc) */}
                   <div className="my-8 rounded-[8px] bg-[#1b3a6b] p-6 sm:p-8 text-center text-white shadow-md">
-                    <h3 className="text-xl sm:text-2xl font-bold">
+                    <h2 className="text-xl sm:text-2xl font-bold">
                       Ready to Find Out If Decompression Can Help Your Spine?
-                    </h3>
+                    </h2>
                     <p className="mt-3 text-sm sm:text-base text-gray-200 max-w-2xl mx-auto">
                       Call{" "}
                       <a
