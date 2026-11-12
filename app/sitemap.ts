@@ -37,11 +37,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "can-your-sleeping-position-contribute-to-neck-pain",
     "why-does-looking-down-at-your-phone-make-your-neck-hurt",
     "what-is-spinal-decompression-and-who-may-benefit-from-it",
+    "simple-daily-habits-that-can-help-you-maintain-better-mobility",
   ];
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({
     url: `${baseUrl}/the-wellness-journal/${slug}`,
-    lastModified: new Date("2026-06-08"), // approximate/fallback baseline date
+    lastModified:
+      slug === "simple-daily-habits-that-can-help-you-maintain-better-mobility"
+        ? new Date("2026-11-12")
+        : new Date("2026-06-08"), // approximate/fallback baseline date
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

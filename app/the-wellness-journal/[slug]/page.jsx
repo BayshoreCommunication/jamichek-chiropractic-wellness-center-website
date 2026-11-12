@@ -54,6 +54,9 @@ import WhyDoesLookingDownAtYourPhoneMakeYourNeckHurt, {
 import WhatIsSpinalDecompressionAndWhoMayBenefitFromIt, {
   whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog,
 } from "@/components/static-blogs/blogs/what-is-spinal-decompression-and-who-may-benefit-from-it";
+import SimpleDailyHabitsThatCanHelpYouMaintainBetterMobility, {
+  simpleDailyHabitsThatCanHelpYouMaintainBetterMobilityBlog,
+} from "@/components/static-blogs/blogs/simple-daily-habits-that-can-help-you-maintain-better-mobility";
 
 
 
@@ -106,6 +109,7 @@ function truncateText(text, wordLimit) {
 
 export async function generateMetadata({ params }) {
   const staticBlog = [
+    simpleDailyHabitsThatCanHelpYouMaintainBetterMobilityBlog,
     whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog,
     howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog,
     benefitsOfRegularChiropracticCareBlog,
@@ -188,6 +192,7 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const blogPostData = await GetAllPostData();
   const recentBlogs = [
+    simpleDailyHabitsThatCanHelpYouMaintainBetterMobilityBlog,
     whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog,
     whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog,
     canYourSleepingPositionContributeToNeckPainBlog,
@@ -207,6 +212,8 @@ const page = async ({ params }) => {
     ...(blogPostData?.data || []),
   ].filter((blog) => blog?.published !== false);
   const staticBlogComponents = {
+    [simpleDailyHabitsThatCanHelpYouMaintainBetterMobilityBlog.slug]:
+      SimpleDailyHabitsThatCanHelpYouMaintainBetterMobility,
     [whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog.slug]:
       WhatIsSpinalDecompressionAndWhoMayBenefitFromIt,
     [howChiropracticTreatmentHelpsReduceInflammationAndImproveMobilityBlog.slug]:

@@ -20,6 +20,7 @@ import { whyDoesBackPainGetWorseAfterSittingAllDayBlog } from "@/components/stat
 import { canYourSleepingPositionContributeToNeckPainBlog } from "@/components/static-blogs/blogs/can-your-sleeping-position-contribute-to-neck-pain";
 import { whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog } from "@/components/static-blogs/blogs/why-does-looking-down-at-your-phone-make-your-neck-hurt";
 import { whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog } from "@/components/static-blogs/blogs/what-is-spinal-decompression-and-who-may-benefit-from-it";
+import { simpleDailyHabitsThatCanHelpYouMaintainBetterMobilityBlog } from "@/components/static-blogs/blogs/simple-daily-habits-that-can-help-you-maintain-better-mobility";
 
 export const metadata: Metadata = {
   title: "The Wellness Journal - Blog | Jachimek Chiropractic",
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
 const page = async () => {
   const blogPostData = await GetAllPostData();
   const rawPosts = [
+    simpleDailyHabitsThatCanHelpYouMaintainBetterMobilityBlog,
     whatIsSpinalDecompressionAndWhoMayBenefitFromItBlog,
     whyDoesLookingDownAtYourPhoneMakeYourNeckHurtBlog,
     canYourSleepingPositionContributeToNeckPainBlog,
