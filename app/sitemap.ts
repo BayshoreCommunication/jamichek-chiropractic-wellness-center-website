@@ -38,14 +38,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "why-does-looking-down-at-your-phone-make-your-neck-hurt",
     "what-is-spinal-decompression-and-who-may-benefit-from-it",
     "simple-daily-habits-that-can-help-you-maintain-better-mobility",
+    "why-does-your-back-hurt-more-at-the-end-of-the-workday",
   ];
+
+  const staticBlogDates: Record<string, string> = {
+    "simple-daily-habits-that-can-help-you-maintain-better-mobility":
+      "2026-11-12",
+    "why-does-your-back-hurt-more-at-the-end-of-the-workday": "2026-11-16",
+  };
 
   const staticBlogRoutes = staticBlogSlugs.map((slug) => ({
     url: `${baseUrl}/the-wellness-journal/${slug}`,
-    lastModified:
-      slug === "simple-daily-habits-that-can-help-you-maintain-better-mobility"
-        ? new Date("2026-11-12")
-        : new Date("2026-06-08"), // approximate/fallback baseline date
+    lastModified: new Date(staticBlogDates[slug] || "2026-06-08"), // approximate/fallback baseline date
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
