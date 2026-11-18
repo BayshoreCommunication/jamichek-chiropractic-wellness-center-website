@@ -40,6 +40,14 @@ const nextConfig = {
     ],
   },
   skipTrailingSlashRedirect: true,
+  experimental: {
+    outputFileTracingIncludes: {
+      "/sitemap.xml": [
+        "./app/**/page.*",
+        "./components/static-blogs/blogs/**/*",
+      ],
+    },
+  },
   // Add headers for PDF files
   async headers() {
     return [
